@@ -1,0 +1,2076 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>วิศวกรรมเกษตรสมัยใหม่ แม่โจ้</title>
+<meta name="description" content="หลักสูตรวิศวกรรมศาสตรมหาบัณฑิต สาขาวิชาวิศวกรรมเกษตรสมัยใหม่ (หลักสูตรปรับปรุง พ.ศ. 2569) คณะวิศวกรรมและอุตสาหกรรมเกษตร มหาวิทยาลัยแม่โจ้">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500;600;700&family=Anuphan:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: white academic site, maroon utility bar + sticky header, full-bleed hero, 1160px content column; hash-routed pages; data lives in the script so the program can edit text, photos and results in one place */
+:root{
+  --maroon:#A51D3B; --maroon-deep:#7E1630; --maroon-soft:#FDEFF2; --rose:#F9D9DF;
+  --brown:#A9763F; --brown-soft:#FBF3EA; --sand:#F5ECE2;
+  --grey:#6E6769; --line:#ECE8E8; --bg:#FFFFFF; --bg-soft:#F8F6F6; --ink:#1F1A1C;
+  --shadow:0 1px 2px rgba(60,20,30,.05),0 10px 30px -14px rgba(60,20,30,.18);
+  --on-dark:#FFFFFF;
+  --display:"Bai Jamjuree","Anuphan",system-ui,sans-serif;
+  --body:"Anuphan",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --maroon:#F0839A; --maroon-deep:#5E1A2B; --maroon-soft:#3A2228; --rose:#4A2630;
+  --brown:#E0B484; --brown-soft:#2F2721; --sand:#352D27;
+  --grey:#B5ADAF; --line:#38312F; --bg:#19161A; --bg-soft:#221E21; --ink:#F4EFF0;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.6); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --maroon:#F0839A; --maroon-deep:#5E1A2B; --maroon-soft:#3A2228; --rose:#4A2630;
+  --brown:#E0B484; --brown-soft:#2F2721; --sand:#352D27;
+  --grey:#B5ADAF; --line:#38312F; --bg:#19161A; --bg-soft:#221E21; --ink:#F4EFF0;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.6); color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.75;margin:0}
+.wrap{max-width:1160px;margin:0 auto;padding-inline:20px}
+a{color:var(--maroon)}
+a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--brown);outline-offset:3px;border-radius:4px}
+h1,h2,h3,h4{font-family:var(--display);line-height:1.3;text-wrap:balance;margin:0;font-weight:700}
+h2{font-size:clamp(1.55rem,3vw,2.1rem)}
+h3{font-size:1.2rem;font-weight:600}
+h4{font-size:1.02rem;font-weight:600}
+p{margin:0;max-width:70ch}
+ul,ol{margin:0}
+img{display:block}
+.muted{color:var(--grey)}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.small{font-size:.88rem}
+.kicker{font-family:var(--display);font-weight:600;font-size:.82rem;letter-spacing:.06em;color:var(--brown);text-transform:uppercase}
+.stack{display:grid;gap:12px}
+.ph{font-family:var(--mono);font-size:.82em;background:var(--brown-soft);color:var(--brown);padding:1px 7px;border-radius:4px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* header */
+header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);min-width:0}
+.mark{flex:none;width:46px;height:46px;border-radius:10px;background:var(--maroon);color:var(--bg);display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:.82rem;line-height:1.05;text-align:center}
+.brand b{display:block;font-family:var(--display);font-size:1.02rem;line-height:1.25}
+.brand small{display:block;color:var(--grey);font-size:.78rem;line-height:1.3}
+nav.menu{display:flex;gap:2px;flex-wrap:wrap;justify-content:flex-end}
+nav.menu a{text-decoration:none;color:var(--ink);font-size:.9rem;font-weight:500;padding:6px 9px;border-radius:6px;white-space:nowrap}
+nav.menu a:hover{background:var(--bg-soft)}
+nav.menu a[aria-current="page"]{color:var(--maroon);background:var(--maroon-soft)}
+.menu-btn{display:none;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:8px;padding:8px 12px;font-family:var(--body);font-size:.95rem;cursor:pointer}
+@media(max-width:1440px){
+  .menu-btn{display:block}
+  nav.menu{display:none;position:absolute;left:0;right:0;top:100%;background:var(--bg);border-bottom:1px solid var(--line);padding:8px 20px 16px;flex-direction:column;align-items:stretch}
+  nav.menu.open{display:flex}
+  nav.menu a{padding:10px 12px}
+}
+
+.facts{background:var(--bg);border-bottom:1px solid var(--line)}
+.facts .wrap{display:grid;grid-template-columns:repeat(5,minmax(0,1fr))}
+.fact{padding:20px 16px;border-right:1px solid var(--line);display:grid;gap:2px}
+.fact:last-child{border-right:0}
+.fact b{font-family:var(--display);font-size:1.7rem;color:var(--maroon);line-height:1.2;font-variant-numeric:tabular-nums}
+.fact span{font-size:.88rem;color:var(--grey)}
+@media(max-width:860px){.facts .wrap{grid-template-columns:repeat(2,minmax(0,1fr))}.fact{border-bottom:1px solid var(--line)}.fact:nth-child(2n){border-right:0}.fact:last-child{grid-column:1/-1}}
+
+/* page heads */
+.phead{background:var(--bg-soft);border-bottom:1px solid var(--line)}
+.phead .wrap{padding-block:44px 36px;display:grid;gap:10px}
+.phead p{color:var(--grey)}
+.crumb{font-size:.85rem;color:var(--grey)}
+.crumb a{color:var(--grey)}
+.sec{padding-block:56px}
+.sec+.sec{padding-top:0}
+.sec-alt{background:var(--bg-soft);padding-block:56px}
+.shead{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:26px}
+.shead>div{display:grid;gap:6px;min-width:0}
+.shead a{font-weight:600;text-decoration:none;white-space:nowrap}
+
+/* grids & cards */
+.g2,.g3,.g4{display:grid;gap:18px}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media(max-width:960px){.g4{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.g2,.g3,.g4{grid-template-columns:1fr}}
+.card{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:22px;display:grid;gap:8px;align-content:start;min-width:0}
+.card p,.card li{color:var(--grey);font-size:.96rem}
+.card.soft{background:var(--bg-soft);border-color:transparent}
+.num{font-family:var(--display);font-weight:700;color:var(--maroon);font-size:.9rem}
+.list{display:grid;gap:8px;padding:0;list-style:none}
+.list li{padding-left:18px;position:relative}
+.list li::before{content:"";position:absolute;left:0;top:.78em;width:7px;height:7px;border-radius:2px;background:var(--maroon)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:.84rem;font-weight:500;padding:4px 12px;border-radius:99px;background:var(--maroon-soft);color:var(--maroon)}
+.chip.b{background:var(--brown-soft);color:var(--brown)}
+
+/* media cards (news, activities, labs) */
+.media{display:grid;grid-template-rows:auto 1fr;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--bg);min-width:0;text-align:left;font:inherit;color:inherit;padding:0;cursor:pointer}
+.media:hover .thumb img{transform:scale(1.03)}
+.thumb{aspect-ratio:16/10;overflow:hidden;background:var(--sand);max-width:100%}
+.thumb img{width:100%;height:100%;object-fit:cover}
+.media .body{padding:18px 20px 20px;display:grid;gap:8px;align-content:start}
+.media .meta{display:flex;gap:10px;flex-wrap:wrap;align-items:center;font-size:.84rem;color:var(--grey)}
+.media .meta .cat{font-weight:600;color:var(--maroon)}
+.media p{color:var(--grey);font-size:.95rem}
+.news-feature{display:grid;grid-template-columns:1.25fr 1fr;gap:18px}
+.news-feature .media:first-child .thumb{aspect-ratio:16/9}
+.news-side{display:grid;gap:18px}
+.news-side .media{grid-template-rows:none;grid-template-columns:150px 1fr}
+.news-side .thumb{aspect-ratio:auto;height:100%;min-height:120px}
+@media(max-width:860px){.news-feature{grid-template-columns:1fr}}
+@media(max-width:520px){.news-side .media{grid-template-columns:110px 1fr}.news-side .media .body{padding:12px 14px}}
+.gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:190px;gap:12px}
+.gallery .media{grid-template-rows:none;position:relative;border:0;border-radius:10px}
+.gallery .media .thumb{aspect-ratio:auto;height:100%}
+.gallery .media:first-child{grid-column:span 2;grid-row:span 2}
+.gallery .cap{position:absolute;left:0;right:0;bottom:0;padding:28px 14px 12px;background:linear-gradient(transparent,rgba(120,30,45,.78));color:#fff;font-size:.9rem;font-weight:500;line-height:1.4}
+@media(max-width:860px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:160px}}
+@media (prefers-reduced-motion:no-preference){.thumb img{transition:transform .35s ease}}
+
+/* dialog */
+dialog{border:0;border-radius:14px;padding:0;max-width:min(760px,calc(100vw - 32px));width:100%;background:var(--bg);color:var(--ink)}
+dialog::backdrop{background:rgba(20,10,10,.6)}
+.dlg-img{aspect-ratio:16/9;background:var(--sand)}
+.dlg-img img{width:100%;height:100%;object-fit:cover}
+.dlg-body{padding:22px 24px 24px;display:grid;gap:10px}
+.dlg-close{position:absolute;top:10px;right:10px;width:38px;height:38px;border-radius:50%;border:0;background:rgba(255,255,255,.92);color:#2B2422;font-size:1.3rem;cursor:pointer}
+
+/* people */
+.lead3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+@media(max-width:860px){.lead3{grid-template-columns:1fr}}
+.leader{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--bg);display:grid;grid-template-rows:auto 1fr}
+.portrait{aspect-ratio:4/3;background:var(--sand);position:relative;overflow:hidden}
+.portrait img{width:100%;height:100%;object-fit:cover}
+.portrait .mono-av{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--display);font-size:3.2rem;font-weight:700;color:var(--maroon);background:linear-gradient(160deg,var(--brown-soft),var(--sand))}
+.leader .body{padding:18px 20px 20px;display:grid;gap:6px;align-content:start}
+.role{display:inline-block;justify-self:start;font-size:.8rem;font-weight:600;padding:3px 10px;border-radius:99px;background:var(--maroon);color:var(--bg)}
+.leader small,.pcard small{display:block;color:var(--grey);font-size:.88rem;line-height:1.55}
+.people{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+@media(max-width:960px){.people{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){.people{grid-template-columns:1fr}}
+.pcard{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--bg);display:grid;grid-template-rows:auto 1fr}
+.pcard .portrait{aspect-ratio:1/1}
+.pcard .portrait .mono-av{font-size:2.4rem}
+.pcard .body{padding:14px 16px 16px;display:grid;gap:6px;align-content:start}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.tags span{font-size:.78rem;padding:2px 8px;border-radius:6px;background:var(--bg-soft);color:var(--grey)}
+.roster{columns:3 260px;column-gap:28px;padding:0;list-style:none}
+.roster li{break-inside:avoid;padding:8px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+
+/* plans */
+.plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+@media(max-width:960px){.plans{grid-template-columns:1fr}}
+.plan{border:1px solid var(--line);border-radius:14px;padding:24px;display:grid;gap:10px;align-content:start;background:var(--bg)}
+.plan .tag{font-size:.8rem;font-weight:600;color:var(--brown)}
+.plan p{color:var(--grey);font-size:.95rem}
+.bar{display:flex;height:10px;border-radius:99px;overflow:hidden;background:var(--line);margin-top:6px}
+.bar span{display:block;height:100%}
+.c1{background:var(--maroon)} .c2{background:var(--brown)} .c3{background:var(--grey)}
+table.credits{width:100%;border-collapse:collapse;font-size:.93rem}
+.credits td{padding:7px 0;border-bottom:1px solid var(--line)}
+.credits td:last-child{text-align:right;font-family:var(--mono)}
+.credits tr.total td{font-weight:600;border-bottom:0}
+.sw{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:8px;vertical-align:middle}
+
+/* tables */
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--bg)}
+.tbl table{width:100%;border-collapse:collapse;font-size:.94rem;min-width:620px}
+.tbl th,.tbl td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl th{font-weight:600;color:var(--grey);font-size:.84rem;background:var(--bg-soft);white-space:nowrap}
+.tbl tr:last-child td{border-bottom:0}
+.tbl td.n{font-family:var(--mono);white-space:nowrap;font-variant-numeric:tabular-nums;font-size:.88rem}
+.tbl td small{display:block;color:var(--grey);font-size:.84rem}
+.tbl .grp td{background:var(--maroon-soft);color:var(--maroon);font-weight:600;font-size:.88rem}
+.tbl tfoot td{font-weight:600;background:var(--bg-soft)}
+.ok{display:inline-block;font-size:.8rem;font-weight:600;padding:2px 10px;border-radius:99px;background:var(--maroon-soft);color:var(--maroon)}
+.wait{display:inline-block;font-size:.8rem;padding:2px 10px;border-radius:99px;border:1px dashed var(--line);color:var(--grey);white-space:nowrap}
+.yes{color:var(--maroon);font-weight:700}
+
+/* tabs & filters */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.tab{font-family:var(--body);font-size:.95rem;padding:9px 16px;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:99px;cursor:pointer}
+.tab[aria-selected="true"]{background:var(--maroon);border-color:var(--maroon);color:var(--bg)}
+.filters{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+select,input[type=search]{font-family:var(--body);font-size:.95rem;padding:9px 12px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);max-width:100%}
+.terms{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+@media(max-width:760px){.terms{grid-template-columns:1fr}}
+.term{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--bg)}
+.term h4{padding:10px 16px;background:var(--bg-soft);border-bottom:1px solid var(--line);font-size:.95rem}
+.term ul{list-style:none;padding:0}
+.term li{display:grid;grid-template-columns:86px 1fr auto;gap:10px;padding:9px 16px;border-bottom:1px solid var(--line);font-size:.92rem}
+.term li>*{min-width:0}
+.term li:last-child{border-bottom:0;font-weight:600}
+.term .c{font-family:var(--mono);font-size:.84rem;color:var(--grey)}
+.term .cr{font-family:var(--mono);text-align:right}
+
+/* PLO */
+.plo-row{display:grid;grid-template-columns:76px 1fr 150px;gap:18px;padding:16px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.plo-row>*{min-width:0}
+.plo-n{font-family:var(--display);font-weight:700;color:var(--maroon);font-size:1.05rem}
+.plo-lv{text-align:right;font-size:.86rem;color:var(--grey)}
+.lv{display:inline-block;font-family:var(--mono);font-size:.78rem;padding:1px 8px;border-radius:5px;background:var(--brown-soft);color:var(--brown);margin-left:6px}
+@media(max-width:640px){.plo-row{grid-template-columns:60px 1fr}.plo-lv{grid-column:2;text-align:left}}
+
+/* steps / cycle */
+.steps{list-style:none;padding:0;display:grid;gap:14px;counter-reset:s}
+.steps li{display:grid;grid-template-columns:36px 1fr;gap:12px;counter-increment:s}
+.steps li>div{min-width:0}
+.steps li::before{content:counter(s);font-family:var(--display);font-weight:700;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:var(--maroon);color:var(--bg);font-size:.9rem}
+.steps p{color:var(--grey);font-size:.94rem}
+.cycle{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.cycle>div{border-top:4px solid var(--maroon);background:var(--bg);border-radius:0 0 12px 12px;padding:18px;display:grid;gap:6px;align-content:start;min-width:0}
+.cycle>div:nth-child(2){border-color:var(--brown)}.cycle>div:nth-child(3){border-color:var(--grey)}.cycle>div:nth-child(4){border-color:var(--maroon-deep)}
+.cycle p{font-size:.92rem;color:var(--grey)}
+@media(max-width:860px){.cycle{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.cycle{grid-template-columns:1fr}}
+.quote{border-left:4px solid var(--maroon);padding:6px 0 6px 20px;font-size:1.1rem;font-family:var(--display);font-weight:500;line-height:1.6}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+.split>*{min-width:0}
+.split .thumb{border-radius:14px}
+@media(max-width:860px){.split{grid-template-columns:1fr}}
+.dl{border-top:1px solid var(--line);margin:0}
+.dl>div{display:grid;grid-template-columns:170px 1fr;gap:16px;padding:13px 0;border-bottom:1px solid var(--line)}
+.dl dt{color:var(--grey);font-size:.93rem}
+.dl dd{margin:0;min-width:0}
+@media(max-width:600px){.dl>div{grid-template-columns:1fr;gap:2px}}
+.partners{display:flex;flex-wrap:wrap;gap:10px}
+.partners span{border:1px solid var(--line);border-radius:8px;padding:8px 14px;font-size:.92rem;background:var(--bg)}
+
+footer.site{background:var(--maroon-soft);color:var(--ink);margin-top:0;border-top:4px solid var(--maroon)}
+footer.site .wrap{padding-block:44px 28px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}
+footer.site h4{color:var(--maroon);margin-bottom:10px}
+footer.site a{color:var(--ink);text-decoration:none}
+footer.site a:hover{color:var(--maroon)}
+footer.site ul{list-style:none;padding:0;display:grid;gap:6px;font-size:.93rem}
+footer.site .base{grid-column:1/-1;border-top:1px solid var(--line);padding-top:18px;font-size:.84rem;color:var(--grey)}
+@media(max-width:760px){footer.site .wrap{grid-template-columns:1fr}}
+.page[hidden]{display:none!important}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:600;text-decoration:none;font-size:.97rem;border:1px solid transparent;cursor:pointer;font-family:var(--body);line-height:1.3}
+.btn-maroon{background:var(--maroon);color:#fff}
+.btn-ghost{border-color:var(--line);color:var(--ink);background:var(--bg)}
+/* ===== modern layer ===== */
+body{font-size:16.5px}
+h1,h2,h3{letter-spacing:-.01em}
+.btn{border-radius:99px;padding:11px 22px}
+.btn-maroon{box-shadow:0 8px 20px -10px var(--maroon)}
+.btn-maroon:hover{background:var(--maroon-deep);color:#fff}
+.btn-ghost:hover{border-color:var(--maroon);color:var(--maroon)}
+header.site{background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px)}
+.mark{border-radius:12px;background:linear-gradient(140deg,var(--maroon),var(--maroon-deep));color:#fff}
+nav.menu{align-items:center;gap:4px}
+nav.menu a{border-radius:99px;padding:7px 11px;font-size:.9rem}
+.brand small{display:none}
+nav.menu a.nav-cta{background:var(--maroon);color:#fff;margin-left:6px}
+nav.menu a.nav-cta[aria-current="page"]{background:var(--maroon-deep);color:#fff}
+@media(max-width:1100px){
+  .menu-btn{display:block}
+  nav.menu{display:none;position:absolute;left:0;right:0;top:100%;background:var(--bg);border-bottom:1px solid var(--line);padding:8px 20px 16px;flex-direction:column;align-items:stretch;box-shadow:var(--shadow)}
+  nav.menu.open{display:flex}
+  nav.menu a{padding:11px 14px}
+  nav.menu a.nav-cta{margin:6px 0 0;text-align:center}
+}
+@media(min-width:1101px){nav.menu{flex-wrap:nowrap!important;flex:none}.brand{flex:1 1 auto}.brand b{line-height:1.2}.menu-btn{display:none}nav.menu{display:flex!important;position:static;flex-direction:row;padding:0;border:0;box-shadow:none;background:none}}
+
+/* hero — dark banner */
+.hero{position:relative;overflow:hidden;color:#fff;isolation:isolate;background:
+  radial-gradient(55% 75% at 88% 18%,rgba(214,70,98,.42) 0%,transparent 62%),
+  radial-gradient(45% 60% at 4% 96%,rgba(169,118,63,.35) 0%,transparent 60%),
+  linear-gradient(135deg,#14080C 0%,#2B0D17 45%,#4A1222 100%)}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background-image:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);
+  background-size:56px 56px;-webkit-mask-image:radial-gradient(80% 90% at 30% 40%,#000 25%,transparent 75%);mask-image:radial-gradient(80% 90% at 30% 40%,#000 25%,transparent 75%)}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,transparent,#E25A75 30%,#D9A066 70%,transparent)}
+.hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center;padding-block:76px 104px}
+.hero-grid>*{min-width:0}
+.pill-label{display:inline-flex;align-items:center;gap:8px;font-size:.84rem;font-weight:600;color:#FFD9E0;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:99px;padding:6px 14px;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.pill-label::before{content:"";width:8px;height:8px;border-radius:50%;background:#FF6B85;box-shadow:0 0 0 4px rgba(255,107,133,.22);animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 8px rgba(255,107,133,0)}}
+.hero h1{font-size:clamp(2.4rem,5.6vw,4.3rem);line-height:1.08;margin-top:20px;color:#fff;letter-spacing:-.01em}
+.hero h1 span{display:block;background:linear-gradient(90deg,#FF8FA3 0%,#F6C9A0 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .deg{margin-top:16px;font-weight:600;color:#E9C9A8;letter-spacing:.01em}
+.hero .lede{margin-top:12px;font-size:1.08rem;color:rgba(255,255,255,.78);max-width:52ch}
+.hero .cta{margin-top:30px}
+.hero .btn-maroon{background:linear-gradient(135deg,#E0405F,#A51D3B);color:#fff;box-shadow:0 12px 28px -10px rgba(224,64,95,.75)}
+.hero .btn-maroon:hover{background:linear-gradient(135deg,#EB5470,#B8213F)}
+.hero .btn-ghost{background:rgba(255,255,255,.06);color:#fff;border-color:rgba(255,255,255,.35)}
+.hero .btn-ghost:hover{background:#fff;color:#7E1630;border-color:#fff}
+.hero-media{position:relative}
+.hero-media::before{content:"";position:absolute;inset:-14px;border-radius:36px;background:linear-gradient(135deg,rgba(255,143,163,.45),rgba(246,201,160,.2) 50%,transparent);z-index:-1;filter:blur(2px)}
+.hero-media img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:28px;box-shadow:0 30px 60px -20px rgba(0,0,0,.6);max-width:100%;border:1px solid rgba(255,255,255,.12)}
+.float{position:absolute;background:rgba(28,10,16,.62);border:1px solid rgba(255,255,255,.16);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-radius:16px;padding:12px 16px;box-shadow:0 16px 36px -14px rgba(0,0,0,.6);display:grid;line-height:1.3;color:#fff}
+.float b{font-family:var(--display);color:#FFB3C1}
+.float span{font-size:.82rem;color:rgba(255,255,255,.72)}
+.f1{left:-22px;bottom:28px}.f2{right:-14px;top:24px}
+.f2 b{font-size:1.6rem}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:36px;padding-block:44px 84px}.f1{left:12px}.f2{right:12px}}
+@media(prefers-reduced-motion:reduce){.pill-label::before{animation:none}}
+
+/* facts as tiles */
+.facts{border:0;background:transparent;margin-top:-48px;position:relative;z-index:1}
+.facts .wrap{gap:12px}
+.fact{background:var(--bg);border:0;border-radius:18px;box-shadow:var(--shadow);padding:18px 20px}
+.fact:last-child{border:0}
+@media(max-width:860px){.fact{border:0}}
+
+/* surfaces */
+.card,.plan,.media,.leader,.pcard,.term,.tbl{border-color:transparent;box-shadow:var(--shadow);border-radius:18px}
+.card.soft{box-shadow:none;background:var(--bg-soft)}
+.sec-alt{background:var(--bg-soft)}
+/* page banners — dark, matches hero */
+.phead,.band{position:relative;overflow:hidden;isolation:isolate;color:#fff;border:0;background:
+  radial-gradient(48% 90% at 92% 10%,rgba(214,70,98,.40) 0%,transparent 64%),
+  radial-gradient(40% 80% at 0% 100%,rgba(169,118,63,.32) 0%,transparent 62%),
+  linear-gradient(120deg,#14080C 0%,#2B0D17 48%,#4A1222 100%)}
+.phead::before,.band::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+  background-size:48px 48px;-webkit-mask-image:linear-gradient(100deg,#000 10%,transparent 70%);mask-image:linear-gradient(100deg,#000 10%,transparent 70%)}
+.phead::after,.band::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,#E25A75,#D9A066 55%,transparent)}
+.phead .wrap{position:relative;padding-block:64px 60px;display:grid;gap:14px}
+.phead .wrap>*{position:relative;z-index:1;max-width:760px}
+.phead .wrap>.ph-mark{position:absolute;right:20px;bottom:-14px;z-index:0;max-width:none;font-family:var(--display);font-weight:700;font-size:clamp(2.8rem,7vw,5.6rem);line-height:1;letter-spacing:-.02em;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.12);pointer-events:none;white-space:nowrap;user-select:none}
+.phead h2,.band h2{color:#fff;font-size:clamp(1.9rem,4.2vw,3.1rem);line-height:1.15;letter-spacing:-.01em}
+.phead h2::after{content:"";display:block;width:64px;height:4px;border-radius:4px;margin-top:18px;background:linear-gradient(90deg,#FF8FA3,#F6C9A0)}
+.phead p,.band p{color:rgba(255,255,255,.76);font-size:1.04rem;max-width:68ch}
+.phead .crumb{justify-self:start;display:inline-flex;align-items:center;gap:6px;font-size:.82rem;font-weight:600;color:#FFD9E0;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:99px;padding:5px 14px;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.phead .crumb a{color:rgba(255,255,255,.7);text-decoration:none}
+.phead .crumb a:hover{color:#fff}
+.ph-art{position:absolute;right:-40px;top:50%;transform:translateY(-50%);width:min(520px,52vw);height:auto;z-index:-1;opacity:.85;pointer-events:none}
+.band .wrap{padding-block:52px 48px;display:grid;gap:12px}
+.band .kicker{color:#F6C9A0}
+.band+section,.band+.sec{padding-top:56px}
+@media(max-width:760px){.phead .wrap{padding-block:44px 42px}.ph-art{width:300px;right:-130px;opacity:.32}.phead .wrap>.ph-mark{bottom:-8px;right:12px}}
+.kicker{color:var(--maroon);letter-spacing:.04em}
+.num{color:var(--brown)}
+.chip{background:var(--maroon-soft)}
+.tab{border-radius:99px}
+.tbl th{background:var(--bg-soft)}
+.gallery .media{box-shadow:none}
+.cycle>div{box-shadow:var(--shadow)}
+.quote{border-left-color:var(--brown)}
+footer.site{background:var(--bg-soft);border-top:0}
+
+
+/* documents */
+.docgroups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:start}
+@media(max-width:860px){.docgroups{grid-template-columns:1fr}}
+.docgroup{background:var(--bg);border-radius:18px;box-shadow:var(--shadow);padding:20px 22px;display:grid;gap:4px;align-content:start;min-width:0}
+.docgroup h3{font-size:1.05rem;margin-bottom:6px}
+.doc{display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;padding:10px 0;border-top:1px solid var(--line);text-decoration:none;color:var(--ink)}
+.doc>*{min-width:0}
+.doc .ty{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-family:var(--mono);font-size:.7rem;font-weight:500;background:var(--maroon-soft);color:var(--maroon)}
+.doc .ty.web{background:var(--brown-soft);color:var(--brown)}
+.doc b{display:block;font-weight:600;font-size:.95rem;line-height:1.45}
+.doc small{display:block;color:var(--grey);font-size:.8rem}
+.doc .go{font-size:.85rem;font-weight:600;color:var(--maroon);white-space:nowrap}
+a.doc:hover b{color:var(--maroon)}
+.doc.off{opacity:.6}
+.doc.off .go{color:var(--grey);font-weight:500}
+
+
+
+.pcontact{display:grid;gap:3px;margin-top:8px;padding-top:10px;border-top:1px solid var(--line);font-size:.84rem;color:var(--grey);min-width:0}
+.pcontact a{color:var(--maroon);text-decoration:none;overflow-wrap:break-word}
+.pcontact a:hover{text-decoration:underline}
+.pcontact .ic{display:inline-block;width:1.3em;color:var(--brown)}
+/* language */
+html[lang="en"] .mark{font-size:.66rem;letter-spacing:-.02em}
+@media(max-width:480px){html[lang="en"] .brand b{font-size:.9rem}}
+.lang-btn{display:inline-flex;align-items:center;border:1px solid var(--line);background:var(--bg);border-radius:99px;padding:3px;gap:2px;cursor:pointer;font-family:var(--display);font-weight:600;font-size:.8rem;margin-left:6px;flex:none}
+.lang-btn span{padding:4px 9px;border-radius:99px;color:var(--grey)}
+html[lang="th"] .lang-btn [data-l="th"],html[lang="en"] .lang-btn [data-l="en"]{background:var(--maroon);color:#fff}
+.clamp{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+html[lang="en"] #courses td small{display:none}
+
+/* plan chooser */
+.chooser{display:grid;grid-template-columns:.8fr 1.4fr;gap:32px;background:linear-gradient(135deg,var(--maroon-soft),var(--brown-soft));border-radius:28px;padding:36px}
+.chooser>*{min-width:0}
+.ch-intro{display:grid;gap:8px;align-content:start}
+.ch-intro p{color:var(--grey)}
+.ch-body{background:var(--bg);border-radius:20px;padding:26px;box-shadow:var(--shadow);display:grid;gap:14px;align-content:start}
+.ch-step{font-size:.82rem;color:var(--grey);font-weight:600}
+.ch-q{font-family:var(--display);font-size:1.15rem;font-weight:600}
+.ch-opts{display:grid;gap:10px}
+.ch-opt{text-align:left;font:inherit;color:var(--ink);background:var(--bg-soft);border:1.5px solid transparent;border-radius:14px;padding:13px 16px;cursor:pointer}
+.ch-opt:hover{border-color:var(--maroon);background:var(--maroon-soft)}
+.ch-prog{display:flex;gap:6px}
+.ch-prog span{height:5px;flex:1;border-radius:99px;background:var(--line)}
+.ch-prog span.on{background:var(--maroon)}
+.ch-res h3{font-size:1.5rem;color:var(--maroon)}
+.ch-res .list{margin-top:4px}
+.ch-note{font-size:.9rem;border-radius:12px;padding:10px 14px;background:var(--brown-soft);color:var(--ink)}
+.ch-actions{display:flex;flex-wrap:wrap;gap:10px}
+.linkbtn{background:none;border:0;color:var(--grey);font:inherit;text-decoration:underline;cursor:pointer;padding:0}
+@media(max-width:860px){.chooser{grid-template-columns:1fr;padding:22px;border-radius:22px}.ch-body{padding:20px}}
+
+/* faq */
+.faq-wrap{display:grid;grid-template-columns:.8fr 1.4fr;gap:40px;align-items:start}
+.faq-wrap>*{min-width:0}
+@media(max-width:860px){.faq-wrap{grid-template-columns:1fr;gap:20px}}
+.faq{display:grid;gap:10px}
+.faq details{background:var(--bg);border-radius:16px;box-shadow:var(--shadow);padding:0 20px}
+.faq summary{cursor:pointer;list-style:none;padding:16px 28px 16px 0;font-weight:600;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:0;top:12px;font-size:1.4rem;color:var(--maroon);font-weight:400}
+.faq details[open] summary::after{content:"–"}
+.faq details p{padding-bottom:16px;color:var(--grey)}
+
+/* voices */
+.voice{display:grid;gap:14px}
+.voice q{font-family:var(--display);font-size:1.05rem;line-height:1.6;quotes:"“" "”"}
+.voice .who{display:flex;gap:12px;align-items:center}
+.voice .who img,.voice .who .av{width:46px;height:46px;border-radius:50%;object-fit:cover;flex:none}
+.voice .who .av{display:grid;place-items:center;background:var(--maroon-soft);color:var(--maroon);font-family:var(--display);font-weight:700}
+.voice small{display:block;color:var(--grey)}
+
+/* mobile apply bar */
+.mbar{display:none}
+@media(max-width:760px){
+  .mbar{display:flex;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+  .mbar .btn{flex:1;justify-content:center}
+  footer.site{padding-bottom:70px}
+}
+@media (prefers-reduced-motion:no-preference){.ch-opt,.btn,nav.menu a{transition:background .15s,border-color .15s,color .15s}}
+
+</style>
+
+</head>
+<body>
+<header class="site">
+  <div class="wrap head">
+    <a class="brand" href="#home"><span class="mark" aria-hidden="true">วศ.ม.</span><span><b>วิศวกรรมเกษตรสมัยใหม่</b><small>Master of Engineering · Modern Agricultural Engineering</small></span></a>
+    <nav class="menu" id="menu" aria-label="เมนูหลัก">
+      <a href="#home" data-en="Home">หน้าแรก</a>
+      <a href="#about" data-en="About">เกี่ยวกับหลักสูตร</a>
+      <a href="#curriculum" data-en="Programme">หลักสูตร</a>
+      <a href="#admission" data-en="Admissions">รับสมัคร</a>
+      <a href="#faculty" data-en="Faculty">คณาจารย์</a>
+      <a href="#news" data-en="News">ข่าวสาร</a>
+      <a href="#documents" data-en="Documents">เอกสาร</a>
+      <a href="#contact" class="nav-cta" data-en="Contact">ติดต่อเรา</a>
+    </nav>
+    <button class="lang-btn" id="lang-btn" type="button" aria-label="เปลี่ยนภาษา / Switch language"><span data-l="th">TH</span><span data-l="en">EN</span></button>
+    <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="menu">เมนู</button>
+  </div>
+</header>
+
+<main>
+<!-- ======================= HOME ======================= -->
+<div class="page" data-page="home">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <span class="pill-label">หลักสูตรปรับปรุง พ.ศ. 2569 · เปิดรับภาคการศึกษาที่ 2/2569</span>
+        <h1 data-en-html="Modern Agricultural<span>Engineering</span>">วิศวกรรมเกษตร<span>สมัยใหม่</span></h1>
+        <p class="deg">วิศวกรรมศาสตรมหาบัณฑิต (วศ.ม.) · มหาวิทยาลัยแม่โจ้</p>
+        <p class="lede">พัฒนานักวิจัย นักพัฒนา และวิศวกรนวัตกรรม ที่ใช้ AI, IoT, Big Data และระบบอัตโนมัติ ยกระดับระบบเกษตรและอุตสาหกรรมเกษตรให้มีประสิทธิภาพ ปลอดภัย และยั่งยืน</p>
+        <div class="cta"><a class="btn btn-maroon" href="#chooser">ค้นหาแผนที่เหมาะกับคุณ</a><a class="btn btn-ghost" href="#admission">คุณสมบัติและการสมัคร</a></div>
+      </div>
+      <div class="hero-media">
+        <img id="hero-img" src="images/hero-dark.svg" alt="ภาพประกอบเกษตรอัจฉริยะ">
+        <div class="float f1"><b>Smart &amp; Low-Carbon</b><span>Agri-Engineering</span></div>
+        <div class="float f2"><b class="mono">36</b><span>หน่วยกิต · 2 ปี</span></div>
+      </div>
+    </div>
+  </section>
+  <div class="facts"><div class="wrap">
+    <div class="fact"><b>36</b><span>หน่วยกิตตลอดหลักสูตร</span></div>
+    <div class="fact"><b>3</b><span>แผนการเรียน วิชาการและวิชาชีพ</span></div>
+    <div class="fact"><b>2 ปี</b><span>ภาคปกติ สอนไทยหรืออังกฤษ</span></div>
+    <div class="fact"><b>7</b><span>กลุ่มวิชาความเชี่ยวชาญ</span></div>
+    <div class="fact"><b class="mono">25,000</b><span>บาทต่อภาคการศึกษา</span></div>
+  </div></div>
+
+  <section class="sec"><div class="wrap">
+    <div class="shead"><div><div class="kicker">ข่าวประชาสัมพันธ์</div><h2>ข่าวล่าสุดของหลักสูตร</h2></div><a href="#news">ดูข่าวทั้งหมด →</a></div>
+    <div class="news-feature" id="home-news"></div>
+  </div></section>
+
+  <section class="sec-alt"><div class="wrap">
+    <div class="shead"><div><div class="kicker">จุดเด่นของหลักสูตร</div><h2>ห้าด้านที่สังเคราะห์จากกรอบวิชาชีพ CIGR<br>และความต้องการของผู้ใช้บัณฑิต</h2></div></div>
+    <div class="g3" id="highlights"></div>
+  </div></section>
+
+  <section class="sec" id="chooser"><div class="wrap">
+    <div class="chooser">
+      <div class="ch-intro"><div class="kicker">ตัวช่วยเลือกแผน</div><h2>แผนไหนเหมาะกับคุณ</h2><p>ตอบ 3 คำถาม ใช้เวลาไม่ถึงนาที</p></div>
+      <div class="ch-body" id="ch-body"></div>
+    </div>
+  </div></section>
+
+  <section class="sec"><div class="wrap">
+    <div class="shead"><div><div class="kicker">เลือกแผนการเรียน</div><h2>36 หน่วยกิตเท่ากัน ต่างกันที่เป้าหมาย</h2></div><a href="#curriculum">โครงสร้างหลักสูตรฉบับเต็ม →</a></div>
+    <div class="plans" id="home-plans"></div>
+  </div></section>
+
+  <section class="sec-alt"><div class="wrap">
+    <div class="shead"><div><div class="kicker">คณะกรรมการบริหารหลักสูตร</div><h2>ทีมบริหารหลักสูตร</h2></div><a href="#faculty">คณาจารย์ทั้งหมด →</a></div>
+    <div class="lead3" id="home-leaders"></div>
+  </div></section>
+
+  <section class="sec" id="voices-sec" hidden><div class="wrap">
+    <div class="shead"><div><div class="kicker">เสียงจากศิษย์เก่าและผู้ใช้บัณฑิต</div><h2>สิ่งที่พวกเขาพูดถึงหลักสูตร</h2></div></div>
+    <div class="g3" id="voices"></div>
+  </div></section>
+
+  <section class="sec"><div class="wrap">
+    <div class="shead"><div><div class="kicker">กิจกรรม</div><h2>บรรยากาศการเรียนรู้และกิจกรรมของหลักสูตร</h2></div><a href="#news">ดูกิจกรรมทั้งหมด →</a></div>
+    <div class="gallery" id="home-gallery"></div>
+  </div></section>
+
+  <section class="sec-alt"><div class="wrap faq-wrap">
+    <div class="stack"><div class="kicker">คำถามที่พบบ่อย</div><h2>สงสัยอะไร ดูคำตอบได้ที่นี่</h2><p class="muted">ไม่พบคำตอบที่ต้องการ ติดต่อหลักสูตรได้โดยตรง</p><a class="btn btn-ghost" href="#contact" style="justify-self:start">ติดต่อเรา</a></div>
+    <div class="faq" id="home-faq"></div>
+  </div></section>
+</div>
+
+<!-- ======================= ABOUT ======================= -->
+<div class="page" data-page="about" hidden>
+  <div class="phead" data-mark="ABOUT"><svg class="ph-art" viewBox="0 0 520 520" aria-hidden="true" fill="none"><defs><linearGradient id="phg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF8FA3"/><stop offset="1" stop-color="#F6C9A0"/></linearGradient></defs><g stroke="rgba(255,255,255,.16)"><circle cx="300" cy="260" r="210"/><circle cx="300" cy="260" r="150" stroke-dasharray="4 8"/><circle cx="300" cy="260" r="92"/><path d="M90 260H510M300 50V470M151 111l298 298M449 111L151 409"/></g><circle cx="300" cy="260" r="150" stroke="url(#phg1)" stroke-width="2" stroke-dasharray="120 820" stroke-linecap="round"/><circle cx="300" cy="260" r="210" stroke="url(#phg1)" stroke-width="1.5" stroke-dasharray="60 1260" stroke-dashoffset="-400" stroke-linecap="round"/><g fill="url(#phg1)"><circle cx="300" cy="110" r="5"/><circle cx="406" cy="366" r="4"/><circle cx="208" cy="188" r="3.5"/><circle cx="90" cy="260" r="4"/></g><rect x="268" y="228" width="64" height="64" rx="14" stroke="url(#phg1)" stroke-width="2"/><path d="M286 270l10-16 10 10 12-20" stroke="#fff" stroke-opacity=".7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="wrap"><span class="ph-mark" aria-hidden="true">ABOUT</span><div class="crumb"><a href="#home">หน้าแรก</a> / เกี่ยวกับหลักสูตร</div><h2>เกี่ยวกับหลักสูตร</h2><p>ปรัชญา วัตถุประสงค์ และผลลัพธ์การเรียนรู้ของหลักสูตรวิศวกรรมศาสตรมหาบัณฑิต สาขาวิชาวิศวกรรมเกษตรสมัยใหม่ (หลักสูตรปรับปรุง พ.ศ. 2569)</p></div></div>
+
+  <section class="sec"><div class="wrap split">
+    <div class="stack">
+      <div class="kicker">ปรัชญาของหลักสูตร</div>
+      <p class="quote">มุ่งผลิตนักวิจัย นักพัฒนา และวิศวกรนวัตกรรมด้านวิศวกรรมเกษตรสมัยใหม่ ที่มีความรู้เชิงลึก บูรณาการองค์ความรู้ข้ามศาสตร์ และปรับใช้เทคโนโลยีดิจิทัล เทคโนโลยีขั้นสูง และนวัตกรรมสีเขียวให้เหมาะสมกับบริบท</p>
+      <p class="muted">เพื่อพัฒนาและยกระดับระบบและนวัตกรรมในภาคการเกษตรและอุตสาหกรรมเกษตรให้มีประสิทธิภาพและปลอดภัยตามมาตรฐานสากล ควบคู่กับการยึดมั่นในคุณธรรม จริยธรรม และความรับผิดชอบต่อสังคมและสิ่งแวดล้อม</p>
+    </div>
+    <div class="thumb"><img src="images/act-farm.svg" alt="ภาพประกอบแปลงเกษตรอัจฉริยะ โรงเรือน เซนเซอร์ และโดรน" loading="lazy"></div>
+  </div></section>
+
+  <section class="sec-alt"><div class="wrap g2">
+    <div class="card"><div class="kicker">ความเชื่อมโยงกับมหาวิทยาลัย</div><h3>สู่มหาวิทยาลัยชั้นนำที่มีความเป็นเลิศทางการเกษตรในระดับนานาชาติ</h3><p>หลักสูตรสนับสนุนแนวคิดเกษตรอัจฉริยะเพื่อสุขภาวะที่ยั่งยืน (Intelligent Well-being Agriculture: IWA) และเกษตรมูลค่าสูงของภาคเหนือ ตอบอุตสาหกรรมเป้าหมายทั้ง First S-Curve เช่น การแปรรูปผลผลิตเกษตรและเกษตรอัจฉริยะ และ New S-Curve เช่น หุ่นยนต์และเทคโนโลยีดิจิทัล</p></div>
+    <div class="card"><div class="kicker">Outcome-Based Education</div><h3>มหาบัณฑิตที่หลักสูตรมุ่งสร้าง</h3><p>ประเมิน ออกแบบ และบูรณาการองค์ความรู้วิศวกรรมเกษตรสมัยใหม่ร่วมกับ AI, IoT และการวิเคราะห์ข้อมูล แก้ปัญหาวิศวกรรมเชิงซับซ้อนด้วยข้อมูลและงานวิจัย สื่อสารและทำงานร่วมกับผู้อื่น มีภาวะผู้นำ เรียนรู้ตลอดชีวิต และรับผิดชอบต่อสังคมและสิ่งแวดล้อม</p><div class="chips" style="margin-top:6px"><span class="chip">SDG 2</span><span class="chip">SDG 12</span><span class="chip">SDG 13</span><span class="chip b">BCG Economy</span><span class="chip b">IWA</span></div></div>
+  </div></section>
+
+  <section class="sec"><div class="wrap">
+    <div class="shead"><div><div class="kicker">วัตถุประสงค์</div><h2>วัตถุประสงค์ของหลักสูตร</h2></div></div>
+    <ol class="steps" id="objectives"></ol>
+  </div></section>
+
+  <section class="sec"><div class="wrap">
+    <div class="shead"><div><div class="kicker">Program Learning Outcomes</div><h2>ผลลัพธ์การเรียนรู้ของหลักสูตร (PLOs)</h2></div>
+      <div class="tabs" role="tablist" aria-label="เลือกแผน" style="margin:0"><button class="tab" role="tab" aria-selected="true" data-plo="1">แผน 1 แบบวิชาการ</button><button class="tab" role="tab" aria-selected="false" data-plo="2">แผน 2 แบบวิชาชีพ</button></div>
+    </div>
+    <div style="border-top:1px solid var(--line)" id="plo-list"></div>
+    <p class="muted small" style="margin-top:14px">ระดับผลลัพธ์ · ด้านความรู้ (Anderson &amp; Krathwohl, 2001): Ev ประเมินค่า, Cr สร้างสรรค์ · ด้านทักษะ (Simpson, 1972): Ad ปรับเปลี่ยน, Me ทำได้คล่องแคล่ว · ด้านจริยธรรมและลักษณะบุคคล (Krathwohl, 1964): Org จัดระบบคุณค่า, Va เห็นคุณค่า</p>
+  </div></section>
+
+  <section class="sec-alt"><div class="wrap">
+    <div class="shead"><div><div class="kicker">จุดเด่นและกลุ่มความเชี่ยวชาญ</div><h2>จากจุดเด่นของหลักสูตรสู่ผลลัพธ์ของผู้เรียน</h2></div></div>
+    <div class="tbl"><table>
+      <thead><tr><th>จุดเด่น</th><th>กลุ่มความเชี่ยวชาญที่สนับสนุน</th><th>กลไกการจัดการเรียนรู้</th><th>ผลลัพธ์ของผู้สำเร็จการศึกษา</th></tr></thead>
+      <tbody id="hl-table"></tbody>
+    </table></div>
+  </div></section>
+
+  <section class="sec"><div class="wrap g2" style="align-items:start">
+    <div class="stack"><div class="kicker">ข้อมูลทั่วไป</div><h2>ข้อมูลหลักสูตร</h2>
+      <dl class="dl">
+        <div><dt>รหัสหลักสูตร</dt><dd class="mono">25590131100178</dd></div>
+        <div><dt>ชื่อหลักสูตร</dt><dd>หลักสูตรวิศวกรรมศาสตรมหาบัณฑิต สาขาวิชาวิศวกรรมเกษตรสมัยใหม่<br><span class="muted small">Master of Engineering Program in Modern Agricultural Engineering</span></dd></div>
+        <div><dt>ชื่อปริญญา</dt><dd>วิศวกรรมศาสตรมหาบัณฑิต (วิศวกรรมเกษตรสมัยใหม่)<br>วศ.ม. (วิศวกรรมเกษตรสมัยใหม่)<br><span class="muted small">Master of Engineering (Modern Agricultural Engineering) · M.Eng.</span></dd></div>
+        <div><dt>รูปแบบ</dt><dd>ปริญญาโท 2 ปี ภาษาไทยหรือภาษาอังกฤษ รับนักศึกษาไทยและต่างชาติ ให้ปริญญาสาขาเดียว</dd></div>
+        <div><dt>กลุ่มสาขา ISCED</dt><dd class="mono small">0719 Engineering and engineering trades, n.e.c.</dd></div>
+        <div><dt>เปิดสอน</dt><dd>ภาคการศึกษาที่ 2 ปีการศึกษา 2569</dd></div>
+        <div><dt>ปรับปรุงจาก</dt><dd>วศ.ม. สาขาวิชาวิศวกรรมเกษตร (หลักสูตรปรับปรุง พ.ศ. 2564)</dd></div>
+      </dl>
+    </div>
+    <div class="stack"><div class="kicker">สถานภาพหลักสูตร</div><h2>การพิจารณาและอนุมัติ</h2>
+      <div class="tbl"><table style="min-width:0"><thead><tr><th>ที่ประชุม</th><th>ครั้งที่ / วันที่</th></tr></thead><tbody id="approval"></tbody></table></div>
+    </div>
+  </div></section>
+
+  <section class="sec-alt"><div class="wrap">
+    <div class="shead"><div><div class="kicker">เส้นทางอาชีพ</div><h2>อาชีพหลังสำเร็จการศึกษา</h2></div></div>
+    <div class="g3" id="careers"></div>
+  </div></section>
+</div>
+
+<!-- ======================= CURRICULUM ======================= -->
+<div class="page" data-page="curriculum" hidden>
+  <div class="phead" data-mark="PROGRAMME"><svg class="ph-art" viewBox="0 0 520 520" aria-hidden="true" fill="none"><defs><linearGradient id="phg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF8FA3"/><stop offset="1" stop-color="#F6C9A0"/></linearGradient></defs><g stroke="rgba(255,255,255,.16)"><circle cx="300" cy="260" r="210"/><circle cx="300" cy="260" r="150" stroke-dasharray="4 8"/><circle cx="300" cy="260" r="92"/><path d="M90 260H510M300 50V470M151 111l298 298M449 111L151 409"/></g><circle cx="300" cy="260" r="150" stroke="url(#phg2)" stroke-width="2" stroke-dasharray="120 820" stroke-linecap="round"/><circle cx="300" cy="260" r="210" stroke="url(#phg2)" stroke-width="1.5" stroke-dasharray="60 1260" stroke-dashoffset="-400" stroke-linecap="round"/><g fill="url(#phg2)"><circle cx="300" cy="110" r="5"/><circle cx="406" cy="366" r="4"/><circle cx="208" cy="188" r="3.5"/><circle cx="90" cy="260" r="4"/></g><rect x="268" y="228" width="64" height="64" rx="14" stroke="url(#phg2)" stroke-width="2"/><path d="M286 270l10-16 10 10 12-20" stroke="#fff" stroke-opacity=".7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="wrap"><span class="ph-mark" aria-hidden="true">PROGRAMME</span><div class="crumb"><a href="#home">หน้าแรก</a> / โครงสร้างหลักสูตร</div><h2>โครงสร้างหลักสูตรและรายวิชา</h2><p>ทุกแผนเรียน 36 หน่วยกิต และเรียนรายวิชาไม่นับหน่วยกิต (7) หน่วยกิต ประเมินผลแบบ S/U พร้อมรายวิชาภาษาต่างประเทศตามเงื่อนไขของบัณฑิตศึกษา</p></div></div>
+
+  <section class="sec"><div class="wrap"><div class="plans" id="cur-plans"></div></div></section>
+
+  <section class="sec-alt"><div class="wrap">
+    <div class="shead"><div><div class="kicker">แผนการศึกษา</div><h2>เรียนอะไร ภาคการศึกษาไหน</h2></div>
+      <div class="tabs" role="tablist" aria-label="แผนการศึกษา" style="margin:0" id="term-tabs"></div></div>
+    <div class="terms" id="terms"></div>
+    <p class="muted small" style="margin-top:12px">( ) = รายวิชาไม่นับหน่วยกิต · วิชาเอกเลือกเลือกจากกลุ่มความเชี่ยวชาญ</p>
+  </div></section>
+
+  <section class="sec"><div class="wrap">
+    <div class="shead"><div><div class="kicker">รายวิชา</div><h2>รายวิชาทั้งหมด</h2></div>
+      <div class="filters"><label class="sr" for="f-plan">แผน</label><select id="f-plan"><option value="">ทุกแผน</option><option value="1.1">แผน 1.1</option><option value="1.2">แผน 1.2</option><option value="2">แผน 2</option></select><label class="sr" for="f-q">ค้นหารายวิชา</label><input type="search" id="f-q" placeholder="ค้นหารหัสหรือชื่อวิชา"></div></div>
+    <div class="tbl"><table><thead><tr><th>รหัส</th><th>รายวิชา</th><th>หน่วยกิต (บ-ป-ศ)</th><th>แผน</th></tr></thead><tbody id="courses"></tbody></table></div>
+    <p class="muted small" style="margin-top:12px">บ-ป-ศ = ชั่วโมงบรรยาย-ปฏิบัติ-ศึกษาด้วยตนเองต่อสัปดาห์ · การเลือกวิชาเอกเลือก: เรียนในกลุ่มความเชี่ยวชาญเฉพาะด้านไม่น้อยกว่าร้อยละ 50 ของหน่วยกิตวิชาเอกเลือก ส่วนที่เหลือเลือกข้ามกลุ่มหรือรายวิชาบัณฑิตศึกษานอกสาขาได้ โดยความเห็นชอบของอาจารย์ที่ปรึกษาและคณะกรรมการบริหารหลักสูตร</p>
+  </div></section>
+
+  <section class="sec-alt"><div class="wrap split">
+    <div class="thumb"><img src="images/act-wil.svg" alt="ภาพประกอบการปฏิบัติงานในสถานประกอบการ" loading="lazy"></div>
+    <div class="stack"><div class="kicker">แผน 2 · Work-Integrated Learning</div><h2>การศึกษาเชิงบูรณาการกับการทำงาน</h2>
+      <p>รายวิชา 20401515 จำนวน 6 หน่วยกิต ปฏิบัติงาน 180 ชั่วโมง ณ องค์กรหรือสถานประกอบการที่เกี่ยวข้อง ในชั้นปีที่ 2 ภาคการศึกษาที่ 1</p>
+      <ul class="list"><li>วิเคราะห์ปัญหาจริงเพื่อปรับปรุงกระบวนการ เพิ่มประสิทธิภาพ หรือลดต้นทุน</li><li>จัดทำแผนดำเนินงาน งบประมาณ และรายงานผล</li><li>เปรียบเทียบด้านประสิทธิภาพ ต้นทุน เวลา พลังงาน เศรษฐศาสตร์สิ่งแวดล้อม และความยั่งยืน</li><li>เสนอแผนพัฒนาเชิงกลยุทธ์ต่อสถานประกอบการและหลักสูตร ภายใต้การดูแลของอาจารย์ที่ปรึกษาและที่ปรึกษาจากสถานประกอบการ</li></ul>
+    </div>
+  </div></section>
+</div>
+
+<!-- ======================= LEARNING ======================= -->
+<div class="page" data-page="curriculum" hidden>
+  <div class="band" id="sec-learning"><div class="wrap"><div class="kicker">การเรียนการสอน</div><h2>การเรียนการสอนและการประเมินผล</h2><p>เรียนรู้จากโจทย์จริง วัดผลตามผลลัพธ์การเรียนรู้ และทวนสอบทุกรายวิชา</p></div></div>
+
+  <section class="sec"><div class="wrap g4">
+    <div class="card soft"><div class="num">Active Learning</div><h4>ผู้เรียนเป็นศูนย์กลาง</h4><p>จัดการเรียนรู้เชิงรุกทุกรายวิชา และสอดแทรกพื้นฐาน AI เทคโนโลยีสีเขียว นวัตกรรม และความยั่งยืนในวิชาเอกบังคับ</p></div>
+    <div class="card soft"><div class="num">Industry Sandbox</div><h4>โจทย์จากภาคเอกชน</h4><p>ภาคเอกชน ศิษย์เก่า และผู้ประกอบการร่วมสอนและตั้งโจทย์วิจัยกับคณาจารย์และนักศึกษา</p></div>
+    <div class="card soft"><div class="num">English</div><h4>สื่อสารสู่สากล</h4><p>สัมมนาค้นคว้างานตีพิมพ์ภาษาอังกฤษ สนับสนุนการนำเสนอและเผยแพร่ในเวทีนานาชาติ</p></div>
+    <div class="card soft"><div class="num">Hybrid</div><h4>ยืดหยุ่นสำหรับคนทำงาน</h4><p>แผน 2 จัดการเรียนการสอนผสมทั้งออนไลน์และออนไซต์</p></div>
+  </div></section>
+
+  <section class="sec"><div class="wrap">
+    <div class="shead"><div><div class="kicker">เส้นทางงานวิจัย</div><h2>วิทยานิพนธ์และการค้นคว้าอิสระ</h2></div></div>
+    <div class="g2">
+      <div class="card"><div class="num">แผน 1 · วิทยานิพนธ์</div><ol class="steps" style="margin-top:8px">
+        <li><div><b>แต่งตั้งอาจารย์ที่ปรึกษาวิทยานิพนธ์</b></div></li>
+        <li><div><b>ทบทวนวรรณกรรมและกำหนดหัวข้อวิจัย</b></div></li>
+        <li><div><b>สอบโครงร่างวิทยานิพนธ์</b><p>ประเมินความเหมาะสมและความเป็นไปได้ของหัวข้อและระเบียบวิธีวิจัย</p></div></li>
+        <li><div><b>ประเมินความก้าวหน้าทุกภาคการศึกษา</b></div></li>
+        <li><div><b>สอบปากเปล่าวิทยานิพนธ์</b><p>กรรมการไม่ต่ำกว่า 3 คน มีผู้ทรงคุณวุฒิภายนอก และเปิดให้ผู้สนใจเข้ารับฟัง</p></div></li>
+        <li><div><b>ประเมินรูปเล่มและเผยแพร่ผลงาน</b></div></li></ol></div>
+      <div class="card"><div class="num">แผน 2 · การค้นคว้าอิสระ</div><ol class="steps" style="margin-top:8px">
+        <li><div><b>แต่งตั้งอาจารย์ที่ปรึกษา</b></div></li>
+        <li><div><b>กำหนดหัวข้อจากปัญหาในสถานประกอบการหรือภาคสนาม</b></div></li>
+        <li><div><b>เสนอโครงร่างต่ออาจารย์ที่ปรึกษา</b></div></li>
+        <li><div><b>ประเมินความก้าวหน้าทุกภาคการศึกษา</b></div></li>
+        <li><div><b>สอบประมวลความรู้และสอบการค้นคว้าอิสระ</b><p>กรรมการไม่ต่ำกว่า 2 คน และเปิดให้ผู้สนใจเข้ารับฟัง</p></div></li>
+        <li><div><b>ประเมินรายงานและเผยแพร่ในช่องทางที่สืบค้นได้</b></div></li></ol></div>
+    </div>
+  </div></section>
+
+  <section class="sec-alt"><div class="wrap">
+    <div class="shead"><div><div class="kicker">เกณฑ์การสำเร็จการศึกษา</div><h2>สิ่งที่ต้องทำให้ครบก่อนจบ</h2></div></div>
+    <div class="tbl"><table>
+      <thead><tr><th>เกณฑ์</th><th>แผน 1.1</th><th>แผน 1.2</th><th>แผน 2</th></tr></thead>
+      <tbody>
+        <tr><td>สอบผ่านภาษาอังกฤษตามหลักเกณฑ์ของมหาวิทยาลัย</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+        <tr><td>เรียนครบตามหลักสูตร รายวิชา S/U ต้องได้ S</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+        <tr><td>เกรดเฉลี่ยสะสมไม่ต่ำกว่า 3.00 และไม่มีรายวิชาต่ำกว่า C</td><td>–</td><td>–</td><td class="yes">✓</td></tr>
+        <tr><td>สอบประมวลความรู้ (ข้อเขียนและ/หรือปากเปล่า)</td><td>–</td><td>–</td><td class="yes">✓</td></tr>
+        <tr><td>สอบผ่านวิทยานิพนธ์หรือการค้นคว้าอิสระในระบบเปิด</td><td>วิทยานิพนธ์</td><td>วิทยานิพนธ์</td><td>การค้นคว้าอิสระ</td></tr>
+        <tr><td>การเผยแพร่ผลงาน</td>
+          <td>ตีพิมพ์หรือได้รับการตอบรับในวารสารระดับชาติหรือนานาชาติที่มีคุณภาพตามเกณฑ์ <b>อย่างน้อย 2 เรื่อง</b> หรือ ตีพิมพ์ในวารสาร 1 เรื่อง และนำเสนอในที่ประชุมวิชาการระดับชาติหรือนานาชาติพร้อม Full Paper ใน Proceedings 1 เรื่อง</td>
+          <td>ตีพิมพ์หรือได้รับการตอบรับในวารสารระดับชาติหรือนานาชาติที่มีคุณภาพตามเกณฑ์ <b>อย่างน้อย 1 เรื่อง</b> หรือ นำเสนอในที่ประชุมวิชาการระดับชาติหรือนานาชาติพร้อม Full Paper ใน Proceedings 1 เรื่อง</td>
+          <td>เผยแพร่ผลงานค้นคว้าอิสระในช่องทางที่สืบค้นได้</td></tr>
+        <tr><td>ผู้รับทุน ปฏิบัติตามเงื่อนไขของทุนให้เสร็จก่อนยื่นสำเร็จการศึกษา</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+      </tbody>
+    </table></div>
+  </div></section>
+
+  <section class="sec-alt" style="padding-top:0"><div class="wrap g2">
+    <div class="card"><div class="num">ระหว่างศึกษา</div><h3>ทวนสอบผลลัพธ์การเรียนรู้ทุกรายวิชา</h3><p>ทวนสอบรายวิชาที่เปิดสอนครบ 100% ทุกภาคการศึกษา ตามประกาศมหาวิทยาลัยแม่โจ้ว่าด้วยระบบและกลไกการทวนสอบผลลัพธ์การเรียนรู้ อาจารย์ผู้รับผิดชอบหลักสูตรรายงานผลต่อคณะกรรมการวิชาการ โดยใช้การประเมินที่หลากหลาย เช่น งานปฏิบัติ โครงการวิจัย การประเมินเชิงผลงาน และการสอบเชิงสมรรถนะ</p></div>
+    <div class="card"><div class="num">หลังสำเร็จการศึกษา</div><h3>ติดตามผลลัพธ์ระยะยาว</h3><ul class="list"><li>สำรวจภาวะการมีงานทำ รายได้ และการนำความรู้ไปใช้</li><li>สำรวจความพึงพอใจของผู้ใช้บัณฑิต</li><li>ติดตามความก้าวหน้าในอาชีพของศิษย์เก่า</li><li>จัดประชาคมศิษย์เก่า นายจ้าง และผู้ทรงคุณวุฒิ</li></ul></div>
+  </div></section>
+
+  <section class="sec"><div class="wrap">
+    <div class="shead"><div><div class="kicker">การวัดผล</div><h2>ระบบการให้ระดับคะแนน</h2></div></div>
+    <div class="tbl"><table style="min-width:520px"><thead><tr><th>สัญลักษณ์</th><th>A</th><th>B+</th><th>B</th><th>C+</th><th>C</th><th>D+</th><th>D</th><th>F</th></tr></thead>
+      <tbody><tr><td>ระดับคะแนน</td><td class="n">4.00</td><td class="n">3.50</td><td class="n">3.00</td><td class="n">2.50</td><td class="n">2.00</td><td class="n">1.50</td><td class="n">1.00</td><td class="n">0.00</td></tr></tbody></table></div>
+    <p class="muted small" style="margin-top:12px">รายวิชาไม่นับหน่วยกิตประเมินเป็น S (พอใจ) หรือ U (ไม่พอใจ) ตามข้อบังคับมหาวิทยาลัยแม่โจ้ว่าด้วยการศึกษาระดับบัณฑิตศึกษา พ.ศ. 2569 และเทียบโอนหน่วยกิตแบบคลังหน่วยกิตได้ตามประกาศของมหาวิทยาลัย</p>
+  </div></section>
+</div>
+
+<!-- ======================= DOCUMENTS ======================= -->
+<div class="page" data-page="documents" hidden>
+  <div class="phead" data-mark="DOCUMENTS"><svg class="ph-art" viewBox="0 0 520 520" aria-hidden="true" fill="none"><defs><linearGradient id="phg3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF8FA3"/><stop offset="1" stop-color="#F6C9A0"/></linearGradient></defs><g stroke="rgba(255,255,255,.16)"><circle cx="300" cy="260" r="210"/><circle cx="300" cy="260" r="150" stroke-dasharray="4 8"/><circle cx="300" cy="260" r="92"/><path d="M90 260H510M300 50V470M151 111l298 298M449 111L151 409"/></g><circle cx="300" cy="260" r="150" stroke="url(#phg3)" stroke-width="2" stroke-dasharray="120 820" stroke-linecap="round"/><circle cx="300" cy="260" r="210" stroke="url(#phg3)" stroke-width="1.5" stroke-dasharray="60 1260" stroke-dashoffset="-400" stroke-linecap="round"/><g fill="url(#phg3)"><circle cx="300" cy="110" r="5"/><circle cx="406" cy="366" r="4"/><circle cx="208" cy="188" r="3.5"/><circle cx="90" cy="260" r="4"/></g><rect x="268" y="228" width="64" height="64" rx="14" stroke="url(#phg3)" stroke-width="2"/><path d="M286 270l10-16 10 10 12-20" stroke="#fff" stroke-opacity=".7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="wrap"><span class="ph-mark" aria-hidden="true">DOCUMENTS</span><div class="crumb"><a href="#home">หน้าแรก</a> / เอกสาร</div><h2>เอกสารที่เกี่ยวข้องกับการศึกษาระดับบัณฑิตศึกษา</h2><p>ข้อบังคับ ประกาศ ปฏิทินการศึกษา แบบฟอร์ม และระบบออนไลน์ที่นักศึกษาและผู้สมัครใช้บ่อย</p></div></div>
+  <section class="sec"><div class="wrap">
+    <div class="docgroups" id="docs"></div>
+  </div></section>
+</div>
+
+<!-- ======================= ADMISSION ======================= -->
+<div class="page" data-page="admission" hidden>
+  <div class="phead" data-mark="ADMISSIONS"><svg class="ph-art" viewBox="0 0 520 520" aria-hidden="true" fill="none"><defs><linearGradient id="phg4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF8FA3"/><stop offset="1" stop-color="#F6C9A0"/></linearGradient></defs><g stroke="rgba(255,255,255,.16)"><circle cx="300" cy="260" r="210"/><circle cx="300" cy="260" r="150" stroke-dasharray="4 8"/><circle cx="300" cy="260" r="92"/><path d="M90 260H510M300 50V470M151 111l298 298M449 111L151 409"/></g><circle cx="300" cy="260" r="150" stroke="url(#phg4)" stroke-width="2" stroke-dasharray="120 820" stroke-linecap="round"/><circle cx="300" cy="260" r="210" stroke="url(#phg4)" stroke-width="1.5" stroke-dasharray="60 1260" stroke-dashoffset="-400" stroke-linecap="round"/><g fill="url(#phg4)"><circle cx="300" cy="110" r="5"/><circle cx="406" cy="366" r="4"/><circle cx="208" cy="188" r="3.5"/><circle cx="90" cy="260" r="4"/></g><rect x="268" y="228" width="64" height="64" rx="14" stroke="url(#phg4)" stroke-width="2"/><path d="M286 270l10-16 10 10 12-20" stroke="#fff" stroke-opacity=".7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="wrap"><span class="ph-mark" aria-hidden="true">ADMISSIONS</span><div class="crumb"><a href="#home">หน้าแรก</a> / การรับสมัคร</div><h2>การรับสมัครนักศึกษา</h2><p>เปิดรับนักศึกษาไทยและต่างชาติ ภาคการศึกษาที่ 2 ปีการศึกษา 2569 แผนการรับ 10 คนต่อปีการศึกษา</p></div></div>
+
+  <section class="sec" style="padding-bottom:0"><div class="wrap"><div class="chooser"><div class="ch-intro"><div class="kicker">ตัวช่วยเลือกแผน</div><h2>ยังไม่แน่ใจว่าจะสมัครแผนไหน</h2><p>ตอบ 3 คำถาม แล้วดูแผนที่เหมาะกับคุณ</p></div><div class="ch-body" id="ch-body2"></div></div></div></section>
+
+  <section class="sec"><div class="wrap">
+    <div class="shead"><div><div class="kicker">คุณสมบัติผู้สมัคร</div><h2>เลือกแผนที่ตรงกับคุณ</h2></div></div>
+    <div class="tbl"><table>
+      <thead><tr><th>คุณสมบัติ</th><th>แผน 1.1</th><th>แผน 1.2</th><th>แผน 2</th></tr></thead>
+      <tbody>
+        <tr><td>วุฒิการศึกษา</td><td colspan="3">ปริญญาตรีหรือเทียบเท่า หรือสาขาอื่นที่เกี่ยวข้อง จากสถาบันที่ ก.พ. รับรอง</td></tr>
+        <tr><td>เกรดเฉลี่ยสะสม (GPAX)</td><td>ไม่น้อยกว่า 3.00 หรือ 2.75 พร้อมผลงานวิจัยตีพิมพ์ระดับชาติ 1 เรื่อง</td><td>ไม่น้อยกว่า 2.50 หรือตามที่อาจารย์ผู้รับผิดชอบหลักสูตรพิจารณา</td><td>ไม่น้อยกว่า 2.25</td></tr>
+        <tr><td>ประสบการณ์ทำงาน</td><td>–</td><td>–</td><td>ทำงานในสถานประกอบการด้านวิศวกรรมเกษตร อุตสาหกรรมเกษตร หรือที่เกี่ยวข้อง ไม่น้อยกว่า 1 ปี</td></tr>
+        <tr><td>ข้าราชการ พนักงานมหาวิทยาลัย หรือรัฐวิสาหกิจ</td><td>หนังสืออนุญาตให้ศึกษาต่อจากผู้บังคับบัญชาระดับกรมหรือเทียบเท่า</td><td>–</td><td>หนังสืออนุญาตให้ศึกษาต่อจากผู้บังคับบัญชาระดับกรมหรือเทียบเท่า</td></tr>
+        <tr><td>ผู้สมัครชาวต่างชาติ</td><td colspan="3">ใบรับรองคุณวุฒิจากสถาบันที่ได้รับการรับรองหรือจากสถานทูตของประเทศนั้น</td></tr>
+      </tbody>
+    </table></div>
+    <p class="muted small" style="margin-top:12px">เป็นไปตามเกณฑ์มาตรฐานหลักสูตรระดับบัณฑิตศึกษา พ.ศ. 2565 และข้อบังคับมหาวิทยาลัยแม่โจ้ว่าด้วยการศึกษาระดับบัณฑิตศึกษา กรณีอื่นอยู่ในดุลยพินิจของคณะกรรมการดำเนินการสอบคัดเลือก</p>
+  </div></section>
+
+  <section class="sec-alt"><div class="wrap">
+    <div class="shead"><div><div class="kicker">ค่าธรรมเนียมการศึกษา</div><h2>อัตราเดียวทุกแผน</h2></div></div>
+    <div class="g3">
+      <div class="card"><div class="num">ต่อภาคการศึกษา</div><h2 class="mono">25,000 บาท</h2></div>
+      <div class="card"><div class="num">ต่อปีการศึกษา</div><h2 class="mono">50,000 บาท</h2><p>2 ภาคการศึกษา</p></div>
+      <div class="card"><div class="num">ตลอดหลักสูตร 2 ปี</div><h2 class="mono">100,000 บาท</h2><p>ไม่รวมรายวิชาปรับพื้นฐานและค่าใช้จ่ายส่วนตัว อัตราเป็นไปตามประกาศมหาวิทยาลัย</p></div>
+    </div>
+  </div></section>
+
+  <section class="sec"><div class="wrap g2" style="align-items:start">
+    <div class="stack"><div class="kicker">ขั้นตอนการสมัคร</div><h2>ห้าขั้นตอนสู่การเป็นนักศึกษา</h2>
+      <ol class="steps" style="margin-top:8px">
+        <li><div><b>เลือกแผนการเรียน</b><p>วิจัยเต็มตัว (1.1) เรียนรายวิชาควบวิจัย (1.2) หรือวิชาชีพสำหรับคนทำงาน (2)</p></div></li>
+        <li><div><b>ปรึกษาอาจารย์ในหลักสูตร</b><p>พูดคุยหัวข้อวิจัยที่สนใจ โดยเฉพาะผู้สมัครแผน 1.1</p></div></li>
+        <li><div><b>สมัครผ่านระบบรับสมัครบัณฑิตศึกษา มหาวิทยาลัยแม่โจ้</b><p>ตามกำหนดการรับสมัครของแต่ละรอบ <span class="ph">[ใส่ลิงก์ระบบรับสมัครและกำหนดการ]</span></p></div></li>
+        <li><div><b>สอบสัมภาษณ์</b><p>นำเสนอแนวคิดการวิจัยหรือประสบการณ์ทำงานที่เกี่ยวข้อง</p></div></li>
+        <li><div><b>ปฐมนิเทศ</b><p>ชี้แจงข้อบังคับ ระยะเวลา กระบวนการวิทยานิพนธ์ และช่องทางร้องเรียนหรืออุทธรณ์</p></div></li>
+      </ol></div>
+    <div class="stack"><div class="kicker">การดูแลผู้เรียน</div><h2>เราช่วยให้คุณเรียนจบตามแผน</h2>
+      <div class="card soft"><h4>อาจารย์ที่ปรึกษาประจำตัว</h4><p>ให้คำปรึกษาทั้งด้านวิชาการ วิชาชีพ การใช้ชีวิต เป้าหมายชีวิต และการเตรียมพร้อมเข้าสู่ตลาดแรงงาน</p></div>
+      <div class="card soft"><h4>ปรับพื้นฐานสำหรับผู้มาจากสาขาอื่น</h4><p>เรียนรายวิชาพื้นฐานเพิ่มเติมแบบไม่นับหน่วยกิต และเตรียมความพร้อมสอบภาษาต่างประเทศตามเงื่อนไขของบัณฑิตศึกษา</p></div>
+      <div class="card soft"><h4>ทุนการศึกษาและทุนวิจัย</h4><p>แจ้งช่องทางทุนทั้งภายในและภายนอก และจัดกิจกรรมฝึกเขียนข้อเสนอโครงการวิจัย</p></div>
+    </div>
+  </div></section>
+  <section class="sec-alt" id="faq"><div class="wrap faq-wrap">
+    <div class="stack"><div class="kicker">คำถามที่พบบ่อย</div><h2>คำถามก่อนสมัคร</h2><p class="muted">คำตอบอ้างอิงจากเอกสารหลักสูตรฉบับผ่านสภามหาวิทยาลัย</p></div>
+    <div class="faq" id="faq-all"></div>
+  </div></section>
+</div>
+
+<!-- ======================= FACULTY ======================= -->
+<div class="page" data-page="faculty" hidden>
+  <div class="phead" data-mark="FACULTY"><svg class="ph-art" viewBox="0 0 520 520" aria-hidden="true" fill="none"><defs><linearGradient id="phg5" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF8FA3"/><stop offset="1" stop-color="#F6C9A0"/></linearGradient></defs><g stroke="rgba(255,255,255,.16)"><circle cx="300" cy="260" r="210"/><circle cx="300" cy="260" r="150" stroke-dasharray="4 8"/><circle cx="300" cy="260" r="92"/><path d="M90 260H510M300 50V470M151 111l298 298M449 111L151 409"/></g><circle cx="300" cy="260" r="150" stroke="url(#phg5)" stroke-width="2" stroke-dasharray="120 820" stroke-linecap="round"/><circle cx="300" cy="260" r="210" stroke="url(#phg5)" stroke-width="1.5" stroke-dasharray="60 1260" stroke-dashoffset="-400" stroke-linecap="round"/><g fill="url(#phg5)"><circle cx="300" cy="110" r="5"/><circle cx="406" cy="366" r="4"/><circle cx="208" cy="188" r="3.5"/><circle cx="90" cy="260" r="4"/></g><rect x="268" y="228" width="64" height="64" rx="14" stroke="url(#phg5)" stroke-width="2"/><path d="M286 270l10-16 10 10 12-20" stroke="#fff" stroke-opacity=".7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="wrap"><span class="ph-mark" aria-hidden="true">FACULTY</span><div class="crumb"><a href="#home">หน้าแรก</a> / คณาจารย์</div><h2>คณาจารย์ในหลักสูตร</h2><p>อาจารย์ประจำหลักสูตร 8 คน สำเร็จการศึกษาระดับปริญญาเอกทุกคน และอาจารย์ผู้สอน 21 คน จากสาขาวิศวกรรม พอลิเมอร์ พืชศาสตร์ เทคโนโลยีสารสนเทศ และการจัดการ</p></div></div>
+
+  <section class="sec"><div class="wrap">
+    <div class="shead"><div><div class="kicker">คณะกรรมการบริหารหลักสูตร</div><h2>ทีมบริหารหลักสูตร</h2></div></div>
+    <div class="lead3" id="leaders"></div>
+  </div></section>
+
+  <section class="sec-alt"><div class="wrap">
+    <div class="shead"><div><div class="kicker">อาจารย์ประจำหลักสูตร</div><h2>ความเชี่ยวชาญของอาจารย์ประจำหลักสูตร</h2></div></div>
+    <div class="people" id="people"></div>
+  </div></section>
+
+  <section class="sec"><div class="wrap">
+    <div class="shead"><div><div class="kicker">อาจารย์ผู้สอน</div><h2>อาจารย์ผู้สอนในหลักสูตร 21 คน</h2></div></div>
+    <ul class="roster" id="roster"></ul>
+  </div></section>
+</div>
+
+<!-- ======================= FACILITIES ======================= -->
+<div class="page" data-page="faculty" hidden>
+  <div class="band" id="sec-facilities"><div class="wrap"><div class="kicker">ห้องปฏิบัติการ</div><h2>ห้องปฏิบัติการและสิ่งสนับสนุนการเรียนรู้</h2><p>อาคารเรียนรวมสาขาวิศวกรรมศาสตร์ อาคารปฏิบัติการทางวิศวกรรม และอาคารปฏิบัติการเทคโนโลยียางและพอลิเมอร์ พร้อมฟาร์มทดลองของมหาวิทยาลัย</p></div></div>
+
+  <section class="sec"><div class="wrap">
+    <div class="shead"><div><div class="kicker">ห้องปฏิบัติการ</div><h2>7 ห้องปฏิบัติการรองรับงานวิจัยและวิทยานิพนธ์</h2></div></div>
+    <div class="g3" id="labs"></div>
+  </div></section>
+
+  <section class="sec-alt"><div class="wrap">
+    <div class="shead"><div><div class="kicker">ครุภัณฑ์วิจัย</div><h2>เครื่องมือที่จัดหาใหม่ 3 ปีงบประมาณล่าสุด</h2></div></div>
+    <div class="tbl"><table><thead><tr><th>ปีงบประมาณ</th><th>รายการ</th></tr></thead><tbody id="equip"></tbody></table></div>
+  </div></section>
+
+  <section class="sec"><div class="wrap g3">
+    <div class="card"><div class="num">ห้องเรียน</div><h4>ห้องบรรยายเฉพาะบัณฑิตศึกษา</h4><p>รองรับนักศึกษาแต่ละชั้นปีได้เพียงพอ พร้อมห้องพักนักศึกษาที่มีโต๊ะทำงานรายบุคคลและ Wi-Fi ความเร็วสูง</p></div>
+    <div class="card"><div class="num">ห้องประชุม</div><h4>ห้องประชุมย่อย 2 ห้อง</h4><p>ความจุ 20–25 คน ใช้นำเสนองาน สอบวิทยานิพนธ์ และจัดแสดงผลงาน พร้อมโปรเจกเตอร์และโสตทัศนูปกรณ์</p></div>
+    <div class="card"><div class="num">ห้องสมุด</div><h4>ห้องสมุดคณะและ Digital Library</h4><p>ชั้น 2 อาคารเรียนรวมสาขาวิศวกรรมศาสตร์ เปิดวันราชการ 08.30–16.30 น. เชื่อมฐานข้อมูลวารสาร e-Book และวิทยานิพนธ์ของสำนักหอสมุด</p></div>
+  </div></section>
+</div>
+
+<!-- ======================= NEWS ======================= -->
+<div class="page" data-page="news" hidden>
+  <div class="phead" data-mark="NEWS"><svg class="ph-art" viewBox="0 0 520 520" aria-hidden="true" fill="none"><defs><linearGradient id="phg6" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF8FA3"/><stop offset="1" stop-color="#F6C9A0"/></linearGradient></defs><g stroke="rgba(255,255,255,.16)"><circle cx="300" cy="260" r="210"/><circle cx="300" cy="260" r="150" stroke-dasharray="4 8"/><circle cx="300" cy="260" r="92"/><path d="M90 260H510M300 50V470M151 111l298 298M449 111L151 409"/></g><circle cx="300" cy="260" r="150" stroke="url(#phg6)" stroke-width="2" stroke-dasharray="120 820" stroke-linecap="round"/><circle cx="300" cy="260" r="210" stroke="url(#phg6)" stroke-width="1.5" stroke-dasharray="60 1260" stroke-dashoffset="-400" stroke-linecap="round"/><g fill="url(#phg6)"><circle cx="300" cy="110" r="5"/><circle cx="406" cy="366" r="4"/><circle cx="208" cy="188" r="3.5"/><circle cx="90" cy="260" r="4"/></g><rect x="268" y="228" width="64" height="64" rx="14" stroke="url(#phg6)" stroke-width="2"/><path d="M286 270l10-16 10 10 12-20" stroke="#fff" stroke-opacity=".7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="wrap"><span class="ph-mark" aria-hidden="true">NEWS</span><div class="crumb"><a href="#home">หน้าแรก</a> / ข่าวและกิจกรรม</div><h2>ข่าวประชาสัมพันธ์และกิจกรรม</h2><p>ความเคลื่อนไหวของหลักสูตร การรับสมัคร และกิจกรรมการเรียนรู้</p></div></div>
+  <section class="sec"><div class="wrap">
+    <div class="shead"><div><div class="kicker">ข่าวประชาสัมพันธ์</div><h2>ข่าวทั้งหมด</h2></div></div>
+    <div class="g3" id="news-all"></div>
+  </div></section>
+  <section class="sec-alt"><div class="wrap">
+    <div class="shead"><div><div class="kicker">ภาพกิจกรรม</div><h2>กิจกรรมของหลักสูตร</h2></div></div>
+    <div class="gallery" id="gallery-all"></div>
+  </div></section>
+</div>
+
+<!-- ======================= QUALITY ======================= -->
+<div class="page" data-page="about" hidden>
+  <div class="band" id="sec-quality"><div class="wrap"><div class="kicker">การพัฒนาหลักสูตร</div><h2>การบริหารและพัฒนาหลักสูตร</h2><p>หลักสูตรรับฟังผู้มีส่วนได้ส่วนเสีย ติดตามผลการดำเนินงานทุกปี และนำผลมาปรับปรุงอย่างต่อเนื่อง ตามเกณฑ์มาตรฐานหลักสูตรระดับบัณฑิตศึกษา พ.ศ. 2565</p></div></div>
+
+  <section class="sec"><div class="wrap">
+    <div class="shead"><div><div class="kicker">เสียงของผู้มีส่วนได้ส่วนเสีย</div><h2>หลักสูตรนี้ออกแบบจากความต้องการจริง</h2></div></div>
+    <div class="g4" style="margin-bottom:22px">
+      <div class="card soft"><h2 class="mono" style="color:var(--maroon)">14</h2><p>สถานประกอบการและผู้ใช้บัณฑิต ตอบแบบสอบถาม 10 ราย และให้สัมภาษณ์ 4 ราย</p></div>
+      <div class="card soft"><h2 class="mono" style="color:var(--maroon)">17</h2><p>ศิษย์เก่าที่ให้สัมภาษณ์และตอบแบบสอบถาม</p></div>
+      <div class="card soft"><h2 class="mono" style="color:var(--maroon)">4</h2><p>นักศึกษาปัจจุบันที่ให้สัมภาษณ์</p></div>
+      <div class="card soft"><h2 class="mono" style="color:var(--maroon)">19</h2><p>กลุ่มผู้มีส่วนได้ส่วนเสียที่วิเคราะห์ความต้องการจำเป็นสู่ PLOs</p></div>
+    </div>
+    <div class="split" style="align-items:start">
+      <div class="stack"><h3>ความต้องการจำเป็นที่ได้รับ</h3>
+        <ul class="list"><li>เข้าใจและวิเคราะห์บทบาทของ IoT, AI, Big Data และ Automation ในเกษตรอัจฉริยะและอุตสาหกรรมเกษตร</li><li>เข้าใจมาตรฐานสากลด้านคุณภาพและความปลอดภัยของผลิตภัณฑ์เกษตร</li><li>ออกแบบและพัฒนาระบบอัตโนมัติ เครื่องจักรกล และอุปกรณ์ เพื่อประสิทธิภาพและความยั่งยืน</li><li>บูรณาการเทคโนโลยีสีเขียวเข้ากับกระบวนการผลิต และใช้ทรัพยากรอย่างคุ้มค่า</li><li>วิเคราะห์และบริหารข้อมูลด้วย Data Analytics เพื่อการวางแผนและตัดสินใจ</li><li>ทักษะภาษาอังกฤษ ภาวะผู้นำ และความเป็นผู้ประกอบการ</li></ul></div>
+      <div class="stack"><h3>องค์กรที่ร่วมให้ข้อมูล</h3><div class="partners" id="partners"></div></div>
+    </div>
+  </div></section>
+
+  <section class="sec-alt"><div class="wrap">
+    <div class="shead"><div><div class="kicker">วงจรการพัฒนา</div><h2>วางแผน ดำเนินการ ตรวจสอบ และปรับปรุง</h2></div></div>
+    <div class="cycle">
+      <div><h4>วางแผน</h4><p>กำหนด PLOs จากความต้องการของผู้มีส่วนได้ส่วนเสีย และวางกรอบการปรับปรุงหลักสูตรล่วงหน้า 4 ปี</p></div>
+      <div><h4>ดำเนินการ</h4><p>จัดการเรียนรู้เชิงรุกทุกรายวิชา WIL ในสถานประกอบการ และ Sandbox ร่วมภาคเอกชน</p></div>
+      <div><h4>ตรวจสอบ</h4><p>ทวนสอบรายวิชา 100% ประชุมอาจารย์ผู้รับผิดชอบหลักสูตรร่วมกับอาจารย์ประจำหลักสูตรทุกเดือน และประเมินคุณภาพอย่างน้อยปีละ 1 ครั้ง</p></div>
+      <div><h4>ปรับปรุง</h4><p>ทบทวนหลักสูตรทุกปี เชิญผู้ทรงคุณวุฒิวิพากษ์ และนำผลประชาคมผู้มีส่วนได้ส่วนเสียมาปรับปรุง</p></div>
+    </div>
+  </div></section>
+
+  <section class="sec"><div class="wrap">
+    <div class="shead"><div><div class="kicker">ผลการดำเนินงาน</div><h2>ตัวบ่งชี้ผลการดำเนินงานของหลักสูตร</h2></div></div>
+    <div class="tbl"><table>
+      <thead><tr><th>#</th><th>ตัวบ่งชี้</th><th>หน่วย</th><th>เป้าหมาย</th><th>2569</th><th>2570</th><th>2571</th></tr></thead>
+      <tbody id="kpi"></tbody>
+    </table></div>
+    <p class="muted small" style="margin-top:12px">หลักสูตรปรับปรุงเริ่มรับนักศึกษาภาคการศึกษาที่ 2/2569 ผลการดำเนินงานจะเผยแพร่เมื่อสิ้นปีการศึกษา พร้อมแนวโน้มและการเปรียบเทียบกับหลักสูตรใกล้เคียง</p>
+  </div></section>
+
+  <section class="sec-alt"><div class="wrap g2" style="align-items:start">
+    <div class="stack"><div class="kicker">แผนรับนักศึกษา</div><h2>แผนรับและผู้สำเร็จการศึกษา 5 ปี</h2>
+      <div class="tbl"><table style="min-width:440px"><thead><tr><th>ปีการศึกษา</th><th>2569</th><th>2570</th><th>2571</th><th>2572</th><th>2573</th></tr></thead>
+      <tbody><tr><td>ชั้นปีที่ 1</td><td class="n">10</td><td class="n">10</td><td class="n">10</td><td class="n">10</td><td class="n">10</td></tr><tr><td>ชั้นปีที่ 2</td><td class="n">–</td><td class="n">10</td><td class="n">10</td><td class="n">10</td><td class="n">10</td></tr></tbody>
+      <tfoot><tr><td>รวม</td><td class="n">10</td><td class="n">20</td><td class="n">20</td><td class="n">20</td><td class="n">20</td></tr><tr><td>คาดว่าจะสำเร็จการศึกษา</td><td class="n">–</td><td class="n">–</td><td class="n">10</td><td class="n">10</td><td class="n">10</td></tr></tfoot></table></div></div>
+    <div class="stack"><div class="kicker">การสื่อสาร</div><h2>เข้าถึงข้อมูลหลักสูตรได้หลายช่องทาง</h2>
+      <p class="muted">เผยแพร่ข้อมูลหลักสูตรผ่านเว็บไซต์คณะ เพจของหลักสูตร แผ่นพับ การออกบูธ และรายละเอียดรายวิชา (OBE 3) บนเว็บไซต์สำนักบริหารและพัฒนาวิชาการ แจ้งอาจารย์ทุกคนผ่านที่ประชุมคณะกรรมการประจำหลักสูตรและกลุ่มไลน์อาจารย์</p></div>
+  </div></section>
+
+  <section class="sec"><div class="wrap">
+    <div class="shead"><div><div class="kicker">ข้อร้องเรียนและการอุทธรณ์</div><h2>สามช่องทางสำหรับนักศึกษา</h2></div><a href="#contact">ส่งเรื่องร้องเรียน →</a></div>
+    <div class="g3">
+      <div class="card"><div class="num">ช่องทางที่ 1</div><h4>แบบฟอร์มอุทธรณ์ร้องทุกข์บนเว็บไซต์คณะ</h4><p>คณะแต่งตั้งกรรมการร้องทุกข์เพื่อพิจารณาเรื่องที่ได้รับ</p></div>
+      <div class="card"><div class="num">ช่องทางที่ 2</div><h4>ระบบทะเบียนและประมวลผล</h4><p>เขียนความเห็นหรือข้อร้องเรียนระหว่างประเมินการสอน รองคณบดีฝ่ายวิชาการตรวจสอบและนำเข้าที่ประชุมคณะกรรมการฝ่ายวิชาการ</p></div>
+      <div class="card"><div class="num">ช่องทางที่ 3</div><h4>คำร้องขอดูผลการศึกษา</h4><p>มีคนกลางร่วมตรวจสอบและสังเกตการณ์การพิจารณาผลการศึกษา</p></div>
+    </div>
+  </div></section>
+</div>
+
+<!-- ======================= CONTACT ======================= -->
+<div class="page" data-page="contact" hidden>
+  <div class="phead" data-mark="CONTACT"><svg class="ph-art" viewBox="0 0 520 520" aria-hidden="true" fill="none"><defs><linearGradient id="phg7" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF8FA3"/><stop offset="1" stop-color="#F6C9A0"/></linearGradient></defs><g stroke="rgba(255,255,255,.16)"><circle cx="300" cy="260" r="210"/><circle cx="300" cy="260" r="150" stroke-dasharray="4 8"/><circle cx="300" cy="260" r="92"/><path d="M90 260H510M300 50V470M151 111l298 298M449 111L151 409"/></g><circle cx="300" cy="260" r="150" stroke="url(#phg7)" stroke-width="2" stroke-dasharray="120 820" stroke-linecap="round"/><circle cx="300" cy="260" r="210" stroke="url(#phg7)" stroke-width="1.5" stroke-dasharray="60 1260" stroke-dashoffset="-400" stroke-linecap="round"/><g fill="url(#phg7)"><circle cx="300" cy="110" r="5"/><circle cx="406" cy="366" r="4"/><circle cx="208" cy="188" r="3.5"/><circle cx="90" cy="260" r="4"/></g><rect x="268" y="228" width="64" height="64" rx="14" stroke="url(#phg7)" stroke-width="2"/><path d="M286 270l10-16 10 10 12-20" stroke="#fff" stroke-opacity=".7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="wrap"><span class="ph-mark" aria-hidden="true">CONTACT</span><div class="crumb"><a href="#home">หน้าแรก</a> / ติดต่อ</div><h2>ติดต่อหลักสูตร</h2><p>สอบถามการสมัคร ให้ข้อเสนอแนะ หรือร้องเรียน หลักสูตรนำทุกเรื่องเข้าที่ประชุมประจำเดือนของอาจารย์ผู้รับผิดชอบหลักสูตร</p></div></div>
+  <section class="sec"><div class="wrap g2" style="align-items:start">
+    <div class="stack"><h3>สำนักงานหลักสูตร</h3>
+      <dl class="dl">
+        <div><dt>ที่อยู่</dt><dd>คณะวิศวกรรมและอุตสาหกรรมเกษตร มหาวิทยาลัยแม่โจ้ ต.หนองหาร อ.สันทราย จ.เชียงใหม่ 50290</dd></div>
+        <div><dt>ประธานหลักสูตร</dt><dd>ผศ.ดร.ทิพาพร คำแดง<br><span class="mono small">tipapon@mju.ac.th</span> <button class="btn btn-ghost small" style="padding:2px 10px" data-copy="tipapon@mju.ac.th">คัดลอก</button><br><span class="mono small">053-875019</span></dd></div>
+        <div><dt>Facebook</dt><dd><span class="ph">[ใส่ลิงก์เพจหลักสูตร]</span></dd></div>
+        <div><dt>LINE</dt><dd><span class="ph">[ใส่ LINE OA]</span></dd></div>
+      </dl></div>
+    <div class="stack"><h3>แบบฟอร์มออนไลน์</h3>
+      <a class="btn btn-maroon" href="https://forms.google.com" target="_blank" rel="noopener">สอบถามเรื่องการสมัครเรียน</a>
+      <a class="btn btn-ghost" href="https://forms.google.com" target="_blank" rel="noopener">ข้อเสนอแนะต่อหลักสูตร สำหรับศิษย์เก่า ผู้ใช้บัณฑิต และสถานประกอบการ</a>
+      <a class="btn btn-ghost" href="https://forms.google.com" target="_blank" rel="noopener">ร้องเรียนและอุทธรณ์</a>
+      <p class="small"><span class="ph">[เปลี่ยนลิงก์ทั้งสามเป็น Google Forms ของหลักสูตร]</span></p>
+    </div>
+  </div></section>
+</div>
+</main>
+
+<footer class="site"><div class="wrap">
+  <div class="stack"><h4>หลักสูตรวิศวกรรมศาสตรมหาบัณฑิต<br>สาขาวิชาวิศวกรรมเกษตรสมัยใหม่</h4><p class="small">หลักสูตรปรับปรุง พ.ศ. 2569 · สภามหาวิทยาลัยแม่โจ้อนุมัติ ครั้งที่ 9/2569 วันที่ 24 กันยายน 2569</p><p class="small">คณะวิศวกรรมและอุตสาหกรรมเกษตร มหาวิทยาลัยแม่โจ้ ต.หนองหาร อ.สันทราย จ.เชียงใหม่ 50290</p></div>
+  <div><h4>หลักสูตร</h4><ul><li><a href="#about">เกี่ยวกับหลักสูตร</a></li><li><a href="#curriculum">โครงสร้างหลักสูตร</a></li><li><a href="#learning">การเรียนการสอน</a></li><li><a href="#quality">การพัฒนาหลักสูตร</a></li><li><a href="#facilities">ห้องปฏิบัติการ</a></li><li><a href="#documents">เอกสารที่เกี่ยวข้อง</a></li></ul></div>
+  <div><h4>ผู้สนใจ</h4><ul><li><a href="#admission">การรับสมัคร</a></li><li><a href="#faculty">คณาจารย์</a></li><li><a href="#faq">คำถามที่พบบ่อย</a></li><li><a href="#news">ข่าวและกิจกรรม</a></li><li><a href="#contact">ติดต่อหลักสูตร</a></li></ul></div>
+  <div class="base">ปรับปรุงข้อมูลล่าสุด ตุลาคม 2569 · ข้อมูลอ้างอิงจากเอกสารหลักสูตร (OBE 2) ฉบับผ่านสภามหาวิทยาลัย</div>
+</div></footer>
+
+<div class="mbar" id="mbar"><a class="btn btn-ghost" href="#faq" data-en="FAQ">คำถามที่พบบ่อย</a><a class="btn btn-maroon" href="#admission" data-en="Apply now">สมัครเรียน</a></div>
+
+<dialog id="dlg" aria-labelledby="dlg-title"><div style="position:relative"><button class="dlg-close" id="dlg-close" aria-label="ปิด">×</button><div class="dlg-img"><img id="dlg-img" src="" alt=""></div><div class="dlg-body"><div class="small muted" id="dlg-meta"></div><h3 id="dlg-title"></h3><p id="dlg-text"></p></div></div></dialog>
+
+<script>
+/* =====================================================================
+   ข้อมูลเว็บไซต์ — แก้ไขข้อความ รูปภาพ และผลการดำเนินงานได้ที่ส่วนนี้
+   รูปภาพ: วางไฟล์ในโฟลเดอร์ images/ แล้วเปลี่ยนชื่อไฟล์ในช่อง img หรือ photo
+   ===================================================================== */
+var DATA = {
+  /* แบนเนอร์หน้าแรก: เปลี่ยนเป็นภาพถ่ายของหลักสูตร เช่น "images/hero.jpg" (ภาพแนวนอน 4:3) */
+  hero: "images/hero-dark.svg",
+
+  /* เสียงศิษย์เก่า/ผู้ใช้บัณฑิต: ใส่เฉพาะคำพูดจริงที่ได้รับอนุญาตแล้ว ถ้าเว้นว่าง [] ส่วนนี้จะไม่แสดง
+     ตัวอย่าง: {quote:"ข้อความ", name:"ชื่อ-สกุล", role:"ตำแหน่ง บริษัท / ศิษย์เก่ารุ่นที่", photo:"images/voices/xxx.jpg"} */
+  testimonials: [],
+
+  /* คำถามที่พบบ่อย: เพิ่มหรือแก้ได้ [คำถาม, คำตอบ] */
+  faq: [
+    ["ไม่ได้จบวิศวกรรมเกษตร สมัครได้ไหม","ได้ ผู้สมัครจบปริญญาตรีหรือเทียบเท่าในสาขาอื่นที่เกี่ยวข้องได้ หากพื้นฐานยังไม่ครบ อาจต้องเรียนรายวิชาปรับพื้นฐานเพิ่มแบบไม่นับหน่วยกิตตามความเห็นชอบของอาจารย์ผู้รับผิดชอบหลักสูตร"],
+    ["ทำงานประจำอยู่ เรียนได้ไหม","ได้ แผน 2 แบบวิชาชีพออกแบบสำหรับคนทำงาน จัดการเรียนการสอนแบบ Hybrid ทั้งออนไลน์และออนไซต์ และใช้ปัญหาจริงจากสถานประกอบการเป็นหัวข้อการค้นคว้าอิสระ ผู้สมัครแผนนี้ต้องมีประสบการณ์ทำงานที่เกี่ยวข้องไม่น้อยกว่า 1 ปี"],
+    ["ค่าใช้จ่ายตลอดหลักสูตรเท่าไร","ค่าธรรมเนียมการศึกษา 25,000 บาทต่อภาคการศึกษา หรือประมาณ 100,000 บาทตลอดหลักสูตร 2 ปี อัตราเดียวกันทุกแผน ไม่รวมรายวิชาปรับพื้นฐานและค่าใช้จ่ายส่วนตัว"],
+    ["มีทุนการศึกษาไหม","หลักสูตรแจ้งช่องทางทุนการศึกษาและทุนวิจัยทั้งภายในและภายนอกมหาวิทยาลัย และจัดกิจกรรมฝึกเขียนข้อเสนอโครงการวิจัยเพื่อขอทุน ผู้รับทุนต้องปฏิบัติตามเงื่อนไขของทุนนั้นก่อนยื่นสำเร็จการศึกษา"],
+    ["ต้องตีพิมพ์ผลงานกี่เรื่องจึงจะจบ","แผน 1.1 ตีพิมพ์ในวารสารระดับชาติหรือนานาชาติอย่างน้อย 2 เรื่อง หรือวารสาร 1 เรื่องและ Proceedings 1 เรื่อง แผน 1.2 วารสาร 1 เรื่อง หรือ Proceedings 1 เรื่อง แผน 2 เผยแพร่ผลงานค้นคว้าอิสระในช่องทางที่สืบค้นได้"],
+    ["ต้องสอบภาษาอังกฤษไหม","ต้องสอบผ่านภาษาอังกฤษตามหลักเกณฑ์ของมหาวิทยาลัยทุกแผน ผู้ที่ยังไม่ผ่านเกณฑ์จะได้รับการเตรียมความพร้อมและลงทะเบียนเรียนรายวิชาภาษาต่างประเทศตามเงื่อนไขของบัณฑิตศึกษา"],
+    ["เรียนกี่ปี และสอนเป็นภาษาอะไร","หลักสูตร 2 ปี ภาคปกติ จัดการศึกษาเป็นภาษาไทยหรือภาษาอังกฤษ และรับทั้งนักศึกษาไทยและนักศึกษาต่างชาติ"],
+    ["แผน 2 ต้องไปปฏิบัติงานที่ไหน","รายวิชาการศึกษาเชิงบูรณาการกับการทำงาน 6 หน่วยกิต ปฏิบัติงาน 180 ชั่วโมง ณ องค์กรหรือสถานประกอบการที่เกี่ยวข้อง ในชั้นปีที่ 2 ภาคการศึกษาที่ 1 ภายใต้การดูแลของอาจารย์ที่ปรึกษาและที่ปรึกษาจากสถานประกอบการ"]
+  ],
+
+
+  /* เอกสารที่เกี่ยวข้อง: แต่ละรายการคือ [ชื่อเอกสาร, ลิงก์, ชนิด "pdf" หรือ "web"]
+     ถ้ายังไม่มีลิงก์ ให้เว้นเป็น "" จะแสดงคำว่า "รอเผยแพร่"
+     เอกสารของหลักสูตรเอง ให้อัปโหลดไฟล์ไว้ในโฟลเดอร์ docs/ แล้วใส่ลิงก์ เช่น "docs/OBE2-2569.pdf" */
+  docs: [
+    {group:"เอกสารหลักสูตร", items:[
+      ["รายละเอียดหลักสูตร (OBE 2) ฉบับผ่านสภามหาวิทยาลัย พ.ศ. 2569","","pdf"],
+      ["รายละเอียดรายวิชา (OBE 3)","","web"],
+      ["คู่มือนักศึกษาและการปฐมนิเทศ","","pdf"]
+    ]},
+    {group:"ข้อบังคับและประกาศระดับบัณฑิตศึกษา", items:[
+      ["ข้อบังคับมหาวิทยาลัยแม่โจ้ ว่าด้วยการศึกษาระดับบัณฑิตศึกษา พ.ศ. 2569","","pdf"],
+      ["รูปแบบการจัดการศึกษาและระบบการศึกษาระดับบัณฑิตศึกษา","https://edu.mju.ac.th/fileDownload/616.pdf","pdf"],
+      ["ภาษาที่ใช้ในการศึกษาระดับบัณฑิตศึกษา","https://edu.mju.ac.th/fileDownload/606.pdf","pdf"],
+      ["ระยะเวลาการศึกษาระดับบัณฑิตศึกษา","https://edu.mju.ac.th/fileDownload/607.pdf","pdf"],
+      ["หลักเกณฑ์การทำและสอบการค้นคว้าอิสระ วิทยานิพนธ์ และดุษฎีนิพนธ์","https://edu.mju.ac.th/fileDownload/611.pdf","pdf"],
+      ["หลักเกณฑ์การแต่งตั้งอาจารย์ที่ปรึกษาการค้นคว้าอิสระ วิทยานิพนธ์ และดุษฎีนิพนธ์","https://edu.mju.ac.th/fileDownload/609.pdf","pdf"]
+    ]},
+    {group:"การลงทะเบียนและสถานภาพนักศึกษา", items:[
+      ["ปฏิทินการศึกษา ปีการศึกษา 2569 ระดับบัณฑิตศึกษา","https://edu.mju.ac.th/www/ViewFile.ashx?f=OTEzLnBkZg2","pdf"],
+      ["หลักเกณฑ์การลงทะเบียนเรียนและชำระค่าธรรมเนียมการศึกษา ระดับบัณฑิตศึกษา","https://edu.mju.ac.th/fileDownload/593.pdf","pdf"],
+      ["การเปลี่ยนสภาพนักศึกษาทดลองเรียนเป็นนักศึกษาสามัญ","https://edu.mju.ac.th/fileDownload/608.pdf","pdf"],
+      ["หลักเกณฑ์การลาพักการศึกษา","https://edu.mju.ac.th/fileDownload/612.pdf","pdf"],
+      ["หลักเกณฑ์และวิธีการขอคืนสภาพนักศึกษา","https://edu.mju.ac.th/fileDownload/613.pdf","pdf"]
+    ]},
+    {group:"ระบบออนไลน์และหน่วยงาน", items:[
+      ["เอกสารและแบบฟอร์มฝ่ายบัณฑิตศึกษา สำนักบริหารและพัฒนาวิชาการ","https://edu.mju.ac.th/www/DocumentGroup.aspx?sID=3","web"],
+      ["ระบบรับสมัครนักศึกษาระดับบัณฑิตศึกษา","http://www.education.mju.ac.th/graduateAdmission/program.aspx","web"],
+      ["เพจรับสมัครบัณฑิตศึกษา MJU Graduate Admissions","https://www.facebook.com/MJUGraduateAdmissions/","web"],
+      ["บัณฑิตวิทยาลัย มหาวิทยาลัยแม่โจ้ (คู่มือการเขียนวิทยานิพนธ์และแบบฟอร์ม)","http://www.grad.mju.ac.th/data_student.php","web"],
+      ["คณะวิศวกรรมและอุตสาหกรรมเกษตร มหาวิทยาลัยแม่โจ้","https://engineer.mju.ac.th/","web"]
+    ]}
+  ],
+
+  news: [
+    {img:"images/news-council.svg", cat:"ข่าวหลักสูตร", date:"24 ก.ย. 2569",
+     title:"สภามหาวิทยาลัยแม่โจ้อนุมัติหลักสูตร วศ.ม. วิศวกรรมเกษตรสมัยใหม่ ปรับปรุง พ.ศ. 2569",
+     text:"สภามหาวิทยาลัยแม่โจ้ในการประชุมครั้งที่ 9/2569 อนุมัติหลักสูตรวิศวกรรมศาสตรมหาบัณฑิต สาขาวิชาวิศวกรรมเกษตรสมัยใหม่ (หลักสูตรปรับปรุง พ.ศ. 2569) ปรับปรุงจากหลักสูตรวิศวกรรมเกษตร พ.ศ. 2564 สู่แนวทาง Smart & Low-Carbon Agri-Engineering มี 3 แผนการเรียน และเพิ่มแผน 2 แบบวิชาชีพสำหรับคนทำงาน"},
+    {img:"images/news-admission.svg", cat:"รับสมัคร", date:"ภาคการศึกษาที่ 2/2569",
+     title:"เปิดรับสมัครนักศึกษารุ่นแรกของหลักสูตรปรับปรุง ทั้งแผนวิชาการและแผนวิชาชีพ",
+     text:"หลักสูตรเปิดรับนักศึกษาไทยและต่างชาติ ภาคการศึกษาที่ 2 ปีการศึกษา 2569 เลือกได้ 3 แผน ได้แก่ แผน 1.1 ทำวิทยานิพนธ์อย่างเดียว แผน 1.2 เรียนรายวิชาและทำวิทยานิพนธ์ และแผน 2 แบบวิชาชีพแบบ Hybrid ค่าธรรมเนียม 25,000 บาทต่อภาคการศึกษา ดูคุณสมบัติและขั้นตอนได้ที่หน้าการรับสมัคร"},
+    {img:"images/news-academic.svg", cat:"ข่าวหลักสูตร", date:"25 ก.ค. 2569",
+     title:"สภาวิชาการเห็นชอบให้นำเสนอหลักสูตรต่อสภามหาวิทยาลัย",
+     text:"คณะกรรมการสภาวิชาการ ในการประชุมครั้งที่ 7/2569 เห็นชอบให้นำเสนอหลักสูตรต่อสภามหาวิทยาลัย หลังหลักสูตรปรับแก้ตามข้อเสนอแนะของคณะกรรมการด้านวิชาการ เช่น ระดับผลลัพธ์การเรียนรู้ เกณฑ์การสำเร็จการศึกษา และรายละเอียดงบประมาณ"},
+    {img:"images/news-equipment.svg", cat:"ห้องปฏิบัติการ", date:"ปีงบประมาณ 2569",
+     title:"ครุภัณฑ์วิจัยใหม่ เครื่องอัดพิมพ์ยางและพลาสติกไฮดรอลิก 100 ตัน และเครื่องสร้างเส้นใยด้วยไฟฟ้าสถิต",
+     text:"คณะจัดหาครุภัณฑ์วิทยาศาสตร์และเทคโนโลยีปีงบประมาณ 2569 ได้แก่ เครื่องสร้างเส้นใยจากสารประกอบพอลิเมอร์ด้วยระบบไฟฟ้าสถิตสำหรับห้องทดลอง และเครื่องอัดพิมพ์ยางและพลาสติกแบบไฮดรอลิกขนาด 100 ตัน รองรับรายวิชาและวิทยานิพนธ์ในกลุ่มวิศวกรรมพอลิเมอร์เพื่ออุตสาหกรรมเกษตร"}
+  ],
+  activities: [
+    {img:"images/act-critique.svg", date:"23–24 ก.พ. 2569", title:"ประชุมปรับปรุงและวิพากษ์หลักสูตร",
+     text:"คณะกรรมการปรับปรุงหลักสูตรและคณะกรรมการวิพากษ์หลักสูตรร่วมพิจารณาโครงสร้าง PLOs และรายวิชา เพื่อให้สอดคล้องกับกรอบวิชาชีพ CIGR และความต้องการของผู้ใช้บัณฑิต"},
+    {img:"images/act-stakeholder.svg", date:"ระหว่างการพัฒนาหลักสูตร", title:"รับฟังเสียงผู้มีส่วนได้ส่วนเสีย",
+     text:"สัมภาษณ์และสอบถามศิษย์เก่า 17 คน สถานประกอบการ 14 ราย และนักศึกษาปัจจุบัน แล้ววิเคราะห์ความต้องการจำเป็นเพื่อกำหนดผลลัพธ์การเรียนรู้ของหลักสูตร"},
+    {img:"images/act-seminar.svg", date:"สัมมนา 1–4", title:"สัมมนาและนำเสนองานวิจัยเป็นภาษาอังกฤษ",
+     text:"นักศึกษาค้นคว้างานตีพิมพ์ภาษาอังกฤษ นำเสนอความก้าวหน้างานวิจัยทุกภาคการศึกษา และได้รับการสนับสนุนให้นำเสนอในที่ประชุมวิชาการระดับนานาชาติ"},
+    {img:"images/act-wil.svg", date:"แผน 2 · ปีที่ 2", title:"เรียนรู้ในสถานประกอบการ 180 ชั่วโมง",
+     text:"นักศึกษาแผน 2 แก้ปัญหาจริงในสถานประกอบการ ภายใต้การดูแลของอาจารย์ที่ปรึกษาและที่ปรึกษาจากสถานประกอบการ"},
+    {img:"images/act-farm.svg", date:"ฟาร์มทดลอง", title:"สมาร์ทฟาร์มและโซลูชันการเกษตร",
+     text:"ทดลองระบบเซนเซอร์ โรงเรือนควบคุมสภาวะ และอากาศยานไร้คนขับเพื่อการเกษตรในพื้นที่จริงของมหาวิทยาลัย"}
+  ],
+  /* tel, email: เบอร์โทรและอีเมลจากประวัติอาจารย์ใน OBE 2 เว้นว่าง "" ได้ถ้าไม่ต้องการแสดง
+     photo: ใส่ชื่อไฟล์รูป เช่น "images/faculty/tipapon.jpg" เว้นว่างไว้จะแสดงอักษรย่อ */
+  leaders: [
+    {role:"ประธานหลักสูตร", name:"ผศ.ดร.ทิพาพร คำแดง", ini:"ท", photo:"", tel:"053-875019", email:"tipapon@mju.ac.th",
+     edu:"วศ.ด. วิศวกรรมเครื่องกล มหาวิทยาลัยเชียงใหม่", tags:["การแปลงสภาพชีวมวล","การจำลองสภาพทางกลและทางความร้อน"]},
+    {role:"รองประธานหลักสูตร", name:"ผศ.ดร.โชติพงศ์ กาญจนประโชติ", ini:"โ", photo:"", tel:"053-875019", email:"choatpong@mju.ac.th",
+     edu:"Ph.D. Bio-industrial Mechatronics Engineering, National Chung-Hsing University, Taiwan", tags:["อุปกรณ์ขนถ่าย","การควบคุมอัตโนมัติ","วิศวกรรมเกษตรแม่นยำ","เครื่องจักรแปรรูปผลผลิตเกษตร"]},
+    {role:"เลขานุการหลักสูตร", name:"รศ.ดร.ฤทธิชัย อัศวราชันย์", ini:"ฤ", photo:"", tel:"053-875000 ต่อ 129", email:"rittichai.assawarachan@gmail.com",
+     edu:"Ph.D. Food Engineering and Bioprocess, Asian Institute of Technology", tags:["การออกแบบและพัฒนาเครื่องจักรแปรรูปอาหาร"]}
+  ],
+  people: [
+    {name:"รศ.ดร.ฤทธิชัย อัศวราชันย์", ini:"ฤ", photo:"", tel:"053-875000 ต่อ 129", email:"rittichai.assawarachan@gmail.com", edu:"Ph.D. Food Engineering and Bioprocess, AIT", tags:["เครื่องจักรแปรรูปอาหาร"]},
+    {name:"รศ.ดร.นักรบ นาคประสม", ini:"น", photo:"", tel:"053-875000", email:"narkprasom@hotmail.com", edu:"Ph.D. Food Engineering, National Pingtung University of Science and Technology", tags:["การหาสภาวะที่เหมาะสม","แบบจำลองทางคณิตศาสตร์","เทคโนโลยีการหมักและการสกัด"]},
+    {name:"ผศ.ดร.วรวรรณ เพชรอุไร", ini:"ว", photo:"", tel:"053-875869-71", email:"worawan@mju.ac.th", edu:"ปร.ด. เทคโนโลยีพอลิเมอร์ มหาวิทยาลัยสงขลานครินทร์", tags:["เทคโนโลยียาง","พอลิเมอร์เบลนด์","เทอร์โมพลาสติกอิลาสโตเมอร์"]},
+    {name:"ผศ.ดร.โชติพงศ์ กาญจนประโชติ", ini:"โ", photo:"", tel:"053-875019", email:"choatpong@mju.ac.th", edu:"Ph.D. Bio-industrial Mechatronics Engineering, National Chung-Hsing University", tags:["การควบคุมอัตโนมัติ","เกษตรแม่นยำ","อุปกรณ์ขนถ่าย"]},
+    {name:"ผศ.ดร.ธนศิษฏ์ วงศ์ศิริอำนวย", ini:"ธ", photo:"", tel:"053-875019", email:"thanasit@mju.ac.th", edu:"วศ.ด. วิศวกรรมเครื่องกล มหาวิทยาลัยเชียงใหม่", tags:["พลังงานทดแทน","การแปลงสภาพชีวมวล","หลังการเก็บเกี่ยว"]},
+    {name:"ผศ.ดร.ทิพาพร คำแดง", ini:"ท", photo:"", tel:"053-875019", email:"tipapon@mju.ac.th", edu:"วศ.ด. วิศวกรรมเครื่องกล มหาวิทยาลัยเชียงใหม่", tags:["การแปลงสภาพชีวมวล","การจำลองทางกลและความร้อน"]},
+    {name:"ผศ.ดร.นำพร ปัญโญใหญ่", ini:"น", photo:"", tel:"053-875019", email:"n.panyoyai@gmail.com", edu:"วศ.ด. วิศวกรรมเครื่องกล มหาวิทยาลัยเชียงใหม่", tags:["พลังงานทดแทน","เครื่องแลกเปลี่ยนความร้อน","หลังการเก็บเกี่ยว"]},
+    {name:"ผศ.ดร.ศิวโรฒ บุญราศรี", ini:"ศ", photo:"", tel:"053-875869-71", email:"siwarote.b@mju.ac.th", edu:"ปร.ด. วิทยาศาสตร์และเทคโนโลยีพอลิเมอร์ มหาวิทยาลัยมหิดล", tags:["ผลิตภัณฑ์ยางและน้ำยาง","ยางคอมโพสิต","สูตรผลิตภัณฑ์ยาง"]}
+  ],
+  roster: ["รศ.ดร.ฤทธิชัย อัศวราชันย์","รศ.ดร.สิริวัฒน์ สาครวาสี","รศ.ดร.นักรบ นาคประสม","รศ.ดร.จำเนียร บุญมาก","ผศ.ดร.ฐิตินันท์ รัตนพรหม","ผศ.ดร.วรวรรณ เพชรอุไร","ผศ.ดร.พิไลวรรณ พรประสิทธิ์","ผศ.ดร.โชติพงศ์ กาญจนประโชติ","ผศ.ดร.ธนศิษฏ์ วงศ์ศิริอำนวย","ผศ.ดร.ทิพาพร คำแดง","ผศ.ดร.นำพร ปัญโญใหญ่","ผศ.ดร.ศิวโรฒ บุญราศรี","ผศ.ดร.ทิพปภา พิสิษฐ์กุล","ผศ.ดริญญา มูลชัย","ผศ.นนท์ ปิ่นเงิน","อ.ดร.อุกฤษณ์ มารังค์","อ.ดร.พนมพร เฉลิมวรรณ์","อ.ดร.วินัย บังคมเนตร","อ.ดร.ประภาพร กิจดำรงธรรม","อ.ดร.ฑีรพรรษฏ์ ศรีอ่อน","อ.ดร.ชวกร ศรีเงินยวง"],
+  labs: [
+    {img:"images/lab-processing.svg", title:"หน่วยปฏิบัติการแปรรูปผลิตผลเกษตร", text:"กระบวนการแปรสภาพด้วยความร้อนและไม่ใช้ความร้อน การอบแห้ง และการยืดอายุผลผลิต"},
+    {img:"images/lab-smartfarm.svg", title:"หน่วยวิจัยสมาร์ทฟาร์มและโซลูชันการเกษตร", text:"เซนเซอร์ IoT โรงเรือนควบคุมสภาวะ โดรนเกษตร และระบบเก็บข้อมูลแปลง"},
+    {img:"images/lab-green.svg", title:"ห้องวิจัยเทคโนโลยีสีเขียวและเชิงนิเวศ", text:"พลังงานชีวมวล การประเมินวัฏจักรชีวิต และฟุตพรินท์ทางสิ่งแวดล้อม"},
+    {img:"images/lab-machinery.svg", title:"ห้องปฏิบัติการเครื่องยนต์และเครื่องจักรกลเกษตร", text:"ทดสอบสมรรถนะเครื่องยนต์ แรงม้าแรงบิด ไอเสีย และการสั่นสะเทือน"},
+    {img:"images/lab-oil.svg", title:"ห้องปฏิบัติการใช้ประโยชน์จากน้ำมันเหลือใช้จากอุตสาหกรรม", text:"แปรรูปของเหลือทิ้งจากอุตสาหกรรมเกษตรเป็นพลังงานและผลิตภัณฑ์มูลค่าเพิ่ม"},
+    {img:"images/lab-rubber.svg", title:"ห้องปฏิบัติการเทคโนโลยียาง", text:"ออกสูตร ขึ้นรูป และทดสอบสมบัติผลิตภัณฑ์ยางและพลาสติก"},
+    {img:"images/lab-latex.svg", title:"ห้องปฏิบัติการเทคโนโลยีน้ำยาง", text:"ผลิตภัณฑ์จากน้ำยางธรรมชาติ ยางคอมโพสิต และวัสดุเพื่อการเกษตร"}
+  ],
+  /* ผลการดำเนินงาน: ใส่ค่าในช่อง r (2569, 2570, 2571) เมื่อมีผล เว้นว่างจะแสดง "รอผล" */
+  /* [ตัวบ่งชี้, หน่วย, เป้าหมาย, [ผล 2569, ผล 2570, ผล 2571]]  ใส่ผลเป็นตัวเลขพร้อมหน่วย เช่น "4.21" หรือ "ร้อยละ 85" */
+  kpi: [
+    ["การรับนักศึกษาตามแผนการรับ","ร้อยละของแผนรับ (10 คน)","≥ ร้อยละ 80",["","",""]],
+    ["อาจารย์ผู้รับผิดชอบหลักสูตรได้รับการพัฒนาด้านการสอนหรือการบริหารหลักสูตร","ร้อยละของอาจารย์ผู้รับผิดชอบหลักสูตร","ร้อยละ 100 (อย่างน้อยคนละ 1 ครั้งต่อปี)",["","",""]],
+    ["รายวิชาที่จัดการเรียนรู้เชิงรุก (Active Learning)","ร้อยละของรายวิชาที่เปิดสอน","ร้อยละ 100",["","",""]],
+    ["ความพึงพอใจของนักศึกษาต่อการจัดการเรียนการสอน","คะแนนเฉลี่ยจาก 5.00","≥ 3.51",["","",""]],
+    ["นักศึกษาบรรลุผลลัพธ์การเรียนรู้รายชั้นปี (YLOs)","ร้อยละของนักศึกษาที่บรรลุ YLOs","≥ ร้อยละ 80",["","",""]],
+    ["นักศึกษาลาออกสะสม (ยิ่งต่ำยิ่งดี)","ร้อยละของผู้รับเข้าแต่ละรุ่น","≤ ร้อยละ 20",["","",""]],
+    ["นักศึกษาสำเร็จการศึกษาตามเวลาที่กำหนด (2 ปี)","ร้อยละของผู้รับเข้าในรุ่นนั้น","≥ ร้อยละ 70",["","",""]],
+    ["บัณฑิตได้งานทำหรือมีรายได้ภายใน 1 ปี","ร้อยละของบัณฑิตที่ตอบแบบสำรวจ","≥ ร้อยละ 80",["","",""]],
+    ["ความพึงพอใจของบัณฑิตต่อคุณภาพหลักสูตร","คะแนนเฉลี่ยจาก 5.00","≥ 3.51",["","",""]],
+    ["ความพึงพอใจของผู้ใช้บัณฑิต","คะแนนเฉลี่ยจาก 5.00","≥ 3.51",["","",""]],
+    ["บัณฑิตบรรลุผลลัพธ์การเรียนรู้ของหลักสูตร (PLOs)","ร้อยละของบัณฑิตที่บรรลุทุก PLO ตามระดับที่กำหนด","≥ ร้อยละ 80",["","",""]]
+  ]
+};
+
+var STATIC = {
+  highlights:[
+    ["Smart & Green Agricultural Engineering","เครื่องจักรกลเกษตร วิศวกรรมดินและน้ำ และพลังงานชีวมวล เพื่อเพิ่มผลผลิตและลดผลกระทบต่อสิ่งแวดล้อม","กลุ่มเครื่องจักรกลเกษตร · กลุ่มวิศวกรรมดินและน้ำ · กลุ่มพลังงาน ชีวมวล และความยั่งยืน","รายวิชาเฉพาะทาง การวิจัย และวิทยานิพนธ์/การค้นคว้าอิสระ","วิเคราะห์และประเมินความเหมาะสมของระบบ อุปกรณ์ และเทคโนโลยี เพื่อประสิทธิภาพ ความปลอดภัย และความยั่งยืน"],
+    ["Advanced Digital Technology","AI, IoT, Big Data และเครื่องมือเชิงคำนวณ สนับสนุนการวิเคราะห์ข้อมูลและการตัดสินใจทางวิศวกรรม","กลุ่มการจัดการและการใช้เทคโนโลยีสารสนเทศเพื่อการเกษตร · กลุ่มนวัตกรรมและเครื่องมือเชิงคำนวณ","AI, IoT, Big Data, Data Analytics และเครื่องมือเชิงคำนวณในรายวิชาและงานวิจัย","เลือกและปรับใช้เทคโนโลยีดิจิทัลแก้ปัญหาทางวิศวกรรมเกษตรได้เหมาะสมกับบริบท"],
+    ["Research-to-Industry","งานวิจัยและนวัตกรรมที่ต่อยอดสู่การใช้จริง ผ่านความร่วมมือกับภาคธุรกิจ อุตสาหกรรม และภาครัฐ","กลุ่มการแปรสภาพผลิตผลการเกษตร · กลุ่มวิศวกรรมพอลิเมอร์เพื่ออุตสาหกรรมเกษตร","วิจัยร่วมกับภาคอุตสาหกรรม พัฒนาต้นแบบ และต่อยอดผลงานสู่การใช้ประโยชน์","สร้างงานวิจัย นวัตกรรม และองค์ความรู้ใหม่ ที่ต่อยอดสู่ภาคเกษตรและอุตสาหกรรมเกษตร"],
+    ["Multidisciplinary Integration","บูรณาการวิศวกรรมเกษตร เทคโนโลยีดิจิทัล วัสดุศาสตร์ พลังงาน และนวัตกรรม เพื่อแก้ปัญหาที่ซับซ้อน","ทั้ง 7 กลุ่มความเชี่ยวชาญ","บูรณาการองค์ความรู้ข้ามศาสตร์ผ่านรายวิชาและงานวิจัย","บูรณาการความรู้หลายศาสตร์ วิเคราะห์และแก้ปัญหาซับซ้อน และพัฒนานวัตกรรม"],
+    ["Flexible Lifelong Learning","เลือกแผนการศึกษาและหัวข้อวิจัยได้ตามความสนใจ รองรับคนทำงานและการเปลี่ยนแปลงของตลาดแรงงาน","ทั้ง 7 กลุ่มความเชี่ยวชาญ","เลือกแผนการศึกษา หัวข้อวิจัย และการเรียนรู้แบบยืดหยุ่น","สื่อสารทางวิชาการ ทำงานร่วมกับผู้อื่น มีภาวะผู้นำ เรียนรู้ตลอดชีวิต และมีคุณธรรม จริยธรรม"]
+  ],
+  objectives:[
+    "พัฒนามหาบัณฑิตให้มีความรู้เชิงลึกและความสามารถในการบูรณาการองค์ความรู้ด้านวิศวกรรมเกษตรสมัยใหม่ เพื่อสร้างสรรค์และพัฒนานวัตกรรมที่ตอบสนองต่อภาคเกษตรและอุตสาหกรรมเกษตรทั้งในระดับชาติและนานาชาติ",
+    "พัฒนามหาบัณฑิตให้วิเคราะห์และประเมินความเหมาะสมของระบบ อุปกรณ์ และเทคโนโลยีดิจิทัลทางวิศวกรรมเกษตร เพื่อสนับสนุนการตัดสินใจทางวิศวกรรมอย่างมีประสิทธิภาพ",
+    "พัฒนามหาบัณฑิตให้เลือกและปรับใช้ข้อมูลและเทคโนโลยีดิจิทัลในการแก้ปัญหาทางวิศวกรรมเกษตรและอุตสาหกรรมเกษตรได้อย่างเหมาะสมกับบริบทและสถานการณ์ที่แตกต่างกัน",
+    "พัฒนามหาบัณฑิตให้มีความสามารถในการสื่อสารทางวิชาการ การทำงานร่วมกับผู้อื่น ภาวะผู้นำ และการเรียนรู้ตลอดชีวิต เพื่อรองรับการเปลี่ยนแปลงทางเทคโนโลยีและเศรษฐกิจในระดับสากลอย่างยั่งยืน",
+    "พัฒนามหาบัณฑิตให้มีคุณธรรม จริยธรรมทางวิชาการและวิชาชีพ ตลอดจนความรับผิดชอบต่อตนเอง สังคม และสิ่งแวดล้อมในการดำเนินงานด้านวิศวกรรมและนวัตกรรมการเกษตร"
+  ],
+  plo:[
+    ["ประเมินการใช้เทคโนโลยีดิจิทัลและเครื่องมือวิศวกรรมในการจัดการระบบและอุปกรณ์ในภาคการเกษตรและอุตสาหกรรมเกษตรด้านประสิทธิภาพและความปลอดภัย","ความรู้","Ev"],
+    ["บูรณาการองค์ความรู้ด้านวิศวกรรม เทคโนโลยีขั้นสูง นวัตกรรมสีเขียว และมาตรฐานสากล เพื่อการพัฒนาและจัดการระบบและอุปกรณ์ในภาคการเกษตรและอุตสาหกรรมเกษตรอย่างยั่งยืน (ผ่านการวิจัยในรูปแบบ{X})","ความรู้","Cr"],
+    ["ปรับเปลี่ยนการทดลองและปรับใช้เทคโนโลยีดิจิทัลเพื่อแก้ปัญหาในการวิจัยทางวิศวกรรมเกษตรและอุตสาหกรรมเกษตรได้อย่างเหมาะสม","ทักษะ","Ad"],
+    ["สื่อสารและนำเสนอผลงานและแนวคิดทางวิศวกรรมได้อย่างคล่องแคล่ว ถูกต้องตามหลักวิชาการ และเหมาะสมกับกลุ่มผู้ฟังและสถานการณ์","ทักษะ","Me"],
+    ["ยึดถือหลักคุณธรรม จริยธรรม และจรรยาบรรณวิชาชีพในการดำเนินงานวิจัย โดยคำนึงถึงความรับผิดชอบต่อสังคมและสิ่งแวดล้อมตามมาตรฐานสากล","จริยธรรม","Org"],
+    ["ปฏิบัติตนเป็นผู้ที่มีความอดทน สู้งาน รับผิดชอบ สามารถทำงานร่วมกับผู้อื่น และเรียนรู้พัฒนาตนเองอย่างต่อเนื่อง","ลักษณะบุคคล","Va"],
+    ["บริหารจัดการงานวิจัยโดยใช้ทักษะบูรณาการเชิงปฏิบัติในการออกแบบและดำเนินโครงการเพื่อแก้โจทย์ปัญหาทางวิศวกรรมเกษตรและอุตสาหกรรมเกษตรได้อย่างคล่องแคล่ว","ทักษะ","Me"]
+  ],
+  approval:[
+    ["คณะกรรมการปรับปรุงหลักสูตร","ครั้งที่ 1 · 23 ก.พ. 2569"],
+    ["คณะกรรมการวิพากษ์หลักสูตร","ครั้งที่ 1 · 24 ก.พ. 2569"],
+    ["คณะกรรมการวิชาการประจำคณะ","2/2569 · 11 มี.ค. 2569"],
+    ["คณะกรรมการประจำคณะ","3/2569 · 18 มี.ค. 2569"],
+    ["คณะกรรมการวิชาการบัณฑิตศึกษา","4/2569 · 1 เม.ย. 2569"],
+    ["คณะกรรมการด้านวิชาการ","5/2569 · 20 พ.ค. 2569"],
+    ["คณะกรรมการบริหารมหาวิทยาลัย","10/2569 · 24 มิ.ย. 2569"],
+    ["คณะกรรมการสภาวิชาการ","7/2569 · 25 ก.ค. 2569"],
+    ["สภามหาวิทยาลัย อนุมัติหลักสูตร","9/2569 · 24 ก.ย. 2569"]
+  ],
+  careers:["อาจารย์หรือบุคลากรในหน่วยงานการศึกษาภาครัฐและเอกชน","นักวิจัยหรือนักพัฒนาด้านวิศวกรรม นวัตกรรม และเทคโนโลยีการเกษตร","นักวิชาการ ผู้เชี่ยวชาญ หรือที่ปรึกษาในหน่วยงานภาครัฐและเอกชน","วิศวกรอาวุโสหรือผู้จัดการโครงการในโรงงานอุตสาหกรรมและสถานประกอบการ","วิศวกรออกแบบและวางแผนระบบเกษตรอัจฉริยะและเครื่องจักรกลเกษตร","ผู้ประกอบการด้านเทคโนโลยีการเกษตร และผู้ประกอบอาชีพอิสระ"],
+  plans:[
+    {id:"1.1",name:"แผน 1.1 แบบวิชาการ",sub:"ทำวิทยานิพนธ์อย่างเดียว",who:"สร้างนักวิจัยที่สร้างสรรค์องค์ความรู้ใหม่ เหมาะกับผู้ที่มีหัวข้อวิจัยชัดเจนและวางแผนเรียนต่อปริญญาเอก",parts:[["วิทยานิพนธ์",36,"c1"]]},
+    {id:"1.2",name:"แผน 1.2 แบบวิชาการ",sub:"เรียนรายวิชาและทำวิทยานิพนธ์",who:"ปูความรู้เชิงลึกด้านเนื้อหาและระเบียบวิธีวิจัย ก่อนต่อยอดเป็นวิทยานิพนธ์ในสาขาเฉพาะ",parts:[["วิชาเอกบังคับ",12,"c1"],["วิชาเอกเลือก",12,"c2"],["วิทยานิพนธ์",12,"c3"]]},
+    {id:"2",name:"แผน 2 แบบวิชาชีพ",sub:"เรียนรายวิชา WIL และค้นคว้าอิสระ · Hybrid",who:"สำหรับผู้ทำงานในสถานประกอบการ นำความรู้แก้ปัญหาเชิงประยุกต์ ไม่ต้องทำวิทยานิพนธ์",parts:[["วิชาเอกบังคับ (รวม WIL 6)",18,"c1"],["วิชาเอกเลือก",12,"c2"],["การค้นคว้าอิสระ",6,"c3"]]}
+  ],
+  terms:{
+    "1.1":[["ปีที่ 1 ภาคการศึกษาที่ 1",[["20401501","ระเบียบวิธีวิจัยทางวิศวกรรมเกษตรสมัยใหม่","(3)"],["20401591","สัมมนา 1","(1)"],["20401691","วิทยานิพนธ์ 1","6"]],6],
+           ["ปีที่ 1 ภาคการศึกษาที่ 2",[["20401592","สัมมนา 2","(1)"],["20401692","วิทยานิพนธ์ 2","6"]],6],
+           ["ปีที่ 2 ภาคการศึกษาที่ 1",[["20401593","สัมมนา 3","(1)"],["20401693","วิทยานิพนธ์ 3","12"]],12],
+           ["ปีที่ 2 ภาคการศึกษาที่ 2",[["20401594","สัมมนา 4","(1)"],["20401694","วิทยานิพนธ์ 4","12"]],12]],
+    "1.2":[["ปีที่ 1 ภาคการศึกษาที่ 1",[["20401501","ระเบียบวิธีวิจัยทางวิศวกรรมเกษตรสมัยใหม่","(3)"],["20401591","สัมมนา 1","(1)"],["20401511","เครื่องมือวัดและการวัดทางวิทยาศาสตร์และเทคโนโลยี","3"],["20401512","การเปลี่ยนแปลงสภาพภูมิอากาศที่มีผลต่ออุตสาหกรรมเกษตร","3"],["20401XXX","วิชาเอกเลือก 1","3"]],9],
+           ["ปีที่ 1 ภาคการศึกษาที่ 2",[["20401592","สัมมนา 2","(1)"],["20401513","การจัดการอุตสาหกรรมเกษตรสมัยใหม่","3"],["20401514","การประยุกต์ใช้ปัญญาประดิษฐ์ในงานวิศวกรรมเกษตร","3"],["20401XXX","วิชาเอกเลือก 2","3"]],9],
+           ["ปีที่ 2 ภาคการศึกษาที่ 1",[["20401593","สัมมนา 3","(1)"],["20401695","วิทยานิพนธ์ 5","6"],["20401XXX","วิชาเอกเลือก 3","3"],["20401XXX","วิชาเอกเลือก 4","3"]],12],
+           ["ปีที่ 2 ภาคการศึกษาที่ 2",[["20401594","สัมมนา 4","(1)"],["20401696","วิทยานิพนธ์ 6","6"]],6]],
+    "2":[["ปีที่ 1 ภาคการศึกษาที่ 1",[["20401501","ระเบียบวิธีวิจัยทางวิศวกรรมเกษตรสมัยใหม่","(3)"],["20401591","สัมมนา 1","(1)"],["20401511","เครื่องมือวัดและการวัดทางวิทยาศาสตร์และเทคโนโลยี","3"],["20401512","การเปลี่ยนแปลงสภาพภูมิอากาศที่มีผลต่ออุตสาหกรรมเกษตร","3"],["20401XXX","วิชาเอกเลือก 1","3"]],9],
+         ["ปีที่ 1 ภาคการศึกษาที่ 2",[["20401592","สัมมนา 2","(1)"],["20401513","การจัดการอุตสาหกรรมเกษตรสมัยใหม่","3"],["20401514","การประยุกต์ใช้ปัญญาประดิษฐ์ในงานวิศวกรรมเกษตร","3"],["20401XXX","วิชาเอกเลือก 2","3"],["20401XXX","วิชาเอกเลือก 3","3"]],12],
+         ["ปีที่ 2 ภาคการศึกษาที่ 1",[["20401593","สัมมนา 3","(1)"],["20401515","การศึกษาเชิงบูรณาการกับการทำงาน","6"],["20401XXX","วิชาเอกเลือก 4","3"]],9],
+         ["ปีที่ 2 ภาคการศึกษาที่ 2",[["20401594","สัมมนา 4","(1)"],["20401697","การค้นคว้าอิสระ","6"]],6]]
+  },
+  courses:[
+    ["g","รายวิชาไม่นับหน่วยกิต · ประเมินผล S/U"],
+    ["20401501","ระเบียบวิธีวิจัยทางวิศวกรรมเกษตรสมัยใหม่","Research Methodology in Modern Agricultural Engineering","(3) (2-3-5)","1.1 1.2 2"],
+    ["20401591","สัมมนา 1","Seminar 1","(1) (0-2-1)","1.1 1.2 2"],
+    ["20401592","สัมมนา 2","Seminar 2","(1) (0-2-1)","1.1 1.2 2"],
+    ["20401593","สัมมนา 3","Seminar 3","(1) (0-2-1)","1.1 1.2 2"],
+    ["20401594","สัมมนา 4","Seminar 4","(1) (0-2-1)","1.1 1.2 2"],
+    ["g","วิชาเอกบังคับ"],
+    ["20401511","เครื่องมือวัดและการวัดทางวิทยาศาสตร์และเทคโนโลยี","Instrumentation and Measurement for Science and Technology","3 (2-3-5)","1.2 2"],
+    ["20401512","การเปลี่ยนแปลงสภาพภูมิอากาศที่มีผลต่ออุตสาหกรรมเกษตร","Climate Change Impacts on Agro-Industry","3 (3-0-6)","1.2 2"],
+    ["20401513","การจัดการอุตสาหกรรมเกษตรสมัยใหม่","Modern Agro-Industry Management","3 (3-0-6)","1.2 2"],
+    ["20401514","การประยุกต์ใช้ปัญญาประดิษฐ์ในงานวิศวกรรมเกษตร","Application of Artificial Intelligence in Agricultural Engineering","3 (3-0-6)","1.2 2"],
+    ["20401515","การศึกษาเชิงบูรณาการกับการทำงาน","Work-Integrated Learning (180-hour placement)","6 (0-180-0)","2"],
+    ["g","วิชาเอกเลือก · กลุ่มเครื่องจักรกลเกษตร"],
+    ["20401521","ระบบเครื่องจักรอัตโนมัติในเกษตรและอุตสาหกรรม","Automation in Agricultural and Industrial Machinery","3 (2-3-5)","1.2 2"],
+    ["20401522","การออกแบบและวิเคราะห์เครื่องจักรกลเกษตรไฟฟ้า","Design and Analysis of Electrical Agricultural Machinery","3 (3-0-6)","1.2 2"],
+    ["20401523","การประยุกต์แขนกลและหุ่นยนต์ในงานเกษตร","Agricultural Robotics and Robotic Arm Applications","3 (3-0-6)","1.2 2"],
+    ["20401524","การทดสอบและประเมินผลเครื่องจักรกลเกษตร","Testing and Evaluation of Agricultural Machinery","3 (2-3-5)","1.2 2"],
+    ["g","วิชาเอกเลือก · กลุ่มวิศวกรรมด้านการแปรสภาพผลิตผลการเกษตร"],
+    ["20401531","นวัตกรรมขั้นสูงการแปรสภาพผลผลิตทางการเกษตรด้วยความร้อนและไม่ใช้ความร้อน","Advanced Innovations in Thermal and Non-Thermal Processing for Agricultural Product Transformation","3 (3-0-6)","1.2 2"],
+    ["20401532","การแปรสภาพผลผลิตเกษตรขั้นสูง","Advanced Agricultural Products Processing","3 (2-3-5)","1.2 2"],
+    ["20401533","การหาสภาวะที่เหมาะสมทางวิทยาศาสตร์และเทคโนโลยี","Optimization in Science and Technology","3 (3-0-6)","1.2 2"],
+    ["20401534","โลจิสติกส์และระบบการตรวจสอบย้อนกลับผลผลิตทางการเกษตร","Logistics and Traceability Systems of Agricultural Products","3 (3-0-6)","1.2 2"],
+    ["g","วิชาเอกเลือก · กลุ่มวิศวกรรมดินและน้ำ"],
+    ["20401541","การจัดการน้ำและระบบชลประทานทางการเกษตร","Water Management and Agricultural Irrigation Systems","3 (2-3-5)","1.2 2"],
+    ["g","วิชาเอกเลือก · กลุ่มการจัดการและการใช้เทคโนโลยีสารสนเทศเพื่อการเกษตร"],
+    ["20401551","ระบบควบคุมอัตโนมัติและการควบคุมระยะไกลสำหรับเกษตรอัจฉริยะ","Automatic Control System and Remote Control for Smart Agriculture","3 (3-0-6)","1.2 2"],
+    ["20401552","การออกแบบและพัฒนาอุปกรณ์สำหรับเกษตรแม่นยำและฟาร์มอัจฉริยะ","Design and Development of Precision Agricultural Devices and Smart Farm","3 (3-0-6)","1.2 2"],
+    ["20401553","ระบบควบคุมสภาวะในโรงเรือนเพาะปลูก","Greenhouse Environment Control System","3 (3-0-6)","1.2 2"],
+    ["20401554","เทคโนโลยีฟาร์มปลูกพืชแนวตั้ง","Vertical Farming Technology","3 (2-3-5)","1.2 2"],
+    ["20401555","เทคโนโลยีขั้นสูงในการขยายพันธุ์และการเพาะปลูกพืช","Advanced Technologies for Plant Propagation and Cultivation","3 (2-3-5)","1.2 2"],
+    ["g","วิชาเอกเลือก · กลุ่มพลังงาน ชีวมวล และความยั่งยืน"],
+    ["20401561","อุณหพลศาสตร์ประยุกต์และการจัดการพลังงานความร้อน","Applied Thermodynamics and Thermal Energy Management","3 (2-3-5)","1.2 2"],
+    ["20401562","การจัดการทรัพยากรวัสดุเกษตรเพื่อความยั่งยืน","Sustainable Management of Agricultural Material Resources","3 (2-3-5)","1.2 2"],
+    ["20401563","การออกแบบระบบพลังงานในการเกษตร","Energy System Design for Agriculture","3 (2-3-5)","1.2 2"],
+    ["20401564","การประเมินวัฏจักรชีวิตและฟุตพรินท์ทางสิ่งแวดล้อม","Life Cycle Assessment and Environmental Footprints","3 (3-0-6)","1.2 2"],
+    ["g","วิชาเอกเลือก · กลุ่มวิศวกรรมพอลิเมอร์เพื่ออุตสาหกรรมเกษตร"],
+    ["20401571","วิทยากระแสและกระบวนการแปรรูปพอลิเมอร์","Rheology and Polymer Processing","3 (3-0-6)","1.2 2"],
+    ["20401572","การออกแบบผลิตภัณฑ์ยาง พลาสติกและแม่พิมพ์","Design of Rubber and Plastic Products and Molds","3 (2-3-5)","1.2 2"],
+    ["20401573","วัสดุพอลิเมอร์ที่ใช้งานทางการเกษตร","Polymeric Materials for Agricultural Application","3 (3-0-6)","1.2 2"],
+    ["20401574","พอลิเมอร์อัจฉริยะ","Smart Polymers","3 (3-0-6)","1.2 2"],
+    ["20401575","เทคโนโลยีการรีไซเคิลยาง","Rubber Recycling Technology","3 (2-3-5)","1.2 2"],
+    ["20401576","พอลิเมอร์เพื่อความยั่งยืน","Polymers for Sustainability","3 (3-0-6)","1.2 2"],
+    ["g","วิชาเอกเลือก · กลุ่มนวัตกรรมและเครื่องมือเชิงคำนวณ"],
+    ["20401581","หัวข้อเฉพาะทางวิศวกรรมเกษตรและอุตสาหกรรมเกษตร 1","Selected Topics in Agricultural Engineering and Agro-Industry 1","3 (3-0-6)","1.2 2"],
+    ["20401582","หัวข้อเฉพาะทางวิศวกรรมเกษตรและอุตสาหกรรมเกษตร 2","Selected Topics in Agricultural Engineering and Agro-Industry 2","3 (3-0-6)","1.2 2"],
+    ["20401583","ระเบียบวิธีเชิงตัวเลขประยุกต์ในงานวิศวกรรมเกษตร","Applied Numerical Methods in Agricultural Engineering","3 (2-3-5)","1.2 2"],
+    ["20401584","การจำลองระบบทางวิทยาศาสตร์และเทคโนโลยี","Systems Simulation for Science and Technology","3 (2-3-5)","1.2 2"],
+    ["20401585","กระบวนการสร้างนวัตกรรมและผู้ประกอบการเกษตร","Innovation Process and Agri-Entrepreneurship","3 (3-0-6)","1.2 2"],
+    ["20401586","ชีวสารสนเทศและการวิเคราะห์ข้อมูลแบบโอมิกส์สำหรับเทคโนโลยีชีวภาพในงานวิศวกรรม","Bioinformatics and Omics Data Analytics for Engineering Biotechnology","3 (1-6-5)","1.2 2"],
+    ["g","วิทยานิพนธ์และการค้นคว้าอิสระ"],
+    ["20401691","วิทยานิพนธ์ 1","Thesis 1","6 (0-18-0)","1.1"],
+    ["20401692","วิทยานิพนธ์ 2","Thesis 2","6 (0-18-0)","1.1"],
+    ["20401693","วิทยานิพนธ์ 3","Thesis 3","12 (0-36-0)","1.1"],
+    ["20401694","วิทยานิพนธ์ 4","Thesis 4","12 (0-36-0)","1.1"],
+    ["20401695","วิทยานิพนธ์ 5","Thesis 5","6 (0-18-0)","1.2"],
+    ["20401696","วิทยานิพนธ์ 6","Thesis 6","6 (0-18-0)","1.2"],
+    ["20401697","การค้นคว้าอิสระ","Independent Studies","6 (0-18-0)","2"]
+  ],
+  equip:[
+    ["2569","เครื่องสร้างเส้นใยจากสารประกอบพอลิเมอร์ด้วยระบบไฟฟ้าสถิต · เครื่องอัดพิมพ์ยางและพลาสติกแบบไฮดรอลิก 100 ตัน"],
+    ["2568","ชุดหุ่นยนต์และระบบอัตโนมัติสำหรับกระบวนการผลิตที่ควบคุมสุขอนามัย · ชุดเครื่องมือขึ้นรูป 3 มิติ · เครื่องต้นแบบยืดอายุผลผลิตด้วยสนามแม่เหล็กไฟฟ้า · เครื่องวิเคราะห์สารอินทรีย์ด้วยเทคนิคเทอร์มอลดีซอร์ปชัน · หุ่นยนต์สี่ขาปัญญาประดิษฐ์ · เครื่องจำลองและเร่งสภาวะการเกิดปฏิกิริยา · เครื่องเป่าฟิล์ม"],
+    ["2567","ชุดวิเคราะห์การปนเปื้อนด้วยสนามแม่เหล็กไฟฟ้า · ชุดเชื่อมอัตโนมัติด้วยหุ่นยนต์อุตสาหกรรม · ชุดทดสอบการสั่นสะเทือน · หุ่นยนต์แขนกลควบคุมการเพาะปลูก · หุ่นยนต์แขนกลมาตรฐานสุขอนามัยสำหรับอุตสาหกรรมเกษตรและอาหาร"],
+    ["มีอยู่เดิม","อากาศยานไร้คนขับสำหรับหว่านและฉีดพ่น · ระบบเก็บข้อมูลแปลงและ Multi Sensor · ปั๊มน้ำพลังงานแสงอาทิตย์ · GC-MS · Raman Microscope Spectrometer · เครื่องวิเคราะห์ธาตุด้วยพลาสมา · เครื่องวิเคราะห์ไอเสีย · เครื่องวัดแรงม้าแรงบิด"]
+  ],
+  partners:["สมาคมวิศวกรรมสถานแห่งประเทศไทยฯ (วสท.)","บริษัท สหะพืชผล ลิสซิ่ง จำกัด","บริษัท แอนเซลล์ ประเทศไทย","องค์การอุตสาหกรรมป่าไม้ ภาคใต้","บริษัท อะกริเทคดีเวลลอปเมนท์ จำกัด","Belton Industrial (Thailand) Ltd.","บริษัท ไทเกอร์ เจ จำกัด","ฟาร์ม Asian Exotic Plants","เฟืออินฟาร์ม","บริษัท เบ็บซี เอเชีย จำกัด","คณะวิศวกรรมและเทคโนโลยีอุตสาหกรรม ม.ศิลปากร","วิทยาลัยพลังงานทดแทน ม.แม่โจ้","หลักสูตรวิศวกรรมเกษตรและชีวภาพ มทร.ล้านนา","คณะเทคโนโลยีการเกษตรและเทคโนโลยีอุตสาหกรรม มรภ.นครสวรรค์","คณะวิศวกรรมและอุตสาหกรรมเกษตร ม.แม่โจ้","มหาวิทยาลัยแม่โจ้","อาจารย์ผู้สอน นักศึกษา และศิษย์เก่า"]
+};
+
+/* =====================================================================
+   คำแปลภาษาอังกฤษ: "ข้อความไทย": "English",
+   ข้อความไทยต้องตรงกับที่แสดงบนเว็บทุกตัวอักษร (ชื่อรายวิชาแปลอัตโนมัติจากข้อมูลรายวิชา)
+   ===================================================================== */
+var I18N_EN = {
+  "โทร": "Tel.",
+  "053-875000 ต่อ 129": "+66 53 875000 ext. 129",
+  "คุณพร้อมด้านงานวิจัยแค่ไหน": "How ready are you for research?",
+  "มีหัวข้อวิจัยชัดเจนและพร้อมทำวิทยานิพนธ์เต็มเวลา": "I have a clear research topic and am ready for a full-time thesis",
+  "อยากเรียนรายวิชาเพื่อปูพื้นฐานก่อนทำวิจัย": "I want coursework to build foundations before research",
+  "ไม่ต้องการทำวิทยานิพนธ์": "I don't want to write a thesis",
+  "เปลี่ยนภาษา / Switch language": "Switch language / เปลี่ยนภาษา",
+  "คัดลอกแล้ว": "Copied",
+  "ปิด": "Close",
+  "รวม": "Total",
+  "แผน": "Plan",
+  "2 ปี": "2 years",
+  "รหัส": "Code",
+  "เมนู": "Menu",
+  "รอผล": "Pending",
+  "หน่วย": "Unit",
+  "วศ.ม.": "M.Eng.",
+  "ทักษะ": "Skills",
+  "เกณฑ์": "Criterion",
+  "แผน 2": "Plan 2",
+  "รายการ": "Item",
+  "เอกสาร": "Documents",
+  "วางแผน": "Plan",
+  "เปิด ↗": "Open ↗",
+  "ทุกแผน": "All plans",
+  "รูปแบบ": "Format",
+  "คัดลอก": "Copy",
+  "ตรวจสอบ": "Check",
+  "แผน 1.1": "Plan 1.1",
+  "แผน 1.2": "Plan 1.2",
+  "หน้าแรก": "Home",
+  "จุดเด่น": "Highlights",
+  "ที่อยู่": "Address",
+  "กิจกรรม": "Activities",
+  "ข่าวสาร": "News",
+  "เปิดสอน": "First intake",
+  "รายวิชา": "Courses",
+  "ความรู้": "Knowledge",
+  "ผู้สนใจ": "Prospective students",
+  "/ เอกสาร": "/ Documents",
+  "/ ติดต่อ": "/ Contact",
+  "เมนูหลัก": "Main menu",
+  "หลักสูตร": "Programme",
+  "จริยธรรม": "Ethics",
+  "คณาจารย์": "Faculty",
+  "รับสมัคร": "Admissions",
+  "ห้องสมุด": "Library",
+  "เลือกแผน": "Choose a plan",
+  "เป้าหมาย": "Target",
+  "ปรับปรุง": "Improve",
+  "ย้อนกลับ": "Back",
+  "การวัดผล": "Grading",
+  "ปฐมนิเทศ": "Orientation",
+  "เริ่มใหม่": "Start over",
+  "คุณสมบัติ": "Requirements",
+  "ติดต่อเรา": "Contact us",
+  "ตัวบ่งชี้": "Indicator",
+  "ห้องเรียน": "Classrooms",
+  "สัญลักษณ์": "Grade",
+  "ดำเนินการ": "Do",
+  "ที่ประชุม": "Committee",
+  "รอเผยแพร่": "Coming soon",
+  "สมัครเรียน": "Apply now",
+  "มีอยู่เดิม": "Existing",
+  "25,000 บาท": "THB 25,000",
+  "ฟาร์มทดลอง": "Experimental farm",
+  "ระดับคะแนน": "Grade points",
+  "ปีการศึกษา": "Academic year (B.E.)",
+  "50,000 บาท": "THB 50,000",
+  "ร้อยละ 100": "100%",
+  "/ คณาจารย์": "/ Faculty",
+  "ปีงบประมาณ": "Fiscal year (B.E.)",
+  "ห้องประชุม": "Meeting rooms",
+  "ชื่อปริญญา": "Degree",
+  "การสื่อสาร": "Communication",
+  "สัมมนา 1–4": "Seminar 1–4",
+  "ภาพกิจกรรม": "Photo gallery",
+  "≤ ร้อยละ 20": "≤ 20%",
+  "การรับสมัคร": "Admissions",
+  "ปรับปรุงจาก": "Revised from",
+  "ยางคอมโพสิต": "Rubber composites",
+  "ลักษณะบุคคล": "Character",
+  "แผนการศึกษา": "Study plan",
+  "เกษตรแม่นยำ": "Precision agriculture",
+  "ชั้นปีที่ 1": "Year 1",
+  "ชั้นปีที่ 2": "Year 2",
+  "รวมหน่วยกิต": "Total credits",
+  "100,000 บาท": "THB 100,000",
+  "ข่าวทั้งหมด": "All news",
+  "สอบสัมภาษณ์": "Interview",
+  "วิทยานิพนธ์": "Thesis",
+  "≥ ร้อยละ 80": "≥ 80%",
+  "≥ ร้อยละ 70": "≥ 70%",
+  "ช่องทางที่ 2": "Channel 2",
+  "วุฒิการศึกษา": "Qualification",
+  "รหัสหลักสูตร": "Programme code",
+  "เฟืออินฟาร์ม": "Fuea In Farm",
+  "25 ก.ค. 2569": "25 Jul 2026",
+  "24 ก.ย. 2569": "24 Sep 2026",
+  "ช่องทางที่ 3": "Channel 3",
+  "ข่าวหลักสูตร": "Programme news",
+  "ข้อมูลทั่วไป": "General information",
+  "เทคโนโลยียาง": "Rubber technology",
+  "วิชาเอกเลือก": "Major electives",
+  "ช่องทางที่ 1": "Channel 1",
+  "ระหว่างศึกษา": "During study",
+  "ค้นหารายวิชา": "Search courses",
+  "เส้นทางอาชีพ": "Career paths",
+  "วัตถุประสงค์": "Objectives",
+  "ชื่อหลักสูตร": "Programme name",
+  "พลังงานทดแทน": "Renewable energy",
+  "วงจรการพัฒนา": "Development cycle",
+  "อุปกรณ์ขนถ่าย": "Material handling equipment",
+  "ต่อปีการศึกษา": "Per academic year",
+  "วิชาเอกบังคับ": "Required major courses",
+  "วิศวกรรมเกษตร": "Agricultural engineering",
+  "อาจารย์ผู้สอน": "Teaching faculty",
+  "/ การรับสมัคร": "/ Admissions",
+  "2 ภาคการศึกษา": "2 semesters",
+  "ครุภัณฑ์วิจัย": "Research equipment",
+  "[ใส่ LINE OA]": "[Add LINE OA]",
+  "ห้องปฏิบัติการ": "Laboratories",
+  "วิชาเอกเลือก 2": "Major elective 2",
+  "แผนรับนักศึกษา": "Intake plan",
+  "การเรียนการสอน": "Teaching and learning",
+  "ต่อภาคการศึกษา": "Per semester",
+  "รายวิชาทั้งหมด": "All courses",
+  "วิชาเอกเลือก 3": "Major elective 3",
+  "วิชาเอกเลือก 4": "Major elective 4",
+  "ข้อมูลหลักสูตร": "Programme information",
+  "คำถามที่พบบ่อย": "Frequently asked questions",
+  "ผลการดำเนินงาน": "Performance",
+  "ข่าวและกิจกรรม": "News and activities",
+  "ติดต่อหลักสูตร": "Contact the programme",
+  "สื่อสารสู่สากล": "International communication",
+  "ประธานหลักสูตร": "Programme Chair",
+  "คำถามก่อนสมัคร": "Questions before applying",
+  "วิชาเอกเลือก 1": "Major elective 1",
+  "เอกสารหลักสูตร": "Programme documents",
+  "หน่วยกิต · 2 ปี": "credits · 2 years",
+  "พอลิเมอร์เบลนด์": "Polymer blends",
+  "กลุ่มสาขา ISCED": "ISCED field",
+  "สถานภาพหลักสูตร": "Programme status",
+  "ตัวช่วยเลือกแผน": "Plan finder",
+  "แบบฟอร์มออนไลน์": "Online forms",
+  "การเผยแพร่ผลงาน": "Research dissemination",
+  "ดูข่าวทั้งหมด →": "All news →",
+  "ประสบการณ์ทำงาน": "Work experience",
+  "23–24 ก.พ. 2569": "23–24 Feb 2026",
+  "ปีงบประมาณ 2569": "Fiscal year 2026",
+  "การดูแลผู้เรียน": "Student support",
+  "ขั้นตอนการสมัคร": "How to apply",
+  "เส้นทางงานวิจัย": "Research pathway",
+  "แผน 2 · ปีที่ 2": "Plan 2 · Year 2",
+  "ไม่น้อยกว่า 2.25": "At least 2.25",
+  "คำถามที่ 2 จาก 3": "Question 2 of 3",
+  "โจทย์จากภาคเอกชน": "Industry-set problems",
+  "มีทุนการศึกษาไหม": "Are scholarships available?",
+  "สูตรผลิตภัณฑ์ยาง": "Rubber compounding",
+  "แผน 2 แบบวิชาชีพ": "Plan 2 (Professional)",
+  "คำถามที่ 1 จาก 3": "Question 1 of 3",
+  "สำนักงานหลักสูตร": "Programme office",
+  "อัตราเดียวทุกแผน": "One fee for all plans",
+  "หน่วยกิต (บ-ป-ศ)": "Credits (L-P-S)",
+  "การพัฒนาหลักสูตร": "Programme development",
+  "เลือกแผนการเรียน": "Choose your plan",
+  "/ ข่าวและกิจกรรม": "/ News and activities",
+  "แผน 1 แบบวิชาการ": "Plan 1 (Academic)",
+  "รองประธานหลักสูตร": "Programme Vice-Chair",
+  "ข่าวประชาสัมพันธ์": "News",
+  "เกี่ยวกับหลักสูตร": "About the programme",
+  "ทีมบริหารหลักสูตร": "Programme management team",
+  "ตลอดหลักสูตร 2 ปี": "Whole programme (2 years)",
+  "เลขานุการหลักสูตร": "Programme Secretary",
+  "แผนไหนเหมาะกับคุณ": "Which plan suits you?",
+  "มหาวิทยาลัยแม่โจ้": "Maejo University",
+  "ดูขั้นตอนการสมัคร": "See how to apply",
+  "โครงสร้างหลักสูตร": "Programme structure",
+  "คณาจารย์ทั้งหมด →": "All faculty →",
+  "ครั้งที่ / วันที่": "Meeting no. / date",
+  "การแปลงสภาพชีวมวล": "Biomass conversion",
+  "หลังการเก็บเกี่ยว": "Postharvest technology",
+  "คุณสมบัติผู้สมัคร": "Applicant requirements",
+  "บาทต่อภาคการศึกษา": "THB per semester",
+  "ปรัชญาของหลักสูตร": "Programme philosophy",
+  "ตั้งแต่ 1 ปีขึ้นไป": "1 year or more",
+  "อย่างน้อย 2 เรื่อง": "at least 2 papers",
+  "การควบคุมอัตโนมัติ": "Automatic control",
+  "จุดเด่นของหลักสูตร": "Programme highlights",
+  "ดูรายวิชาของแผนนี้": "See this plan's courses",
+  "อย่างน้อย 1 เรื่อง": "at least 1 paper",
+  "กิจกรรมของหลักสูตร": "Programme activities",
+  "หลังสำเร็จการศึกษา": "After graduation",
+  "แผน 1.2 แบบวิชาการ": "Plan 1.2 (Academic)",
+  "คณาจารย์ในหลักสูตร": "Programme faculty",
+  "คณะกรรมการประจำคณะ": "Faculty Board",
+  "ดูกิจกรรมทั้งหมด →": "All activities →",
+  "แผน 1.1 แบบวิชาการ": "Plan 1.1 (Academic)",
+  "ผู้สมัครชาวต่างชาติ": "International applicants",
+  "ร้องเรียนและอุทธรณ์": "Complaints and appeals",
+  "คะแนนเฉลี่ยจาก 5.00": "Mean score out of 5.00",
+  "/ เกี่ยวกับหลักสูตร": "/ About the programme",
+  "เอกสารที่เกี่ยวข้อง": "Related documents",
+  "แผน 1 · วิทยานิพนธ์": "Plan 1 · Thesis",
+  "วิศวกรรมเกษตรแม่นยำ": "Precision agricultural engineering",
+  "/ โครงสร้างหลักสูตร": "/ Programme structure",
+  "การรับสมัครนักศึกษา": "Student admissions",
+  "ค่าธรรมเนียมการศึกษา": "Tuition fees",
+  "แผนที่แนะนำสำหรับคุณ": "Recommended plan for you",
+  "ส่งเรื่องร้องเรียน →": "Submit a complaint →",
+  "คำร้องขอดูผลการศึกษา": "Request to review grades",
+  "การหาสภาวะที่เหมาะสม": "Optimisation",
+  "คณะกรรมการสภาวิชาการ": "Academic Council",
+  "หน่วยกิตตลอดหลักสูตร": "Credits for the whole programme",
+  "ต้องสอบภาษาอังกฤษไหม": "Do I need to pass an English test?",
+  "ติดตามผลลัพธ์ระยะยาว": "Long-term outcome tracking",
+  "เลือกแผนที่ตรงกับคุณ": "Find the plan that fits you",
+  "อาจารย์ประจำหลักสูตร": "Programme faculty members",
+  "คุณสมบัติและการสมัคร": "Requirements and application",
+  "การพิจารณาและอนุมัติ": "Review and approval",
+  "ระบบการให้ระดับคะแนน": "Grading system",
+  "7/2569 · 25 ก.ค. 2569": "No. 7/2569 · 25 Jul 2026",
+  "4/2569 · 1 เม.ย. 2569": "No. 4/2569 · 1 Apr 2026",
+  "คณะกรรมการด้านวิชาการ": "Academic Affairs Committee",
+  "แบบจำลองทางคณิตศาสตร์": "Mathematical modelling",
+  "ภาคการศึกษาที่ 2/2569": "Semester 2/2026",
+  "ข่าวล่าสุดของหลักสูตร": "Latest programme news",
+  "รายวิชาไม่นับหน่วยกิต": "Non-credit courses",
+  "9/2569 · 24 ก.ย. 2569": "No. 9/2569 · 24 Sep 2026",
+  "[ใส่ลิงก์เพจหลักสูตร]": "[Add programme page link]",
+  "เกรดเฉลี่ยสะสม (GPAX)": "Cumulative GPA (GPAX)",
+  "ผลิตภัณฑ์ยางและน้ำยาง": "Rubber and latex products",
+  "ห้องประชุมย่อย 2 ห้อง": "Two small meeting rooms",
+  "ผู้เรียนเป็นศูนย์กลาง": "Student-centred",
+  "5/2569 · 20 พ.ค. 2569": "No. 5/2569 · 20 May 2026",
+  "วิศวกรรมเกษตรสมัยใหม่": "Modern Agricultural Engineering",
+  "ยืดหยุ่นสำหรับคนทำงาน": "Flexible for working professionals",
+  "กลไกการจัดการเรียนรู้": "Learning mechanism",
+  "ค้นหารหัสหรือชื่อวิชา": "Search by course code or name",
+  "ระบบทะเบียนและประมวลผล": "Registration and records system",
+  "เกณฑ์การสำเร็จการศึกษา": "Graduation requirements",
+  "องค์กรที่ร่วมให้ข้อมูล": "Organisations that contributed",
+  "กลุ่มวิชาความเชี่ยวชาญ": "specialisation groups",
+  "ค้นหาแผนที่เหมาะกับคุณ": "Find the plan that fits you",
+  "สอบโครงร่างวิทยานิพนธ์": "Thesis proposal examination",
+  "ระบบออนไลน์และหน่วยงาน": "Online systems and offices",
+  "สอบปากเปล่าวิทยานิพนธ์": "Thesis oral defence",
+  "ทุนการศึกษาและทุนวิจัย": "Scholarships and research grants",
+  "2/2569 · 11 มี.ค. 2569": "No. 2/2569 · 11 Mar 2026",
+  "คาดว่าจะสำเร็จการศึกษา": "Expected graduates",
+  "เครื่องจักรแปรรูปอาหาร": "Food processing machinery",
+  "ภาพประกอบเกษตรอัจฉริยะ": "Illustration of smart agriculture",
+  "3/2569 · 18 มี.ค. 2569": "No. 3/2569 · 18 Mar 2026",
+  "บริษัท ไทเกอร์ เจ จำกัด": "Tiger J Co., Ltd.",
+  "แผน 2 · การค้นคว้าอิสระ": "Plan 2 · Independent study",
+  "วัตถุประสงค์ของหลักสูตร": "Programme objectives",
+  "อาชีพหลังสำเร็จการศึกษา": "Careers after graduation",
+  "ระหว่างการพัฒนาหลักสูตร": "During programme development",
+  "ร้อยละของแผนรับ (10 คน)": "% of intake plan (10 students)",
+  "ปรึกษาอาจารย์ในหลักสูตร": "Talk to programme faculty",
+  "10/2569 · 24 มิ.ย. 2569": "No. 10/2569 · 24 Jun 2026",
+  "ทำวิทยานิพนธ์อย่างเดียว": "Thesis only",
+  "เรียนอะไร ภาคการศึกษาไหน": "What you study, semester by semester",
+  "แต่งตั้งอาจารย์ที่ปรึกษา": "Appoint an advisor",
+  "การจำลองทางกลและความร้อน": "Mechanical and thermal simulation",
+  "ปีที่ 1 ภาคการศึกษาที่ 2": "Year 1, Semester 2",
+  "ปีที่ 2 ภาคการศึกษาที่ 2": "Year 2, Semester 2",
+  "อาจารย์ที่ปรึกษาประจำตัว": "Personal academic advisor",
+  "สามช่องทางสำหรับนักศึกษา": "Three channels for students",
+  "คณะกรรมการบริหารหลักสูตร": "Programme Administration Committee",
+  "ปีที่ 2 ภาคการศึกษาที่ 1": "Year 2, Semester 1",
+  "ภาคปกติ สอนไทยหรืออังกฤษ": "Regular programme, taught in Thai or English",
+  "ปีที่ 1 ภาคการศึกษาที่ 1": "Year 1, Semester 1",
+  "คณะกรรมการวิพากษ์หลักสูตร": "Curriculum Review Committee",
+  "วิชาเอกบังคับ (รวม WIL 6)": "Required major courses (incl. WIL 6)",
+  "ครั้งที่ 1 · 23 ก.พ. 2569": "No. 1 · 23 Feb 2026",
+  "ข้อร้องเรียนและการอุทธรณ์": "Complaints and appeals",
+  "เครื่องแลกเปลี่ยนความร้อน": "Heat exchangers",
+  "ทั้ง 7 กลุ่มความเชี่ยวชาญ": "All 7 specialisation groups",
+  "หลักเกณฑ์การลาพักการศึกษา": "Rules on leave of absence",
+  "ครั้งที่ 1 · 24 ก.พ. 2569": "No. 1 · 24 Feb 2026",
+  "บริษัท แอนเซลล์ ประเทศไทย": "Ansell (Thailand)",
+  "สอบถามเรื่องการสมัครเรียน": "Ask about admission",
+  "รายละเอียดรายวิชา (OBE 3)": "Course specifications (OBE 3)",
+  "คณะกรรมการวิชาการประจำคณะ": "Faculty Academic Committee",
+  "ฟาร์ม Asian Exotic Plants": "Asian Exotic Plants farm",
+  "การบริหารและพัฒนาหลักสูตร": "Programme management and development",
+  "สิ่งที่ต้องทำให้ครบก่อนจบ": "What you must complete to graduate",
+  "เป้าหมายหลักของคุณคืออะไร": "What is your main goal?",
+  "เราช่วยให้คุณเรียนจบตามแผน": "We help you graduate on schedule",
+  "คณะกรรมการปรับปรุงหลักสูตร": "Curriculum Revision Committee",
+  "การรับนักศึกษาตามแผนการรับ": "Student intake against plan",
+  "ความพึงพอใจของผู้ใช้บัณฑิต": "Employer satisfaction",
+  "ทำงานประจำอยู่ เรียนได้ไหม": "I work full-time. Can I still study?",
+  "ร้อยละของรายวิชาที่เปิดสอน": "% of courses offered",
+  "สงสัยอะไร ดูคำตอบได้ที่นี่": "Questions? Find answers here",
+  "บริษัท เบ็บซี เอเชีย จำกัด": "Bebsi Asia Co., Ltd.",
+  "เทอร์โมพลาสติกอิลาสโตเมอร์": "Thermoplastic elastomers",
+  "ห้องบรรยายเฉพาะบัณฑิตศึกษา": "Dedicated graduate lecture rooms",
+  "เทคโนโลยีการหมักและการสกัด": "Fermentation and extraction technology",
+  "ห้องปฏิบัติการเทคโนโลยียาง": "Rubber Technology Laboratory",
+  "ความต้องการจำเป็นที่ได้รับ": "Needs identified",
+  "ความเชื่อมโยงกับมหาวิทยาลัย": "Link to the university's direction",
+  "โครงสร้างหลักสูตรและรายวิชา": "Programme structure and courses",
+  "ข่าวประชาสัมพันธ์และกิจกรรม": "News and activities",
+  "ยังไม่แน่ใจว่าจะสมัครแผนไหน": "Not sure which plan to apply for?",
+  "สิ่งที่พวกเขาพูดถึงหลักสูตร": "What they say about the programme",
+  "โครงสร้างหลักสูตรฉบับเต็ม →": "Full programme structure →",
+  "คณะกรรมการบริหารมหาวิทยาลัย": "University Executive Committee",
+  "ผลลัพธ์ของผู้สำเร็จการศึกษา": "Graduate outcomes",
+  "จุดเด่นและกลุ่มความเชี่ยวชาญ": "Highlights and specialisation groups",
+  "ร้อยละของผู้รับเข้าแต่ละรุ่น": "% of each intake cohort",
+  "เรียนรายวิชาและทำวิทยานิพนธ์": "Coursework and thesis",
+  "คู่มือนักศึกษาและการปฐมนิเทศ": "Student handbook and orientation",
+  "แผน 2 ต้องไปปฏิบัติงานที่ไหน": "Where do Plan 2 students do their placement?",
+  "ห้าขั้นตอนสู่การเป็นนักศึกษา": "Five steps to enrolment",
+  "เสียงของผู้มีส่วนได้ส่วนเสีย": "Stakeholder voice",
+  "วิศวกรรมเกษตรสมัยใหม่ แม่โจ้": "Modern Agricultural Engineering, Maejo",
+  "คณะกรรมการวิชาการบัณฑิตศึกษา": "Graduate Academic Committee",
+  "ค่าใช้จ่ายตลอดหลักสูตรเท่าไร": "How much does the programme cost?",
+  "เครื่องจักรแปรรูปผลผลิตเกษตร": "Agricultural produce processing machinery",
+  "วศ.ม. (วิศวกรรมเกษตรสมัยใหม่)": "M.Eng. (Modern Agricultural Engineering)",
+  "บริษัท สหะพืชผล ลิสซิ่ง จำกัด": "Saha Puechphol Leasing Co., Ltd.",
+  "ร้อยละของบัณฑิตที่ตอบแบบสำรวจ": "% of graduates responding to the survey",
+  "ร้อยละของผู้รับเข้าในรุ่นนั้น": "% of the intake cohort",
+  "อาจารย์ผู้สอนในหลักสูตร 21 คน": "21 teaching faculty",
+  "ประเมินรูปเล่มและเผยแพร่ผลงาน": "Assess the thesis and publish the work",
+  "วิทยานิพนธ์และการค้นคว้าอิสระ": "Thesis and independent study",
+  "สาขาวิชาวิศวกรรมเกษตรสมัยใหม่": "Modern Agricultural Engineering",
+  "แผนการเรียน วิชาการและวิชาชีพ": "study plans, academic and professional",
+  "การเรียนการสอนและการประเมินผล": "Teaching, learning and assessment",
+  "และความต้องการของผู้ใช้บัณฑิต": "and the needs of graduate employers",
+  "กลุ่มความเชี่ยวชาญที่สนับสนุน": "Supporting specialisation groups",
+  "เรียนกี่ปี และสอนเป็นภาษาอะไร": "How long is the programme and what language is it taught in?",
+  "สมาร์ทฟาร์มและโซลูชันการเกษตร": "Smart farm and agricultural solutions",
+  "วิทยาลัยพลังงานทดแทน ม.แม่โจ้": "School of Renewable Energy, Maejo University",
+  "มหาบัณฑิตที่หลักสูตรมุ่งสร้าง": "The graduates we aim to develop",
+  "ห้องปฏิบัติการเทคโนโลยีน้ำยาง": "Latex Technology Laboratory",
+  "ตอบ 3 คำถาม ใช้เวลาไม่ถึงนาที": "3 questions, under a minute",
+  "WIL 180 ชั่วโมงในสถานประกอบการ": "180-hour WIL placement in industry",
+  "ห้องสมุดคณะและ Digital Library": "Faculty library and Digital Library",
+  "องค์การอุตสาหกรรมป่าไม้ ภาคใต้": "Forest Industry Organization (Southern Region)",
+  "สภามหาวิทยาลัย อนุมัติหลักสูตร": "University Council (programme approval)",
+  "การลงทะเบียนและสถานภาพนักศึกษา": "Registration and student status",
+  "ร้อยละของนักศึกษาที่บรรลุ YLOs": "% of students achieving YLOs",
+  "นักศึกษาปัจจุบันที่ให้สัมภาษณ์": "Current students interviewed",
+  "ตามกำหนดการรับสมัครของแต่ละรอบ": "According to each round's admission schedule",
+  "หลักสูตรวิศวกรรมศาสตรมหาบัณฑิต": "Master of Engineering Program",
+  "เสนอโครงร่างต่ออาจารย์ที่ปรึกษา": "Submit a proposal to your advisor",
+  "แผนรับและผู้สำเร็จการศึกษา 5 ปี": "Five-year intake and graduation plan",
+  "สำรวจความพึงพอใจของผู้ใช้บัณฑิต": "Survey employer satisfaction",
+  "รับฟังเสียงผู้มีส่วนได้ส่วนเสีย": "Listening to stakeholders",
+  "การจำลองสภาพทางกลและทางความร้อน": "Mechanical and thermal simulation",
+  "หน่วยปฏิบัติการแปรรูปผลิตผลเกษตร": "Agricultural Produce Processing Unit",
+  "ระยะเวลาการศึกษาระดับบัณฑิตศึกษา": "Duration of graduate study",
+  "ประชุมปรับปรุงและวิพากษ์หลักสูตร": "Curriculum revision and review meetings",
+  "เสียงจากศิษย์เก่าและผู้ใช้บัณฑิต": "Voices of alumni and employers",
+  "ต้องตีพิมพ์ผลงานกี่เรื่องจึงจะจบ": "How many publications do I need to graduate?",
+  "แผน 2 · Work-Integrated Learning": "Plan 2 · Work-Integrated Learning",
+  "ภาคการศึกษาที่ 2 ปีการศึกษา 2569": "Semester 2, academic year 2026",
+  "ทบทวนวรรณกรรมและกำหนดหัวข้อวิจัย": "Review the literature and define the research topic",
+  "ยังไม่ได้ทำงาน หรือน้อยกว่า 1 ปี": "Not working yet, or less than 1 year",
+  "[ใส่ลิงก์ระบบรับสมัครและกำหนดการ]": "[Add application system link and schedule]",
+  "ปรับพื้นฐานสำหรับผู้มาจากสาขาอื่น": "Foundation courses for applicants from other fields",
+  "นำความรู้ไปแก้ปัญหาในงานที่ทำอยู่": "Solve problems in my current job",
+  "นักศึกษาลาออกสะสม (ยิ่งต่ำยิ่งดี)": "Cumulative student withdrawal (lower is better)",
+  "ประเมินความก้าวหน้าทุกภาคการศึกษา": "Progress assessed every semester",
+  "ไม่ได้จบวิศวกรรมเกษตร สมัครได้ไหม": "My degree isn't in agricultural engineering. Can I apply?",
+  "บริษัท อะกริเทคดีเวลลอปเมนท์ จำกัด": "Agritech Development Co., Ltd.",
+  "ตัวบ่งชี้ผลการดำเนินงานของหลักสูตร": "Programme key performance indicators",
+  "ทวนสอบผลลัพธ์การเรียนรู้ทุกรายวิชา": "Learning outcomes verified in every course",
+  "ข้อบังคับและประกาศระดับบัณฑิตศึกษา": "Graduate regulations and announcements",
+  "เรียนรู้ในสถานประกอบการ 180 ชั่วโมง": "Learning in industry for 180 hours",
+  "แต่งตั้งอาจารย์ที่ปรึกษาวิทยานิพนธ์": "Appoint a thesis advisor",
+  "หลักสูตรนี้ออกแบบจากความต้องการจริง": "Designed from real needs",
+  "สอดคล้องกับเป้าหมายระดับชาติและสากล": "Aligned with national and global goals",
+  "ตอบ 3 คำถาม แล้วดูแผนที่เหมาะกับคุณ": "Answer 3 questions to see the plan that fits you",
+  "อาจารย์ผู้สอน นักศึกษา และศิษย์เก่า": "Instructors, students and alumni",
+  "เข้าถึงข้อมูลหลักสูตรได้หลายช่องทาง": "Programme information through many channels",
+  "ความเชี่ยวชาญของอาจารย์ประจำหลักสูตร": "Expertise of programme faculty",
+  "ผลลัพธ์การเรียนรู้ของหลักสูตร (PLOs)": "Program Learning Outcomes (PLOs)",
+  "หลักเกณฑ์และวิธีการขอคืนสภาพนักศึกษา": "Rules for reinstating student status",
+  "ระบบรับสมัครนักศึกษาระดับบัณฑิตศึกษา": "Graduate admission system",
+  "ร้อยละของอาจารย์ผู้รับผิดชอบหลักสูตร": "% of programme-responsible faculty",
+  "บัณฑิตได้งานทำหรือมีรายได้ภายใน 1 ปี": "Graduates employed or earning within 1 year",
+  "วางแผน ดำเนินการ ตรวจสอบ และปรับปรุง": "Plan, do, check, act",
+  "ภาษาที่ใช้ในการศึกษาระดับบัณฑิตศึกษา": "Language of instruction at graduate level",
+  "สอบประมวลความรู้และสอบการค้นคว้าอิสระ": "Comprehensive examination and independent study examination",
+  "ห้องวิจัยเทคโนโลยีสีเขียวและเชิงนิเวศ": "Green and Eco-Technology Research Lab",
+  "สัมมนาและนำเสนองานวิจัยเป็นภาษาอังกฤษ": "Seminars and research presentations in English",
+  "รายวิชาไม่นับหน่วยกิต · ประเมินผล S/U": "Non-credit courses · graded S/U",
+  "ความพึงพอใจของบัณฑิตต่อคุณภาพหลักสูตร": "Graduate satisfaction with programme quality",
+  "36 หน่วยกิตเท่ากัน ต่างกันที่เป้าหมาย": "36 credits in every plan, different goals",
+  "ติดตามความก้าวหน้าในอาชีพของศิษย์เก่า": "Track alumni career progression",
+  "ภาพประกอบการปฏิบัติงานในสถานประกอบการ": "Illustration of an industry placement",
+  "วิชาเอกเลือก · กลุ่มวิศวกรรมดินและน้ำ": "Major electives · Soil and Water Engineering",
+  "แบบฟอร์มอุทธรณ์ร้องทุกข์บนเว็บไซต์คณะ": "Appeal and complaint form on the faculty website",
+  "จัดทำแผนดำเนินงาน งบประมาณ และรายงานผล": "Prepare a work plan, budget and report",
+  "คณะวิศวกรรมและอุตสาหกรรมเกษตร ม.แม่โจ้": "Faculty of Engineering and Agro-Industry, Maejo University",
+  "ศิษย์เก่าที่ให้สัมภาษณ์และตอบแบบสอบถาม": "Alumni interviewed and surveyed",
+  "สมาคมวิศวกรรมสถานแห่งประเทศไทยฯ (วสท.)": "Engineering Institute of Thailand (EIT)",
+  "วิชาเอกเลือก · กลุ่มเครื่องจักรกลเกษตร": "Major electives · Agricultural Machinery",
+  "ห้าด้านที่สังเคราะห์จากกรอบวิชาชีพ CIGR": "Five strengths drawn from the CIGR professional framework",
+  "หน่วยวิจัยสมาร์ทฟาร์มและโซลูชันการเกษตร": "Smart Farm and Agricultural Solutions Research Unit",
+  "ร้อยละ 100 (อย่างน้อยคนละ 1 ครั้งต่อปี)": "100% (at least one activity per person per year)",
+  "การออกแบบและพัฒนาเครื่องจักรแปรรูปอาหาร": "Design and development of food processing machinery",
+  "ห้องปฏิบัติการและสิ่งสนับสนุนการเรียนรู้": "Laboratories and learning resources",
+  "บรรยากาศการเรียนรู้และกิจกรรมของหลักสูตร": "Learning and programme activities",
+  "เรียนรายวิชา WIL และค้นคว้าอิสระ · Hybrid": "Coursework, WIL and independent study · Hybrid",
+  "เครื่องมือที่จัดหาใหม่ 3 ปีงบประมาณล่าสุด": "New equipment from the last three fiscal years",
+  "หลักสูตรวิศวกรรมเกษตรและชีวภาพ มทร.ล้านนา": "Agricultural and Biological Engineering Program, RMUTL",
+  "เรียนครบตามหลักสูตร รายวิชา S/U ต้องได้ S": "Complete all required courses; S/U courses must be S",
+  "จากจุดเด่นของหลักสูตรสู่ผลลัพธ์ของผู้เรียน": "From programme highlights to student outcomes",
+  "คณะวิศวกรรมและเทคโนโลยีอุตสาหกรรม ม.ศิลปากร": "Faculty of Engineering and Industrial Technology, Silpakorn University",
+  "วิทยานิพนธ์ 1–4 ตลอด 2 ปี พร้อมสัมมนาทุกภาค": "Thesis 1–4 across 2 years, with a seminar every semester",
+  "สอบผ่านภาษาอังกฤษตามหลักเกณฑ์ของมหาวิทยาลัย": "Pass the university English requirement",
+  "สอบประมวลความรู้ (ข้อเขียนและ/หรือปากเปล่า)": "Comprehensive examination (written and/or oral)",
+  "จัดประชาคมศิษย์เก่า นายจ้าง และผู้ทรงคุณวุฒิ": "Stakeholder forum with alumni, employers and experts",
+  "ไม่พบคำตอบที่ต้องการ ติดต่อหลักสูตรได้โดยตรง": "Can't find your answer? Contact the programme directly",
+  "วศ.ด. วิศวกรรมเครื่องกล มหาวิทยาลัยเชียงใหม่": "D.Eng. Mechanical Engineering, Chiang Mai University",
+  "7 ห้องปฏิบัติการรองรับงานวิจัยและวิทยานิพนธ์": "7 laboratories for research and theses",
+  "นักศึกษาสำเร็จการศึกษาตามเวลาที่กำหนด (2 ปี)": "Students graduating on time (2 years)",
+  "ประเมินรายงานและเผยแพร่ในช่องทางที่สืบค้นได้": "Assess the report and publish it in a searchable channel",
+  "ข้าราชการ พนักงานมหาวิทยาลัย หรือรัฐวิสาหกิจ": "Civil servants, university staff or state enterprise employees",
+  "ความพึงพอใจของนักศึกษาต่อการจัดการเรียนการสอน": "Student satisfaction with teaching and learning",
+  "กำหนดหัวข้อจากปัญหาในสถานประกอบการหรือภาคสนาม": "Choose a topic from a problem in industry or the field",
+  "เผยแพร่ผลงานค้นคว้าอิสระในช่องทางที่สืบค้นได้": "Publish the independent study in a searchable channel",
+  "เอกสารที่เกี่ยวข้องกับการศึกษาระดับบัณฑิตศึกษา": "Documents for graduate study",
+  "วิศวกรรมศาสตรมหาบัณฑิต (วิศวกรรมเกษตรสมัยใหม่)": "Master of Engineering (Modern Agricultural Engineering)",
+  "เพจรับสมัครบัณฑิตศึกษา MJU Graduate Admissions": "MJU Graduate Admissions page",
+  "ห้องปฏิบัติการเครื่องยนต์และเครื่องจักรกลเกษตร": "Engines and Agricultural Machinery Laboratory",
+  "การค้นคว้าอิสระ 6 หน่วยกิต และสอบประมวลความรู้": "Independent study (6 credits) and a comprehensive examination",
+  "คณะวิศวกรรมและอุตสาหกรรมเกษตร มหาวิทยาลัยแม่โจ้": "Faculty of Engineering and Agro-Industry, Maejo University",
+  "บัณฑิตบรรลุผลลัพธ์การเรียนรู้ของหลักสูตร (PLOs)": "Graduates achieving the PLOs",
+  "แผน 2 จัดการเรียนการสอนผสมทั้งออนไลน์และออนไซต์": "Plan 2 is taught in a hybrid format, online and on campus",
+  "ปฏิทินการศึกษา ปีการศึกษา 2569 ระดับบัณฑิตศึกษา": "Graduate academic calendar, academic year 2026",
+  "นักศึกษาบรรลุผลลัพธ์การเรียนรู้รายชั้นปี (YLOs)": "Students achieving year-level learning outcomes (YLOs)",
+  "สำรวจภาวะการมีงานทำ รายได้ และการนำความรู้ไปใช้": "Survey employment, income and use of knowledge",
+  "สอบผ่านวิทยานิพนธ์หรือการค้นคว้าอิสระในระบบเปิด": "Pass the thesis or independent study examination, open to the public",
+  "ร้อยละของบัณฑิตที่บรรลุทุก PLO ตามระดับที่กำหนด": "% of graduates achieving every PLO at the target level",
+  "พูดคุยหัวข้อวิจัยที่สนใจ โดยเฉพาะผู้สมัครแผน 1.1": "Discuss research interests, especially for Plan 1.1 applicants",
+  "ปร.ด. เทคโนโลยีพอลิเมอร์ มหาวิทยาลัยสงขลานครินทร์": "Ph.D. Polymer Technology, Prince of Songkla University",
+  "ทำวิจัยสร้างองค์ความรู้ใหม่ หรือเรียนต่อปริญญาเอก": "Do research and create new knowledge, or go on to a Ph.D.",
+  "รายวิชาที่จัดการเรียนรู้เชิงรุก (Active Learning)": "Courses using active learning",
+  "Work-Integrated Learning · ปฏิบัติงาน 180 ชั่วโมง": "Work-Integrated Learning · 180-hour placement",
+  "การเปลี่ยนสภาพนักศึกษาทดลองเรียนเป็นนักศึกษาสามัญ": "Changing from probationary to regular student status",
+  "ทักษะภาษาอังกฤษ ภาวะผู้นำ และความเป็นผู้ประกอบการ": "English, leadership and entrepreneurship",
+  "วิชาเอกเลือก · กลุ่มพลังงาน ชีวมวล และความยั่งยืน": "Major electives · Energy, Biomass and Sustainability",
+  "วิชาเอกเลือก · กลุ่มนวัตกรรมและเครื่องมือเชิงคำนวณ": "Major electives · Innovation and Computational Tools",
+  "[เปลี่ยนลิงก์ทั้งสามเป็น Google Forms ของหลักสูตร]": "[Replace all three links with the programme's Google Forms]",
+  "กรรมการไม่ต่ำกว่า 2 คน และเปิดให้ผู้สนใจเข้ารับฟัง": "At least 2 examiners, open to the public",
+  "สมัครผ่านระบบรับสมัครบัณฑิตศึกษา มหาวิทยาลัยแม่โจ้": "Apply through the Maejo University graduate admission system",
+  "อาจารย์หรือบุคลากรในหน่วยงานการศึกษาภาครัฐและเอกชน": "Lecturer or staff in public and private education",
+  "วิศวกรรมศาสตรมหาบัณฑิต (วศ.ม.) · มหาวิทยาลัยแม่โจ้": "Master of Engineering (M.Eng.) · Maejo University",
+  "คำตอบอ้างอิงจากเอกสารหลักสูตรฉบับผ่านสภามหาวิทยาลัย": "Answers are based on the Council-approved programme document",
+  "วิชาเอกบังคับ 12 หน่วยกิต รวม AI ในงานวิศวกรรมเกษตร": "12 credits of required courses, including AI in agricultural engineering",
+  "รูปแบบการจัดการศึกษาและระบบการศึกษาระดับบัณฑิตศึกษา": "Educational formats and systems at graduate level",
+  "บูรณาการองค์ความรู้ข้ามศาสตร์ผ่านรายวิชาและงานวิจัย": "Cross-disciplinary integration through courses and research",
+  "สภาวิชาการเห็นชอบให้นำเสนอหลักสูตรต่อสภามหาวิทยาลัย": "Academic Council endorses the programme for the University Council",
+  "นำเสนอแนวคิดการวิจัยหรือประสบการณ์ทำงานที่เกี่ยวข้อง": "Present your research idea or relevant work experience",
+  "ออกสูตร ขึ้นรูป และทดสอบสมบัติผลิตภัณฑ์ยางและพลาสติก": "Formulate, mould and test rubber and plastic products",
+  "ภาพประกอบแปลงเกษตรอัจฉริยะ โรงเรือน เซนเซอร์ และโดรน": "Illustration of a smart farm with a greenhouse, sensors and drones",
+  "มีคนกลางร่วมตรวจสอบและสังเกตการณ์การพิจารณาผลการศึกษา": "A neutral party joins the grade review as an observer",
+  "ไม่พบรายวิชาที่ตรงกับคำค้น ลองพิมพ์รหัส เช่น 20401514": "No matching courses. Try a course code, e.g. 20401514",
+  "เลือกวิชาเอกเลือกจาก 7 กลุ่มความเชี่ยวชาญ 12 หน่วยกิต": "12 credits of electives from 7 specialisation groups",
+  "เกรดเฉลี่ยสะสมไม่ต่ำกว่า 3.00 และไม่มีรายวิชาต่ำกว่า C": "GPA of at least 3.00 and no course below C",
+  "คณะแต่งตั้งกรรมการร้องทุกข์เพื่อพิจารณาเรื่องที่ได้รับ": "The faculty appoints a complaints committee to consider each case",
+  "เลือกแผนการศึกษา หัวข้อวิจัย และการเรียนรู้แบบยืดหยุ่น": "Choice of study plan, research topic and flexible learning",
+  "รายวิชาเฉพาะทาง การวิจัย และวิทยานิพนธ์/การค้นคว้าอิสระ": "Specialised courses, research and thesis/independent study",
+  "ห้องปฏิบัติการใช้ประโยชน์จากน้ำมันเหลือใช้จากอุตสาหกรรม": "Industrial Waste Oil Utilisation Laboratory",
+  "ปร.ด. วิทยาศาสตร์และเทคโนโลยีพอลิเมอร์ มหาวิทยาลัยมหิดล": "Ph.D. Polymer Science and Technology, Mahidol University",
+  "คณะเทคโนโลยีการเกษตรและเทคโนโลยีอุตสาหกรรม มรภ.นครสวรรค์": "Faculty of Agricultural Technology and Agro-Industry, Nakhon Sawan Rajabhat University",
+  "วิชาเอกเลือก · กลุ่มวิศวกรรมด้านการแปรสภาพผลิตผลการเกษตร": "Major electives · Agricultural Products Processing Engineering",
+  "วศ.ม. สาขาวิชาวิศวกรรมเกษตร (หลักสูตรปรับปรุง พ.ศ. 2564)": "M.Eng. Agricultural Engineering (revised 2021)",
+  "ผู้ประกอบการด้านเทคโนโลยีการเกษตร และผู้ประกอบอาชีพอิสระ": "Agricultural technology entrepreneur or self-employed professional",
+  "วิชาเอกเลือก · กลุ่มวิศวกรรมพอลิเมอร์เพื่ออุตสาหกรรมเกษตร": "Major electives · Polymer Engineering for Agro-Industry",
+  "หลักสูตรปรับปรุง พ.ศ. 2569 · เปิดรับภาคการศึกษาที่ 2/2569": "Revised 2026 curriculum · Now admitting for semester 2/2026",
+  "เข้าใจมาตรฐานสากลด้านคุณภาพและความปลอดภัยของผลิตภัณฑ์เกษตร": "Understand international quality and safety standards for agricultural products",
+  "รายละเอียดหลักสูตร (OBE 2) ฉบับผ่านสภามหาวิทยาลัย พ.ศ. 2569": "Programme specification (OBE 2), Council-approved 2026",
+  "ความเคลื่อนไหวของหลักสูตร การรับสมัคร และกิจกรรมการเรียนรู้": "Programme updates, admissions and learning activities",
+  "เอกสารและแบบฟอร์มฝ่ายบัณฑิตศึกษา สำนักบริหารและพัฒนาวิชาการ": "Graduate documents and forms, Office of Academic Administration and Development",
+  "วิศวกรออกแบบและวางแผนระบบเกษตรอัจฉริยะและเครื่องจักรกลเกษตร": "Design engineer for smart agriculture systems and agricultural machinery",
+  "ผลิตภัณฑ์จากน้ำยางธรรมชาติ ยางคอมโพสิต และวัสดุเพื่อการเกษตร": "Products from natural latex, rubber composites and agricultural materials",
+  "หลักสูตรวิศวกรรมศาสตรมหาบัณฑิต สาขาวิชาวิศวกรรมเกษตรสมัยใหม่": "Master of Engineering Program in Modern Agricultural Engineering",
+  "ทดสอบสมรรถนะเครื่องยนต์ แรงม้าแรงบิด ไอเสีย และการสั่นสะเทือน": "Engine performance, horsepower and torque, exhaust and vibration testing",
+  "นักวิชาการ ผู้เชี่ยวชาญ หรือที่ปรึกษาในหน่วยงานภาครัฐและเอกชน": "Academic, specialist or consultant in public and private organisations",
+  "ไม่น้อยกว่า 2.50 หรือตามที่อาจารย์ผู้รับผิดชอบหลักสูตรพิจารณา": "At least 2.50, or as approved by the programme committee",
+  "ประเมินความเหมาะสมและความเป็นไปได้ของหัวข้อและระเบียบวิธีวิจัย": "Assesses the suitability and feasibility of the topic and research methodology",
+  "หนังสืออนุญาตให้ศึกษาต่อจากผู้บังคับบัญชาระดับกรมหรือเทียบเท่า": "Permission to study from a department-level supervisor or equivalent",
+  "หลักเกณฑ์การทำและสอบการค้นคว้าอิสระ วิทยานิพนธ์ และดุษฎีนิพนธ์": "Rules for independent study, thesis and dissertation work and examinations",
+  "กลุ่มผู้มีส่วนได้ส่วนเสียที่วิเคราะห์ความต้องการจำเป็นสู่ PLOs": "Stakeholder groups whose needs were analysed into PLOs",
+  "นักวิจัยหรือนักพัฒนาด้านวิศวกรรม นวัตกรรม และเทคโนโลยีการเกษตร": "Researcher or developer in engineering, innovation and agricultural technology",
+  "สู่มหาวิทยาลัยชั้นนำที่มีความเป็นเลิศทางการเกษตรในระดับนานาชาติ": "Toward a leading university with international excellence in agriculture",
+  "พลังงานชีวมวล การประเมินวัฏจักรชีวิต และฟุตพรินท์ทางสิ่งแวดล้อม": "Biomass energy, life cycle assessment and environmental footprints",
+  "เซนเซอร์ IoT โรงเรือนควบคุมสภาวะ โดรนเกษตร และระบบเก็บข้อมูลแปลง": "IoT sensors, controlled-environment greenhouses, agricultural drones and field data systems",
+  "ผู้รับทุน ปฏิบัติตามเงื่อนไขของทุนให้เสร็จก่อนยื่นสำเร็จการศึกษา": "Scholarship holders meet all scholarship conditions before applying to graduate",
+  "ตีพิมพ์วารสาร 2 เรื่อง หรือวารสาร 1 เรื่องและ Proceedings 1 เรื่อง": "2 journal papers, or 1 journal paper and 1 proceedings paper",
+  "วิศวกรอาวุโสหรือผู้จัดการโครงการในโรงงานอุตสาหกรรมและสถานประกอบการ": "Senior engineer or project manager in factories and companies",
+  "ข้อเสนอแนะต่อหลักสูตร สำหรับศิษย์เก่า ผู้ใช้บัณฑิต และสถานประกอบการ": "Feedback on the programme from alumni, employers and industry",
+  "เรียนรู้จากโจทย์จริง วัดผลตามผลลัพธ์การเรียนรู้ และทวนสอบทุกรายวิชา": "Learn from real problems, assessed against learning outcomes and verified in every course",
+  "ไม่น้อยกว่า 3.00 หรือ 2.75 พร้อมผลงานวิจัยตีพิมพ์ระดับชาติ 1 เรื่อง": "At least 3.00, or 2.75 with one national research publication",
+  "ข้อบังคับมหาวิทยาลัยแม่โจ้ ว่าด้วยการศึกษาระดับบัณฑิตศึกษา พ.ศ. 2569": "Maejo University Regulation on Graduate Study B.E. 2569 (2026)",
+  "วิชาเอกเลือก · กลุ่มการจัดการและการใช้เทคโนโลยีสารสนเทศเพื่อการเกษตร": "Major electives · Agricultural Information Technology and Management",
+  "( ) = รายวิชาไม่นับหน่วยกิต · วิชาเอกเลือกเลือกจากกลุ่มความเชี่ยวชาญ": "( ) = non-credit course · electives are chosen from the specialisation groups",
+  "วิเคราะห์และบริหารข้อมูลด้วย Data Analytics เพื่อการวางแผนและตัดสินใจ": "Analyse and manage data with data analytics for planning and decisions",
+  "วิจัยร่วมกับภาคอุตสาหกรรม พัฒนาต้นแบบ และต่อยอดผลงานสู่การใช้ประโยชน์": "Joint research with industry, prototype development and research translation",
+  "ใบรับรองคุณวุฒิจากสถาบันที่ได้รับการรับรองหรือจากสถานทูตของประเทศนั้น": "Degree certification from an accredited institution or the country's embassy",
+  "สถานประกอบการและผู้ใช้บัณฑิต ตอบแบบสอบถาม 10 ราย และให้สัมภาษณ์ 4 ราย": "Employers and companies: 10 survey responses and 4 interviews",
+  "บูรณาการความรู้หลายศาสตร์ วิเคราะห์และแก้ปัญหาซับซ้อน และพัฒนานวัตกรรม": "Integrate knowledge across disciplines, solve complex problems and develop innovations",
+  "แปรรูปของเหลือทิ้งจากอุตสาหกรรมเกษตรเป็นพลังงานและผลิตภัณฑ์มูลค่าเพิ่ม": "Turning agro-industrial waste into energy and value-added products",
+  "วิเคราะห์ปัญหาจริงเพื่อปรับปรุงกระบวนการ เพิ่มประสิทธิภาพ หรือลดต้นทุน": "Analyse real problems to improve processes, raise efficiency or cut costs",
+  "หลักเกณฑ์การลงทะเบียนเรียนและชำระค่าธรรมเนียมการศึกษา ระดับบัณฑิตศึกษา": "Rules on graduate registration and tuition payment",
+  "บัณฑิตวิทยาลัย มหาวิทยาลัยแม่โจ้ (คู่มือการเขียนวิทยานิพนธ์และแบบฟอร์ม)": "Maejo University Graduate School (thesis writing guide and forms)",
+  "บูรณาการเทคโนโลยีสีเขียวเข้ากับกระบวนการผลิต และใช้ทรัพยากรอย่างคุ้มค่า": "Integrate green technology into production and use resources efficiently",
+  "อาจารย์ผู้รับผิดชอบหลักสูตรได้รับการพัฒนาด้านการสอนหรือการบริหารหลักสูตร": "Programme-responsible faculty receiving teaching or management development",
+  "กรรมการไม่ต่ำกว่า 3 คน มีผู้ทรงคุณวุฒิภายนอก และเปิดให้ผู้สนใจเข้ารับฟัง": "At least 3 examiners including an external expert, open to the public",
+  "ปริญญาตรีหรือเทียบเท่า หรือสาขาอื่นที่เกี่ยวข้อง จากสถาบันที่ ก.พ. รับรอง": "Bachelor's degree or equivalent in a related field from an institution recognised by the Civil Service Commission",
+  "SDG 2, 12, 13 · BCG Economy · เกษตรสุขอัจฉริยะ (IWA) ของมหาวิทยาลัยแม่โจ้": "SDG 2, 12, 13 · BCG Economy · Maejo University's Intelligent Well-being Agriculture (IWA)",
+  "เลือกและปรับใช้เทคโนโลยีดิจิทัลแก้ปัญหาทางวิศวกรรมเกษตรได้เหมาะสมกับบริบท": "Select and adapt digital technologies to solve agricultural engineering problems in context",
+  "แจ้งช่องทางทุนทั้งภายในและภายนอก และจัดกิจกรรมฝึกเขียนข้อเสนอโครงการวิจัย": "Information on internal and external funding, and proposal-writing workshops",
+  "ตีพิมพ์หรือได้รับการตอบรับในวารสารระดับชาติหรือนานาชาติที่มีคุณภาพตามเกณฑ์": "published or accepted in a qualified national or international journal",
+  "วิจัยเต็มตัว (1.1) เรียนรายวิชาควบวิจัย (1.2) หรือวิชาชีพสำหรับคนทำงาน (2)": "Full-time research (1.1), coursework with research (1.2) or professional study for working people (2)",
+  "กลุ่มการแปรสภาพผลิตผลการเกษตร · กลุ่มวิศวกรรมพอลิเมอร์เพื่ออุตสาหกรรมเกษตร": "Agricultural Products Processing · Polymer Engineering for Agro-Industry",
+  "เปิดรับสมัครนักศึกษารุ่นแรกของหลักสูตรปรับปรุง ทั้งแผนวิชาการและแผนวิชาชีพ": "Applications open for the first cohort of the revised programme, academic and professional plans",
+  "สัมมนาค้นคว้างานตีพิมพ์ภาษาอังกฤษ สนับสนุนการนำเสนอและเผยแพร่ในเวทีนานาชาติ": "Seminars review English-language literature and support presenting and publishing internationally",
+  "กระบวนการแปรสภาพด้วยความร้อนและไม่ใช้ความร้อน การอบแห้ง และการยืดอายุผลผลิต": "Thermal and non-thermal processing, drying and shelf-life extension",
+  "ชี้แจงข้อบังคับ ระยะเวลา กระบวนการวิทยานิพนธ์ และช่องทางร้องเรียนหรืออุทธรณ์": "Briefing on regulations, timelines, the thesis process and complaint and appeal channels",
+  "จัดการเรียนรู้เชิงรุกทุกรายวิชา WIL ในสถานประกอบการ และ Sandbox ร่วมภาคเอกชน": "Active learning in every course, WIL in industry and a Sandbox with the private sector",
+  "AI, IoT, Big Data, Data Analytics และเครื่องมือเชิงคำนวณในรายวิชาและงานวิจัย": "AI, IoT, Big Data, data analytics and computational tools in courses and research",
+  "ไม่รวมรายวิชาปรับพื้นฐานและค่าใช้จ่ายส่วนตัว อัตราเป็นไปตามประกาศมหาวิทยาลัย": "Excludes foundation courses and personal expenses. Fees follow university announcements",
+  "ตอนนี้คุณทำงานในสายวิศวกรรมเกษตร อุตสาหกรรมเกษตร หรือที่เกี่ยวข้องมาแล้วกี่ปี": "How long have you worked in agricultural engineering, agro-industry or a related field?",
+  "คุณสมบัติ: GPAX ไม่น้อยกว่า 2.50 หรือตามที่อาจารย์ผู้รับผิดชอบหลักสูตรพิจารณา": "Requirements: GPAX of at least 2.50, or as approved by the programme committee",
+  "เรียนรายวิชา 24 หน่วยกิต และทำวิทยานิพนธ์ 12 หน่วยกิต ปูพื้นฐานก่อนลงมือวิจัย": "24 credits of coursework and a 12-credit thesis, building foundations before research",
+  "คุณสมบัติ: GPAX ไม่น้อยกว่า 3.00 หรือ 2.75 พร้อมผลงานตีพิมพ์ระดับชาติ 1 เรื่อง": "Requirements: GPAX of at least 3.00, or 2.75 with one national publication",
+  "หลักเกณฑ์การแต่งตั้งอาจารย์ที่ปรึกษาการค้นคว้าอิสระ วิทยานิพนธ์ และดุษฎีนิพนธ์": "Rules for appointing independent study, thesis and dissertation advisors",
+  "ภาคเอกชน ศิษย์เก่า และผู้ประกอบการร่วมสอนและตั้งโจทย์วิจัยกับคณาจารย์และนักศึกษา": "Industry, alumni and entrepreneurs co-teach and set research problems with faculty and students",
+  "สร้างงานวิจัย นวัตกรรม และองค์ความรู้ใหม่ ที่ต่อยอดสู่ภาคเกษตรและอุตสาหกรรมเกษตร": "Create research, innovation and new knowledge applied in agriculture and agro-industry",
+  "สำหรับผู้ทำงานในสถานประกอบการ นำความรู้แก้ปัญหาเชิงประยุกต์ ไม่ต้องทำวิทยานิพนธ์": "For people working in industry: apply knowledge to practical problems, no thesis required",
+  "ปริญญาโท 2 ปี ภาษาไทยหรือภาษาอังกฤษ รับนักศึกษาไทยและต่างชาติ ให้ปริญญาสาขาเดียว": "2-year master's degree in Thai or English, open to Thai and international students, single degree",
+  "ทำวิทยานิพนธ์ 36 หน่วยกิต เหมาะกับผู้ที่มีโจทย์วิจัยชัดและต้องการสร้างผลงานตีพิมพ์": "36-credit thesis, suited to those with a clear research question who want publications",
+  "สภามหาวิทยาลัยแม่โจ้อนุมัติหลักสูตร วศ.ม. วิศวกรรมเกษตรสมัยใหม่ ปรับปรุง พ.ศ. 2569": "Maejo University Council approves the revised 2026 M.Eng. in Modern Agricultural Engineering",
+  "คุณสมบัติ: GPAX ไม่น้อยกว่า 2.25 และมีประสบการณ์ทำงานที่เกี่ยวข้องไม่น้อยกว่า 1 ปี": "Requirements: GPAX of at least 2.25 and at least 1 year of relevant work experience",
+  "ออกแบบและพัฒนาระบบอัตโนมัติ เครื่องจักรกล และอุปกรณ์ เพื่อประสิทธิภาพและความยั่งยืน": "Design and develop automation, machinery and equipment for efficiency and sustainability",
+  "ปูความรู้เชิงลึกด้านเนื้อหาและระเบียบวิธีวิจัย ก่อนต่อยอดเป็นวิทยานิพนธ์ในสาขาเฉพาะ": "Build in-depth knowledge and research methods before a thesis in a specialised field",
+  "ข้อบังคับ ประกาศ ปฏิทินการศึกษา แบบฟอร์ม และระบบออนไลน์ที่นักศึกษาและผู้สมัครใช้บ่อย": "Regulations, announcements, academic calendars, forms and online systems used by students and applicants",
+  "เปรียบเทียบด้านประสิทธิภาพ ต้นทุน เวลา พลังงาน เศรษฐศาสตร์สิ่งแวดล้อม และความยั่งยืน": "Compare efficiency, cost, time, energy, environmental economics and sustainability",
+  "คณะวิศวกรรมและอุตสาหกรรมเกษตร มหาวิทยาลัยแม่โจ้ ต.หนองหาร อ.สันทราย จ.เชียงใหม่ 50290": "Faculty of Engineering and Agro-Industry, Maejo University, Nong Han, San Sai, Chiang Mai 50290, Thailand",
+  "กลุ่มเครื่องจักรกลเกษตร · กลุ่มวิศวกรรมดินและน้ำ · กลุ่มพลังงาน ชีวมวล และความยั่งยืน": "Agricultural Machinery · Soil and Water Engineering · Energy, Biomass and Sustainability",
+  "ทบทวนหลักสูตรทุกปี เชิญผู้ทรงคุณวุฒิวิพากษ์ และนำผลประชาคมผู้มีส่วนได้ส่วนเสียมาปรับปรุง": "Annual curriculum review, external expert critique and stakeholder forum results feed improvements",
+  "เลือกแผนการศึกษาและหัวข้อวิจัยได้ตามความสนใจ รองรับคนทำงานและการเปลี่ยนแปลงของตลาดแรงงาน": "Choose the study plan and research topic that suit you, for working people and changing job markets",
+  "ทำงานในสถานประกอบการด้านวิศวกรรมเกษตร อุตสาหกรรมเกษตร หรือที่เกี่ยวข้อง ไม่น้อยกว่า 1 ปี": "At least 1 year working in agricultural engineering, agro-industry or a related field",
+  "สื่อสารทางวิชาการ ทำงานร่วมกับผู้อื่น มีภาวะผู้นำ เรียนรู้ตลอดชีวิต และมีคุณธรรม จริยธรรม": "Communicate academically, work with others, lead, learn for life, and act with integrity",
+  "งานวิจัยและนวัตกรรมที่ต่อยอดสู่การใช้จริง ผ่านความร่วมมือกับภาคธุรกิจ อุตสาหกรรม และภาครัฐ": "Research and innovation applied in practice through partnerships with business, industry and government",
+  "หรือ นำเสนอในที่ประชุมวิชาการระดับชาติหรือนานาชาติพร้อม Full Paper ใน Proceedings 1 เรื่อง": "or presented at a national or international conference with a full paper in the proceedings (1 paper)",
+  "เปิดรับนักศึกษาไทยและต่างชาติ ภาคการศึกษาที่ 2 ปีการศึกษา 2569 แผนการรับ 10 คนต่อปีการศึกษา": "Open to Thai and international students from semester 2, academic year 2026. Intake plan: 10 students per year",
+  "กลุ่มการจัดการและการใช้เทคโนโลยีสารสนเทศเพื่อการเกษตร · กลุ่มนวัตกรรมและเครื่องมือเชิงคำนวณ": "Agricultural Information Technology and Management · Innovation and Computational Tools",
+  "กำหนด PLOs จากความต้องการของผู้มีส่วนได้ส่วนเสีย และวางกรอบการปรับปรุงหลักสูตรล่วงหน้า 4 ปี": "PLOs set from stakeholder needs, with curriculum revision planned four years ahead",
+  "AI, IoT, Big Data และเครื่องมือเชิงคำนวณ สนับสนุนการวิเคราะห์ข้อมูลและการตัดสินใจทางวิศวกรรม": "AI, IoT, Big Data and computational tools for data analysis and engineering decisions",
+  "ความจุ 20–25 คน ใช้นำเสนองาน สอบวิทยานิพนธ์ และจัดแสดงผลงาน พร้อมโปรเจกเตอร์และโสตทัศนูปกรณ์": "Seats 20–25 for presentations, thesis defences and exhibitions, with projectors and AV equipment",
+  "เรียนแบบ Hybrid ไม่ต้องทำวิทยานิพนธ์ แก้ปัญหาจริงจากสถานประกอบการผ่าน WIL และการค้นคว้าอิสระ": "Hybrid learning, no thesis. Solve real industry problems through WIL and independent study",
+  "เข้าใจและวิเคราะห์บทบาทของ IoT, AI, Big Data และ Automation ในเกษตรอัจฉริยะและอุตสาหกรรมเกษตร": "Understand and analyse the roles of IoT, AI, Big Data and automation in smart agriculture and agro-industry",
+  "บูรณาการวิศวกรรมเกษตร เทคโนโลยีดิจิทัล วัสดุศาสตร์ พลังงาน และนวัตกรรม เพื่อแก้ปัญหาที่ซับซ้อน": "Combines agricultural engineering, digital technology, materials science, energy and innovation for complex problems",
+  "หลักสูตรปรับปรุง พ.ศ. 2569 · สภามหาวิทยาลัยแม่โจ้อนุมัติ ครั้งที่ 9/2569 วันที่ 24 กันยายน 2569": "Revised 2026 curriculum · Approved by the Maejo University Council, meeting no. 9/2569, 24 September 2026",
+  "ให้คำปรึกษาทั้งด้านวิชาการ วิชาชีพ การใช้ชีวิต เป้าหมายชีวิต และการเตรียมพร้อมเข้าสู่ตลาดแรงงาน": "Advice on academics, careers, student life, goals and preparing for the job market",
+  "ปรับปรุงข้อมูลล่าสุด ตุลาคม 2569 · ข้อมูลอ้างอิงจากเอกสารหลักสูตร (OBE 2) ฉบับผ่านสภามหาวิทยาลัย": "Last updated October 2026 · Based on the Council-approved programme document (OBE 2)",
+  "เครื่องจักรกลเกษตร วิศวกรรมดินและน้ำ และพลังงานชีวมวล เพื่อเพิ่มผลผลิตและลดผลกระทบต่อสิ่งแวดล้อม": "Agricultural machinery, soil and water engineering and biomass energy to raise output and reduce environmental impact",
+  "ทดลองระบบเซนเซอร์ โรงเรือนควบคุมสภาวะ และอากาศยานไร้คนขับเพื่อการเกษตรในพื้นที่จริงของมหาวิทยาลัย": "Testing sensors, controlled-environment greenhouses and agricultural drones on the university's own land",
+  "ครุภัณฑ์วิจัยใหม่ เครื่องอัดพิมพ์ยางและพลาสติกไฮดรอลิก 100 ตัน และเครื่องสร้างเส้นใยด้วยไฟฟ้าสถิต": "New research equipment: a 100-tonne hydraulic rubber and plastic press and an electrospinning machine",
+  "หลักสูตร 2 ปี ภาคปกติ จัดการศึกษาเป็นภาษาไทยหรือภาษาอังกฤษ และรับทั้งนักศึกษาไทยและนักศึกษาต่างชาติ": "A 2-year regular programme taught in Thai or English, open to both Thai and international students",
+  "รองรับนักศึกษาแต่ละชั้นปีได้เพียงพอ พร้อมห้องพักนักศึกษาที่มีโต๊ะทำงานรายบุคคลและ Wi-Fi ความเร็วสูง": "Enough seats for every cohort, plus a student room with individual desks and high-speed Wi-Fi",
+  "สร้างนักวิจัยที่สร้างสรรค์องค์ความรู้ใหม่ เหมาะกับผู้ที่มีหัวข้อวิจัยชัดเจนและวางแผนเรียนต่อปริญญาเอก": "Develops researchers who create new knowledge. Suited to those with a clear topic who plan to pursue a Ph.D.",
+  "นักศึกษาแผน 2 แก้ปัญหาจริงในสถานประกอบการ ภายใต้การดูแลของอาจารย์ที่ปรึกษาและที่ปรึกษาจากสถานประกอบการ": "Plan 2 students solve real problems in industry, supervised by a faculty advisor and an industry mentor",
+  "วิเคราะห์และประเมินความเหมาะสมของระบบ อุปกรณ์ และเทคโนโลยี เพื่อประสิทธิภาพ ความปลอดภัย และความยั่งยืน": "Analyse and evaluate systems, equipment and technologies for efficiency, safety and sustainability",
+  "เรียนรายวิชาพื้นฐานเพิ่มเติมแบบไม่นับหน่วยกิต และเตรียมความพร้อมสอบภาษาต่างประเทศตามเงื่อนไขของบัณฑิตศึกษา": "Extra non-credit foundation courses and preparation for the graduate language requirement",
+  "เครื่องสร้างเส้นใยจากสารประกอบพอลิเมอร์ด้วยระบบไฟฟ้าสถิต · เครื่องอัดพิมพ์ยางและพลาสติกแบบไฮดรอลิก 100 ตัน": "Electrospinning machine for polymer fibres · 100-tonne hydraulic rubber and plastic press",
+  "ปฏิบัติตนเป็นผู้ที่มีความอดทน สู้งาน รับผิดชอบ สามารถทำงานร่วมกับผู้อื่น และเรียนรู้พัฒนาตนเองอย่างต่อเนื่อง": "Show perseverance, diligence and responsibility, work well with others, and keep developing oneself",
+  "จัดการเรียนรู้เชิงรุกทุกรายวิชา และสอดแทรกพื้นฐาน AI เทคโนโลยีสีเขียว นวัตกรรม และความยั่งยืนในวิชาเอกบังคับ": "Active learning in every course, with AI, green technology, innovation and sustainability built into required courses",
+  "เสนอแผนพัฒนาเชิงกลยุทธ์ต่อสถานประกอบการและหลักสูตร ภายใต้การดูแลของอาจารย์ที่ปรึกษาและที่ปรึกษาจากสถานประกอบการ": "Present a strategic improvement plan to the company and the programme, supervised by a faculty advisor and an industry mentor",
+  "แผน 2 ต้องมีประสบการณ์ทำงานที่เกี่ยวข้องอย่างน้อย 1 ปี จึงแนะนำแผน 1.2 ที่เน้นรายวิชาและมีวิทยานิพนธ์ขนาดเล็กแทน": "Plan 2 requires at least 1 year of relevant work experience, so Plan 1.2, with coursework and a smaller thesis, is recommended instead",
+  "เขียนความเห็นหรือข้อร้องเรียนระหว่างประเมินการสอน รองคณบดีฝ่ายวิชาการตรวจสอบและนำเข้าที่ประชุมคณะกรรมการฝ่ายวิชาการ": "Add comments or complaints during teaching evaluation. The Associate Dean for Academic Affairs reviews them and refers them to the Academic Committee",
+  "สอบถามการสมัคร ให้ข้อเสนอแนะ หรือร้องเรียน หลักสูตรนำทุกเรื่องเข้าที่ประชุมประจำเดือนของอาจารย์ผู้รับผิดชอบหลักสูตร": "Ask about admission, give feedback or file a complaint. The programme reviews every item at its monthly faculty meeting",
+  "ปรับเปลี่ยนการทดลองและปรับใช้เทคโนโลยีดิจิทัลเพื่อแก้ปัญหาในการวิจัยทางวิศวกรรมเกษตรและอุตสาหกรรมเกษตรได้อย่างเหมาะสม": "Adapt experiments and apply digital technologies appropriately to solve research problems in agricultural engineering and agro-industry",
+  "หรือ ตีพิมพ์ในวารสาร 1 เรื่อง และนำเสนอในที่ประชุมวิชาการระดับชาติหรือนานาชาติพร้อม Full Paper ใน Proceedings 1 เรื่อง": "or 1 journal paper plus a conference presentation with a full paper in the proceedings (1 paper)",
+  "สื่อสารและนำเสนอผลงานและแนวคิดทางวิศวกรรมได้อย่างคล่องแคล่ว ถูกต้องตามหลักวิชาการ และเหมาะสมกับกลุ่มผู้ฟังและสถานการณ์": "Communicate and present engineering work and ideas fluently and accurately, suited to the audience and situation",
+  "ทวนสอบรายวิชา 100% ประชุมอาจารย์ผู้รับผิดชอบหลักสูตรร่วมกับอาจารย์ประจำหลักสูตรทุกเดือน และประเมินคุณภาพอย่างน้อยปีละ 1 ครั้ง": "100% of courses verified, monthly meetings of programme faculty, and a quality assessment at least once a year",
+  "ชั้น 2 อาคารเรียนรวมสาขาวิศวกรรมศาสตร์ เปิดวันราชการ 08.30–16.30 น. เชื่อมฐานข้อมูลวารสาร e-Book และวิทยานิพนธ์ของสำนักหอสมุด": "2nd floor, Engineering Lecture Building. Open on working days 08:30–16:30, with access to the university library's journals, e-books and theses",
+  "ยึดถือหลักคุณธรรม จริยธรรม และจรรยาบรรณวิชาชีพในการดำเนินงานวิจัย โดยคำนึงถึงความรับผิดชอบต่อสังคมและสิ่งแวดล้อมตามมาตรฐานสากล": "Uphold integrity, ethics and professional codes in research, with responsibility to society and the environment by international standards",
+  "รายวิชา 20401515 จำนวน 6 หน่วยกิต ปฏิบัติงาน 180 ชั่วโมง ณ องค์กรหรือสถานประกอบการที่เกี่ยวข้อง ในชั้นปีที่ 2 ภาคการศึกษาที่ 1": "Course 20401515 (6 credits): a 180-hour placement at a relevant organisation or company in Year 2, Semester 1",
+  "อาคารเรียนรวมสาขาวิศวกรรมศาสตร์ อาคารปฏิบัติการทางวิศวกรรม และอาคารปฏิบัติการเทคโนโลยียางและพอลิเมอร์ พร้อมฟาร์มทดลองของมหาวิทยาลัย": "Engineering Lecture Building, Engineering Laboratory Building and the Rubber and Polymer Technology Building, plus the university's experimental farm",
+  "ปรัชญา วัตถุประสงค์ และผลลัพธ์การเรียนรู้ของหลักสูตรวิศวกรรมศาสตรมหาบัณฑิต สาขาวิชาวิศวกรรมเกษตรสมัยใหม่ (หลักสูตรปรับปรุง พ.ศ. 2569)": "Philosophy, objectives and learning outcomes of the Master of Engineering Program in Modern Agricultural Engineering (revised 2026)",
+  "ทุกแผนเรียน 36 หน่วยกิต และเรียนรายวิชาไม่นับหน่วยกิต (7) หน่วยกิต ประเมินผลแบบ S/U พร้อมรายวิชาภาษาต่างประเทศตามเงื่อนไขของบัณฑิตศึกษา": "Every plan is 36 credits, plus 7 non-credit credits graded S/U and the graduate foreign-language requirement",
+  "ประเมินการใช้เทคโนโลยีดิจิทัลและเครื่องมือวิศวกรรมในการจัดการระบบและอุปกรณ์ในภาคการเกษตรและอุตสาหกรรมเกษตรด้านประสิทธิภาพและความปลอดภัย": "Evaluate the use of digital technologies and engineering tools in managing systems and equipment in agriculture and agro-industry for efficiency and safety",
+  "นักศึกษาค้นคว้างานตีพิมพ์ภาษาอังกฤษ นำเสนอความก้าวหน้างานวิจัยทุกภาคการศึกษา และได้รับการสนับสนุนให้นำเสนอในที่ประชุมวิชาการระดับนานาชาติ": "Students review English-language literature, present research progress every semester and are supported to present at international conferences",
+  "หลักสูตรรับฟังผู้มีส่วนได้ส่วนเสีย ติดตามผลการดำเนินงานทุกปี และนำผลมาปรับปรุงอย่างต่อเนื่อง ตามเกณฑ์มาตรฐานหลักสูตรระดับบัณฑิตศึกษา พ.ศ. 2565": "The programme listens to stakeholders, tracks performance every year and keeps improving, in line with the 2022 graduate programme standards",
+  "สัมภาษณ์และสอบถามศิษย์เก่า 17 คน สถานประกอบการ 14 ราย และนักศึกษาปัจจุบัน แล้ววิเคราะห์ความต้องการจำเป็นเพื่อกำหนดผลลัพธ์การเรียนรู้ของหลักสูตร": "Interviews and surveys with 17 alumni, 14 companies and current students, analysed to set the programme learning outcomes",
+  "หลักสูตรปรับปรุงเริ่มรับนักศึกษาภาคการศึกษาที่ 2/2569 ผลการดำเนินงานจะเผยแพร่เมื่อสิ้นปีการศึกษา พร้อมแนวโน้มและการเปรียบเทียบกับหลักสูตรใกล้เคียง": "The revised programme admits its first students in semester 2/2026. Results will be published at the end of each academic year, with trends and comparisons with similar programmes",
+  "บริหารจัดการงานวิจัยโดยใช้ทักษะบูรณาการเชิงปฏิบัติในการออกแบบและดำเนินโครงการเพื่อแก้โจทย์ปัญหาทางวิศวกรรมเกษตรและอุตสาหกรรมเกษตรได้อย่างคล่องแคล่ว": "Manage research using integrated practical skills to design and run projects that solve problems in agricultural engineering and agro-industry fluently",
+  "พัฒนามหาบัณฑิตให้มีคุณธรรม จริยธรรมทางวิชาการและวิชาชีพ ตลอดจนความรับผิดชอบต่อตนเอง สังคม และสิ่งแวดล้อมในการดำเนินงานด้านวิศวกรรมและนวัตกรรมการเกษตร": "Develop graduates with academic and professional integrity and responsibility to themselves, society and the environment in engineering and agricultural innovation",
+  "อาจารย์ประจำหลักสูตร 8 คน สำเร็จการศึกษาระดับปริญญาเอกทุกคน และอาจารย์ผู้สอน 21 คน จากสาขาวิศวกรรม พอลิเมอร์ พืชศาสตร์ เทคโนโลยีสารสนเทศ และการจัดการ": "8 programme faculty members, all with doctorates, and 21 teaching faculty from engineering, polymer science, plant science, information technology and management",
+  "ค่าธรรมเนียมการศึกษา 25,000 บาทต่อภาคการศึกษา หรือประมาณ 100,000 บาทตลอดหลักสูตร 2 ปี อัตราเดียวกันทุกแผน ไม่รวมรายวิชาปรับพื้นฐานและค่าใช้จ่ายส่วนตัว": "Tuition is THB 25,000 per semester, about THB 100,000 for the 2-year programme, the same for every plan. Foundation courses and personal expenses are extra",
+  "พัฒนามหาบัณฑิตให้วิเคราะห์และประเมินความเหมาะสมของระบบ อุปกรณ์ และเทคโนโลยีดิจิทัลทางวิศวกรรมเกษตร เพื่อสนับสนุนการตัดสินใจทางวิศวกรรมอย่างมีประสิทธิภาพ": "Develop graduates who analyse and evaluate systems, equipment and digital technologies in agricultural engineering to support effective engineering decisions",
+  "พัฒนานักวิจัย นักพัฒนา และวิศวกรนวัตกรรม ที่ใช้ AI, IoT, Big Data และระบบอัตโนมัติ ยกระดับระบบเกษตรและอุตสาหกรรมเกษตรให้มีประสิทธิภาพ ปลอดภัย และยั่งยืน": "Developing researchers, developers and innovation engineers who use AI, IoT, Big Data and automation to make agriculture and agro-industry efficient, safe and sustainable",
+  "พัฒนามหาบัณฑิตให้เลือกและปรับใช้ข้อมูลและเทคโนโลยีดิจิทัลในการแก้ปัญหาทางวิศวกรรมเกษตรและอุตสาหกรรมเกษตรได้อย่างเหมาะสมกับบริบทและสถานการณ์ที่แตกต่างกัน": "Develop graduates who select and apply data and digital technologies to solve agricultural engineering and agro-industry problems in different contexts",
+  "คณะกรรมการปรับปรุงหลักสูตรและคณะกรรมการวิพากษ์หลักสูตรร่วมพิจารณาโครงสร้าง PLOs และรายวิชา เพื่อให้สอดคล้องกับกรอบวิชาชีพ CIGR และความต้องการของผู้ใช้บัณฑิต": "The curriculum revision and review committees examined the structure, PLOs and courses against the CIGR professional framework and employer needs",
+  "ต้องสอบผ่านภาษาอังกฤษตามหลักเกณฑ์ของมหาวิทยาลัยทุกแผน ผู้ที่ยังไม่ผ่านเกณฑ์จะได้รับการเตรียมความพร้อมและลงทะเบียนเรียนรายวิชาภาษาต่างประเทศตามเงื่อนไขของบัณฑิตศึกษา": "Every plan requires passing the university English requirement. Students who have not yet met it receive preparation and take the graduate language courses",
+  "เป็นไปตามเกณฑ์มาตรฐานหลักสูตรระดับบัณฑิตศึกษา พ.ศ. 2565 และข้อบังคับมหาวิทยาลัยแม่โจ้ว่าด้วยการศึกษาระดับบัณฑิตศึกษา กรณีอื่นอยู่ในดุลยพินิจของคณะกรรมการดำเนินการสอบคัดเลือก": "In line with the 2022 graduate programme standards and Maejo University graduate regulations. Other cases are at the discretion of the selection committee",
+  "ได้ ผู้สมัครจบปริญญาตรีหรือเทียบเท่าในสาขาอื่นที่เกี่ยวข้องได้ หากพื้นฐานยังไม่ครบ อาจต้องเรียนรายวิชาปรับพื้นฐานเพิ่มแบบไม่นับหน่วยกิตตามความเห็นชอบของอาจารย์ผู้รับผิดชอบหลักสูตร": "Yes. Applicants with a bachelor's degree or equivalent in a related field can apply. Those missing some foundations may take extra non-credit foundation courses approved by the programme committee",
+  "พัฒนามหาบัณฑิตให้มีความสามารถในการสื่อสารทางวิชาการ การทำงานร่วมกับผู้อื่น ภาวะผู้นำ และการเรียนรู้ตลอดชีวิต เพื่อรองรับการเปลี่ยนแปลงทางเทคโนโลยีและเศรษฐกิจในระดับสากลอย่างยั่งยืน": "Develop graduates who communicate academically, work with others, lead and learn for life, ready for technological and economic change worldwide",
+  "เพื่อพัฒนาและยกระดับระบบและนวัตกรรมในภาคการเกษตรและอุตสาหกรรมเกษตรให้มีประสิทธิภาพและปลอดภัยตามมาตรฐานสากล ควบคู่กับการยึดมั่นในคุณธรรม จริยธรรม และความรับผิดชอบต่อสังคมและสิ่งแวดล้อม": "to develop and upgrade systems and innovations in agriculture and agro-industry to be efficient and safe by international standards, with integrity and responsibility to society and the environment",
+  "หลักสูตรแจ้งช่องทางทุนการศึกษาและทุนวิจัยทั้งภายในและภายนอกมหาวิทยาลัย และจัดกิจกรรมฝึกเขียนข้อเสนอโครงการวิจัยเพื่อขอทุน ผู้รับทุนต้องปฏิบัติตามเงื่อนไขของทุนนั้นก่อนยื่นสำเร็จการศึกษา": "The programme shares internal and external scholarship and research funding opportunities and runs proposal-writing workshops. Scholarship holders must meet the conditions of their scholarship before graduating",
+  "รายวิชาไม่นับหน่วยกิตประเมินเป็น S (พอใจ) หรือ U (ไม่พอใจ) ตามข้อบังคับมหาวิทยาลัยแม่โจ้ว่าด้วยการศึกษาระดับบัณฑิตศึกษา พ.ศ. 2569 และเทียบโอนหน่วยกิตแบบคลังหน่วยกิตได้ตามประกาศของมหาวิทยาลัย": "Non-credit courses are graded S (satisfactory) or U (unsatisfactory) under the Maejo University Regulation on Graduate Study B.E. 2569. Credit transfer via the credit bank follows university announcements",
+  "พัฒนามหาบัณฑิตให้มีความรู้เชิงลึกและความสามารถในการบูรณาการองค์ความรู้ด้านวิศวกรรมเกษตรสมัยใหม่ เพื่อสร้างสรรค์และพัฒนานวัตกรรมที่ตอบสนองต่อภาคเกษตรและอุตสาหกรรมเกษตรทั้งในระดับชาติและนานาชาติ": "Develop graduates with in-depth knowledge and the ability to integrate modern agricultural engineering to create innovations for agriculture and agro-industry nationally and internationally",
+  "บูรณาการองค์ความรู้ด้านวิศวกรรม เทคโนโลยีขั้นสูง นวัตกรรมสีเขียว และมาตรฐานสากล เพื่อการพัฒนาและจัดการระบบและอุปกรณ์ในภาคการเกษตรและอุตสาหกรรมเกษตรอย่างยั่งยืน (ผ่านการวิจัยในรูปแบบวิทยานิพนธ์)": "Integrate engineering knowledge, advanced technology, green innovation and international standards to develop and manage systems and equipment in agriculture and agro-industry sustainably (through thesis research)",
+  "บูรณาการองค์ความรู้ด้านวิศวกรรม เทคโนโลยีขั้นสูง นวัตกรรมสีเขียว และมาตรฐานสากล เพื่อการพัฒนาและจัดการระบบและอุปกรณ์ในภาคการเกษตรและอุตสาหกรรมเกษตรอย่างยั่งยืน (ผ่านการวิจัยในรูปแบบการค้นคว้าอิสระ)": "Integrate engineering knowledge, advanced technology, green innovation and international standards to develop and manage systems and equipment in agriculture and agro-industry sustainably (through independent study)",
+  "มุ่งผลิตนักวิจัย นักพัฒนา และวิศวกรนวัตกรรมด้านวิศวกรรมเกษตรสมัยใหม่ ที่มีความรู้เชิงลึก บูรณาการองค์ความรู้ข้ามศาสตร์ และปรับใช้เทคโนโลยีดิจิทัล เทคโนโลยีขั้นสูง และนวัตกรรมสีเขียวให้เหมาะสมกับบริบท": "To develop researchers, developers and innovation engineers in modern agricultural engineering with in-depth knowledge, who integrate knowledge across disciplines and adapt digital, advanced and green technologies to context",
+  "รายวิชาการศึกษาเชิงบูรณาการกับการทำงาน 6 หน่วยกิต ปฏิบัติงาน 180 ชั่วโมง ณ องค์กรหรือสถานประกอบการที่เกี่ยวข้อง ในชั้นปีที่ 2 ภาคการศึกษาที่ 1 ภายใต้การดูแลของอาจารย์ที่ปรึกษาและที่ปรึกษาจากสถานประกอบการ": "Work-Integrated Learning is a 6-credit course with a 180-hour placement at a relevant organisation or company in Year 2, Semester 1, supervised by a faculty advisor and an industry mentor",
+  "ชุดวิเคราะห์การปนเปื้อนด้วยสนามแม่เหล็กไฟฟ้า · ชุดเชื่อมอัตโนมัติด้วยหุ่นยนต์อุตสาหกรรม · ชุดทดสอบการสั่นสะเทือน · หุ่นยนต์แขนกลควบคุมการเพาะปลูก · หุ่นยนต์แขนกลมาตรฐานสุขอนามัยสำหรับอุตสาหกรรมเกษตรและอาหาร": "Electromagnetic contamination analyser · Robotic automated welding station · Vibration test rig · Robotic arm for crop cultivation · Hygienic robotic arm for agro-food industry",
+  "เผยแพร่ข้อมูลหลักสูตรผ่านเว็บไซต์คณะ เพจของหลักสูตร แผ่นพับ การออกบูธ และรายละเอียดรายวิชา (OBE 3) บนเว็บไซต์สำนักบริหารและพัฒนาวิชาการ แจ้งอาจารย์ทุกคนผ่านที่ประชุมคณะกรรมการประจำหลักสูตรและกลุ่มไลน์อาจารย์": "Programme information is shared through the faculty website, the programme page, brochures, exhibition booths and course specifications (OBE 3) on the Office of Academic Administration and Development website. All faculty are informed through programme committee meetings and the faculty LINE group",
+  "แผน 1.1 ตีพิมพ์ในวารสารระดับชาติหรือนานาชาติอย่างน้อย 2 เรื่อง หรือวารสาร 1 เรื่องและ Proceedings 1 เรื่อง แผน 1.2 วารสาร 1 เรื่อง หรือ Proceedings 1 เรื่อง แผน 2 เผยแพร่ผลงานค้นคว้าอิสระในช่องทางที่สืบค้นได้": "Plan 1.1: at least 2 papers in national or international journals, or 1 journal paper and 1 proceedings paper. Plan 1.2: 1 journal paper or 1 proceedings paper. Plan 2: publish the independent study in a searchable channel",
+  "ได้ แผน 2 แบบวิชาชีพออกแบบสำหรับคนทำงาน จัดการเรียนการสอนแบบ Hybrid ทั้งออนไลน์และออนไซต์ และใช้ปัญหาจริงจากสถานประกอบการเป็นหัวข้อการค้นคว้าอิสระ ผู้สมัครแผนนี้ต้องมีประสบการณ์ทำงานที่เกี่ยวข้องไม่น้อยกว่า 1 ปี": "Yes. Plan 2 (Professional) is designed for working people, taught in a hybrid format online and on campus, with independent study based on real problems at your workplace or industry. Applicants need at least 1 year of relevant work experience",
+  "คณะกรรมการสภาวิชาการ ในการประชุมครั้งที่ 7/2569 เห็นชอบให้นำเสนอหลักสูตรต่อสภามหาวิทยาลัย หลังหลักสูตรปรับแก้ตามข้อเสนอแนะของคณะกรรมการด้านวิชาการ เช่น ระดับผลลัพธ์การเรียนรู้ เกณฑ์การสำเร็จการศึกษา และรายละเอียดงบประมาณ": "The Academic Council, at meeting no. 7/2569, endorsed submitting the programme to the University Council after revisions requested by the Academic Affairs Committee, including learning outcome levels, graduation requirements and budget details",
+  "อากาศยานไร้คนขับสำหรับหว่านและฉีดพ่น · ระบบเก็บข้อมูลแปลงและ Multi Sensor · ปั๊มน้ำพลังงานแสงอาทิตย์ · GC-MS · Raman Microscope Spectrometer · เครื่องวิเคราะห์ธาตุด้วยพลาสมา · เครื่องวิเคราะห์ไอเสีย · เครื่องวัดแรงม้าแรงบิด": "Agricultural drones for spreading and spraying · Field data logging and multi-sensor systems · Solar water pump · GC-MS · Raman microscope spectrometer · Plasma elemental analyser · Exhaust gas analyser · Dynamometer",
+  "ระดับผลลัพธ์ · ด้านความรู้ (Anderson & Krathwohl, 2001): Ev ประเมินค่า, Cr สร้างสรรค์ · ด้านทักษะ (Simpson, 1972): Ad ปรับเปลี่ยน, Me ทำได้คล่องแคล่ว · ด้านจริยธรรมและลักษณะบุคคล (Krathwohl, 1964): Org จัดระบบคุณค่า, Va เห็นคุณค่า": "Outcome levels · Knowledge (Anderson & Krathwohl, 2001): Ev Evaluating, Cr Creating · Skills (Simpson, 1972): Ad Adaptation, Me Mechanism · Ethics and character (Krathwohl, 1964): Org Organizing, Va Valuing",
+  "ประเมิน ออกแบบ และบูรณาการองค์ความรู้วิศวกรรมเกษตรสมัยใหม่ร่วมกับ AI, IoT และการวิเคราะห์ข้อมูล แก้ปัญหาวิศวกรรมเชิงซับซ้อนด้วยข้อมูลและงานวิจัย สื่อสารและทำงานร่วมกับผู้อื่น มีภาวะผู้นำ เรียนรู้ตลอดชีวิต และรับผิดชอบต่อสังคมและสิ่งแวดล้อม": "Evaluate, design and integrate modern agricultural engineering with AI, IoT and data analytics; solve complex engineering problems using data and research; communicate and collaborate, lead, learn for life and act responsibly towards society and the environment",
+  "หลักสูตรสนับสนุนแนวคิดเกษตรอัจฉริยะเพื่อสุขภาวะที่ยั่งยืน (Intelligent Well-being Agriculture: IWA) และเกษตรมูลค่าสูงของภาคเหนือ ตอบอุตสาหกรรมเป้าหมายทั้ง First S-Curve เช่น การแปรรูปผลผลิตเกษตรและเกษตรอัจฉริยะ และ New S-Curve เช่น หุ่นยนต์และเทคโนโลยีดิจิทัล": "The programme supports Intelligent Well-being Agriculture (IWA) and high-value agriculture in Northern Thailand, serving First S-Curve industries such as produce processing and smart farming, and New S-Curve industries such as robotics and digital technology",
+  "คณะจัดหาครุภัณฑ์วิทยาศาสตร์และเทคโนโลยีปีงบประมาณ 2569 ได้แก่ เครื่องสร้างเส้นใยจากสารประกอบพอลิเมอร์ด้วยระบบไฟฟ้าสถิตสำหรับห้องทดลอง และเครื่องอัดพิมพ์ยางและพลาสติกแบบไฮดรอลิกขนาด 100 ตัน รองรับรายวิชาและวิทยานิพนธ์ในกลุ่มวิศวกรรมพอลิเมอร์เพื่ออุตสาหกรรมเกษตร": "The faculty acquired new scientific equipment in fiscal year 2026: a laboratory electrospinning machine for polymer fibres and a 100-tonne hydraulic rubber and plastic press, supporting courses and theses in Polymer Engineering for Agro-Industry",
+  "หลักสูตรเปิดรับนักศึกษาไทยและต่างชาติ ภาคการศึกษาที่ 2 ปีการศึกษา 2569 เลือกได้ 3 แผน ได้แก่ แผน 1.1 ทำวิทยานิพนธ์อย่างเดียว แผน 1.2 เรียนรายวิชาและทำวิทยานิพนธ์ และแผน 2 แบบวิชาชีพแบบ Hybrid ค่าธรรมเนียม 25,000 บาทต่อภาคการศึกษา ดูคุณสมบัติและขั้นตอนได้ที่หน้าการรับสมัคร": "The programme admits Thai and international students from semester 2, academic year 2026. Choose from three plans: Plan 1.1 thesis only, Plan 1.2 coursework and thesis, and Plan 2 professional (hybrid). Tuition is THB 25,000 per semester. See the Admissions page for requirements and steps",
+  "ทวนสอบรายวิชาที่เปิดสอนครบ 100% ทุกภาคการศึกษา ตามประกาศมหาวิทยาลัยแม่โจ้ว่าด้วยระบบและกลไกการทวนสอบผลลัพธ์การเรียนรู้ อาจารย์ผู้รับผิดชอบหลักสูตรรายงานผลต่อคณะกรรมการวิชาการ โดยใช้การประเมินที่หลากหลาย เช่น งานปฏิบัติ โครงการวิจัย การประเมินเชิงผลงาน และการสอบเชิงสมรรถนะ": "All courses offered each semester are verified (100%) under Maejo University's announcement on verifying learning outcomes. Programme faculty report results to the Academic Committee, using varied assessment such as practical work, research projects, portfolio assessment and competency tests",
+  "บ-ป-ศ = ชั่วโมงบรรยาย-ปฏิบัติ-ศึกษาด้วยตนเองต่อสัปดาห์ · การเลือกวิชาเอกเลือก: เรียนในกลุ่มความเชี่ยวชาญเฉพาะด้านไม่น้อยกว่าร้อยละ 50 ของหน่วยกิตวิชาเอกเลือก ส่วนที่เหลือเลือกข้ามกลุ่มหรือรายวิชาบัณฑิตศึกษานอกสาขาได้ โดยความเห็นชอบของอาจารย์ที่ปรึกษาและคณะกรรมการบริหารหลักสูตร": "L-P-S = lecture, practice and self-study hours per week · Electives: at least 50% of elective credits from one specialisation group; the rest may come from other groups or graduate courses outside the field, with approval from the advisor and the programme committee",
+  "สภามหาวิทยาลัยแม่โจ้ในการประชุมครั้งที่ 9/2569 อนุมัติหลักสูตรวิศวกรรมศาสตรมหาบัณฑิต สาขาวิชาวิศวกรรมเกษตรสมัยใหม่ (หลักสูตรปรับปรุง พ.ศ. 2569) ปรับปรุงจากหลักสูตรวิศวกรรมเกษตร พ.ศ. 2564 สู่แนวทาง Smart & Low-Carbon Agri-Engineering มี 3 แผนการเรียน และเพิ่มแผน 2 แบบวิชาชีพสำหรับคนทำงาน": "The Maejo University Council, at meeting no. 9/2569, approved the Master of Engineering Program in Modern Agricultural Engineering (revised 2026). Revised from the 2021 Agricultural Engineering programme towards Smart & Low-Carbon Agri-Engineering, it offers three study plans, including a new professional Plan 2 for working people",
+  "ชุดหุ่นยนต์และระบบอัตโนมัติสำหรับกระบวนการผลิตที่ควบคุมสุขอนามัย · ชุดเครื่องมือขึ้นรูป 3 มิติ · เครื่องต้นแบบยืดอายุผลผลิตด้วยสนามแม่เหล็กไฟฟ้า · เครื่องวิเคราะห์สารอินทรีย์ด้วยเทคนิคเทอร์มอลดีซอร์ปชัน · หุ่นยนต์สี่ขาปัญญาประดิษฐ์ · เครื่องจำลองและเร่งสภาวะการเกิดปฏิกิริยา · เครื่องเป่าฟิล์ม": "Hygienic robotics and automation kit for production · 3D forming kit · Electromagnetic shelf-life extension prototype · Thermal desorption organic compound analyser · AI quadruped robot · Accelerated reaction chamber · Blown film machine",
+  "อ.ดร.ประภาพร กิจดำรงธรรม": "Dr. Prapaporn Kitdamrongtam",
+  "ผศ.ดริญญา มูลชัย": "Asst. Prof. Darinya Moonchai",
+  "อ.ดร.อุกฤษณ์ มารังค์": "Dr. Ukrit Marung",
+  "รศ.ดร.สิริวัฒน์ สาครวาสี": "Assoc. Prof. Dr. Siriwat Sakhonwasee",
+  "อ.ดร.ชวกร ศรีเงินยวง": "Dr. Chawakorn Sri-ngernyuang",
+  "ผศ.ดร.โชติพงศ์ กาญจนประโชติ": "Asst. Prof. Dr. Choatpong Kanjanaphachoat",
+  "รศ.ดร.นักรบ นาคประสม": "Assoc. Prof. Dr. Nukrob Narkprasom",
+  "ผศ.ดร.ศิวโรฒ บุญราศรี": "Asst. Prof. Dr. Siwarote Boonrasri",
+  "อ.ดร.ฑีรพรรษฏ์ ศรีอ่อน": "Dr. Theeraphat Sri-on",
+  "ผศ.ดร.นำพร ปัญโญใหญ่": "Asst. Prof. Dr. Numpon Punyoyai",
+  "อ.ดร.พนมพร เฉลิมวรรณ์": "Dr. Panomporn Chalermwan",
+  "ผศ.ดร.ทิพาพร คำแดง": "Asst. Prof. Dr. Tipapon Khamdaeng",
+  "ผศ.ดร.ทิพปภา พิสิษฐ์กุล": "Asst. Prof. Dr. Tippapha Pisithkul",
+  "ผศ.ดร.ฐิตินันท์ รัตนพรหม": "Asst. Prof. Dr. Tithinun Rattanaplome",
+  "รศ.ดร.จำเนียร บุญมาก": "Assoc. Prof. Dr. Jamnian Bunmark",
+  "ผศ.ดร.วรวรรณ เพชรอุไร": "Asst. Prof. Dr. Worawan Pechurai",
+  "อ.ดร.วินัย บังคมเนตร": "Dr. Winai Bangkhomned",
+  "ผศ.ดร.พิไลวรรณ พรประสิทธิ์": "Asst. Prof. Dr. Philaiwan Pornprasit",
+  "ผศ.นนท์ ปิ่นเงิน": "Asst. Prof. Non Pinngern",
+  "รศ.ดร.ฤทธิชัย อัศวราชันย์": "Assoc. Prof. Dr. Rittichai Assawarachan",
+  "ผศ.ดร.ธนศิษฏ์ วงศ์ศิริอำนวย": "Asst. Prof. Dr. Thanasit Wongsiriamnuay",
+  "คำถามที่": "Question",
+  "จาก": "of"
+};
+
+(function(){
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+  function $(id){return document.getElementById(id)}
+
+  /* ---------- dialog ---------- */
+  var dlg=$("dlg");
+  function openItem(it){
+    $("dlg-img").src=it.img; $("dlg-img").alt="";
+    $("dlg-meta").innerHTML=[it.cat,it.date].filter(Boolean).map(function(x){return "<span>"+esc(x)+"</span>"}).join(" · ");
+    $("dlg-title").textContent=it.title; $("dlg-text").textContent=it.text;
+    if(dlg.showModal){dlg.showModal()}else{dlg.setAttribute("open","")}
+  }
+  $("dlg-close").addEventListener("click",function(){dlg.close?dlg.close():dlg.removeAttribute("open")});
+  dlg.addEventListener("click",function(e){if(e.target===dlg)dlg.close()});
+
+  function newsCard(it,i,src){
+    return '<button class="media" data-src="'+src+'" data-i="'+i+'"><div class="thumb"><img src="'+esc(it.img)+'" alt="" loading="lazy"></div><div class="body"><div class="meta"><span class="cat">'+esc(it.cat||"")+'</span><span>'+esc(it.date)+'</span></div><h3>'+esc(it.title)+'</h3>'+(src==="side"?"":'<p class="clamp">'+esc(it.text)+'</p>')+'</div></button>';
+  }
+  function galleryItem(it,i){
+    return '<button class="media" data-src="act" data-i="'+i+'"><div class="thumb"><img src="'+esc(it.img)+'" alt="" loading="lazy"></div><span class="cap">'+esc(it.title)+'</span></button>';
+  }
+  var N=DATA.news;
+  $("home-news").innerHTML=newsCard(N[0],0,"news")+'<div class="news-side">'+N.slice(1,4).map(function(n,i){return newsCard(n,i+1,"side")}).join("")+'</div>';
+  $("news-all").innerHTML=N.map(function(n,i){return newsCard(n,i,"news")}).join("");
+  $("home-gallery").innerHTML=DATA.activities.map(galleryItem).join("");
+  $("gallery-all").innerHTML=DATA.activities.map(galleryItem).join("");
+  document.addEventListener("click",function(e){
+    var b=e.target.closest(".media[data-src]"); if(!b) return;
+    var src=b.getAttribute("data-src"), i=+b.getAttribute("data-i");
+    openItem(src==="act"?DATA.activities[i]:DATA.news[i]);
+  });
+
+
+
+  /* ---------- documents ---------- */
+  function host(u){try{return new URL(u,location.href).hostname.replace(/^www\./,"")}catch(e){return ""}}
+  $("docs").innerHTML=DATA.docs.map(function(g){
+    return '<div class="docgroup"><h3>'+esc(g.group)+'</h3>'+g.items.map(function(d){
+      var ty='<span class="ty'+(d[2]==="web"?" web":"")+'">'+(d[2]==="web"?"WEB":"PDF")+'</span>';
+      if(!d[1]) return '<div class="doc off">'+ty+'<span><b>'+esc(d[0])+'</b></span><span class="go">รอเผยแพร่</span></div>';
+      return '<a class="doc" href="'+esc(d[1])+'" target="_blank" rel="noopener">'+ty+'<span><b>'+esc(d[0])+'</b><small>'+esc(host(d[1])||"เอกสารของหลักสูตร")+'</small></span><span class="go">เปิด ↗</span></a>';
+    }).join("")+'</div>';
+  }).join("");
+
+  /* ---------- hero image ---------- */
+  if(DATA.hero){$("hero-img").src=DATA.hero}
+
+  /* ---------- testimonials ---------- */
+  if(DATA.testimonials&&DATA.testimonials.length){
+    $("voices-sec").hidden=false;
+    $("voices").innerHTML=DATA.testimonials.map(function(t){
+      var av=t.photo?'<img src="'+esc(t.photo)+'" alt="">':'<span class="av">'+esc((t.name||"?").charAt(0))+'</span>';
+      return '<figure class="card voice" style="margin:0"><q>'+esc(t.quote)+'</q><figcaption class="who">'+av+'<span><b>'+esc(t.name)+'</b><small>'+esc(t.role||"")+'</small></span></figcaption></figure>';
+    }).join("");
+  }
+
+  /* ---------- FAQ ---------- */
+  function faqHTML(list){return list.map(function(f,i){return '<details'+(i===0?' open':'')+'><summary>'+esc(f[0])+'</summary><p>'+esc(f[1])+'</p></details>'}).join("")}
+  $("home-faq").innerHTML=faqHTML(DATA.faq.slice(0,5));
+  $("faq-all").innerHTML=faqHTML(DATA.faq);
+
+  /* ---------- plan chooser ---------- */
+  var Q=[
+    {q:"เป้าหมายหลักของคุณคืออะไร",o:[["ทำวิจัยสร้างองค์ความรู้ใหม่ หรือเรียนต่อปริญญาเอก","research"],["นำความรู้ไปแก้ปัญหาในงานที่ทำอยู่","work"]]},
+    {q:"ตอนนี้คุณทำงานในสายวิศวกรรมเกษตร อุตสาหกรรมเกษตร หรือที่เกี่ยวข้องมาแล้วกี่ปี",o:[["ยังไม่ได้ทำงาน หรือน้อยกว่า 1 ปี","lt1"],["ตั้งแต่ 1 ปีขึ้นไป","ge1"]]},
+    {q:"คุณพร้อมด้านงานวิจัยแค่ไหน",o:[["มีหัวข้อวิจัยชัดเจนและพร้อมทำวิทยานิพนธ์เต็มเวลา","ready"],["อยากเรียนรายวิชาเพื่อปูพื้นฐานก่อนทำวิจัย","course"],["ไม่ต้องการทำวิทยานิพนธ์","nothesis"]]}
+  ];
+  var R={
+    "1.1":{t:"แผน 1.1 แบบวิชาการ",d:"ทำวิทยานิพนธ์ 36 หน่วยกิต เหมาะกับผู้ที่มีโจทย์วิจัยชัดและต้องการสร้างผลงานตีพิมพ์",pts:["วิทยานิพนธ์ 1–4 ตลอด 2 ปี พร้อมสัมมนาทุกภาค","ตีพิมพ์วารสาร 2 เรื่อง หรือวารสาร 1 เรื่องและ Proceedings 1 เรื่อง"],n:"คุณสมบัติ: GPAX ไม่น้อยกว่า 3.00 หรือ 2.75 พร้อมผลงานตีพิมพ์ระดับชาติ 1 เรื่อง"},
+    "1.2":{t:"แผน 1.2 แบบวิชาการ",d:"เรียนรายวิชา 24 หน่วยกิต และทำวิทยานิพนธ์ 12 หน่วยกิต ปูพื้นฐานก่อนลงมือวิจัย",pts:["วิชาเอกบังคับ 12 หน่วยกิต รวม AI ในงานวิศวกรรมเกษตร","เลือกวิชาเอกเลือกจาก 7 กลุ่มความเชี่ยวชาญ 12 หน่วยกิต"],n:"คุณสมบัติ: GPAX ไม่น้อยกว่า 2.50 หรือตามที่อาจารย์ผู้รับผิดชอบหลักสูตรพิจารณา"},
+    "2":{t:"แผน 2 แบบวิชาชีพ",d:"เรียนแบบ Hybrid ไม่ต้องทำวิทยานิพนธ์ แก้ปัญหาจริงจากสถานประกอบการผ่าน WIL และการค้นคว้าอิสระ",pts:["WIL 180 ชั่วโมงในสถานประกอบการ","การค้นคว้าอิสระ 6 หน่วยกิต และสอบประมวลความรู้"],n:"คุณสมบัติ: GPAX ไม่น้อยกว่า 2.25 และมีประสบการณ์ทำงานที่เกี่ยวข้องไม่น้อยกว่า 1 ปี"}
+  };
+  function decide(a){
+    if(a[2]==="nothesis"||a[0]==="work"){
+      if(a[1]==="ge1") return ["2",null];
+      return ["1.2","แผน 2 ต้องมีประสบการณ์ทำงานที่เกี่ยวข้องอย่างน้อย 1 ปี จึงแนะนำแผน 1.2 ที่เน้นรายวิชาและมีวิทยานิพนธ์ขนาดเล็กแทน"];
+    }
+    if(a[2]==="ready") return ["1.1",null];
+    return ["1.2",null];
+  }
+  function Chooser(root){
+    var ans=[];
+    function render(){
+      if(ans.length<Q.length){
+        var q=Q[ans.length];
+        root.innerHTML='<div class="ch-prog">'+Q.map(function(_,i){return '<span class="'+(i<=ans.length?"on":"")+'"></span>'}).join("")+'</div><div class="ch-step"><span>คำถามที่</span> '+(ans.length+1)+' <span>จาก</span> '+Q.length+'</div><div class="ch-q">'+esc(q.q)+'</div><div class="ch-opts">'+q.o.map(function(o){return '<button class="ch-opt" data-v="'+o[1]+'">'+esc(o[0])+'</button>'}).join("")+'</div>'+(ans.length?'<button class="linkbtn" data-back="1">ย้อนกลับ</button>':'');
+      } else {
+        var d=decide(ans), r=R[d[0]];
+        root.innerHTML='<div class="ch-res stack"><div class="ch-step">แผนที่แนะนำสำหรับคุณ</div><h3>'+esc(r.t)+'</h3><p class="muted">'+esc(r.d)+'</p><ul class="list">'+r.pts.map(function(x){return '<li>'+esc(x)+'</li>'}).join("")+'</ul>'+(d[1]?'<div class="ch-note">'+esc(d[1])+'</div>':'')+'<div class="ch-note">'+esc(r.n)+'</div><div class="ch-actions"><a class="btn btn-maroon" href="#admission">ดูขั้นตอนการสมัคร</a><a class="btn btn-ghost" href="#curriculum">ดูรายวิชาของแผนนี้</a></div><button class="linkbtn" data-reset="1">เริ่มใหม่</button></div>';
+      }
+    }
+    root.addEventListener("click",function(e){
+      var b=e.target.closest("button"); if(!b) return;
+      if(b.dataset.v){ans.push(b.dataset.v); if(ans.length===1&&ans[0]==="work"){/* still ask experience */} render();}
+      else if(b.dataset.back){ans.pop();render()}
+      else if(b.dataset.reset){ans=[];render()}
+    });
+    render();
+  }
+  Chooser($("ch-body")); Chooser($("ch-body2"));
+
+  function enIni(n){ var e=I18N_EN[n]; if(!e) return ""; e=e.replace(/^(Assoc\. Prof\. |Asst\. Prof\. |Dr\. )+/,""); return e.charAt(0); }
+  /* ---------- people ---------- */
+  function portrait(p){
+    return '<div class="portrait">'+(p.photo?'<img src="'+esc(p.photo)+'" alt="'+esc(p.name)+'" loading="lazy">':'<div class="mono-av" aria-hidden="true" data-en="'+esc(enIni(p.name))+'">'+esc(p.ini)+'</div>')+'</div>';
+  }
+  function tags(t){return '<div class="tags">'+t.map(function(x){return '<span>'+esc(x)+'</span>'}).join("")+'</div>'}
+  function contact(p){
+    if(!p.tel&&!p.email) return "";
+    return '<div class="pcontact">'+(p.email?'<a href="mailto:'+esc(p.email)+'"><span class="ic">✉</span>'+esc(p.email).replace("@","@<wbr>")+'</a>':'')+(p.tel?'<span><span class="ic">☎</span><span>โทร</span> '+esc(p.tel)+'</span>':'')+'</div>';
+  }
+  var L=DATA.leaders.map(function(p){return '<article class="leader">'+portrait(p)+'<div class="body"><span class="role">'+esc(p.role)+'</span><h3>'+esc(p.name)+'</h3><small>'+esc(p.edu)+'</small>'+tags(p.tags)+contact(p)+'</div></article>'}).join("");
+  $("home-leaders").innerHTML=L; $("leaders").innerHTML=L;
+  $("people").innerHTML=DATA.people.map(function(p){return '<article class="pcard">'+portrait(p)+'<div class="body"><h4>'+esc(p.name)+'</h4><small>'+esc(p.edu)+'</small>'+tags(p.tags)+contact(p)+'</div></article>'}).join("");
+  $("roster").innerHTML=DATA.roster.map(function(n){return '<li>'+esc(n)+'</li>'}).join("");
+
+  /* ---------- static content ---------- */
+  $("highlights").innerHTML=STATIC.highlights.map(function(h,i){return '<div class="card"><div class="num">0'+(i+1)+'</div><h3>'+esc(h[0])+'</h3><p>'+esc(h[1])+'</p></div>'}).join("")+'<div class="card" style="background:var(--maroon);border-color:var(--maroon)"><h3 style="color:var(--bg)">สอดคล้องกับเป้าหมายระดับชาติและสากล</h3><p style="color:var(--bg);opacity:.9">SDG 2, 12, 13 · BCG Economy · เกษตรสุขอัจฉริยะ (IWA) ของมหาวิทยาลัยแม่โจ้</p></div>';
+  $("hl-table").innerHTML=STATIC.highlights.map(function(h){return '<tr><td><b>'+esc(h[0])+'</b></td><td>'+esc(h[2])+'</td><td>'+esc(h[3])+'</td><td>'+esc(h[4])+'</td></tr>'}).join("");
+  $("objectives").innerHTML=STATIC.objectives.map(function(o){return '<li><div><p style="color:var(--ink)">'+esc(o)+'</p></div></li>'}).join("");
+  $("approval").innerHTML=STATIC.approval.map(function(a,i){return '<tr><td>'+(i===8?'<b>'+esc(a[0])+'</b>':esc(a[0]))+'</td><td class="n">'+esc(a[1])+'</td></tr>'}).join("");
+  $("careers").innerHTML=STATIC.careers.map(function(c,i){return '<div class="card"><div class="num">0'+(i+1)+'</div><p style="color:var(--ink)">'+esc(c)+'</p></div>'}).join("");
+  $("labs").innerHTML=DATA.labs.map(function(l){return '<article class="media" style="cursor:default"><div class="thumb"><img src="'+esc(l.img)+'" alt="" loading="lazy"></div><div class="body"><h3>'+esc(l.title)+'</h3><p>'+esc(l.text)+'</p></div></article>'}).join("");
+  $("equip").innerHTML=STATIC.equip.map(function(e){return '<tr><td class="n">'+esc(e[0])+'</td><td>'+esc(e[1])+'</td></tr>'}).join("");
+  $("partners").innerHTML=STATIC.partners.map(function(p){return '<span>'+esc(p)+'</span>'}).join("");
+  $("kpi").innerHTML=DATA.kpi.map(function(k,i){return '<tr><td class="n">'+(i+1)+'</td><td>'+esc(k[0])+'</td><td class="muted small">'+esc(k[1])+'</td><td style="white-space:nowrap"><b>'+esc(k[2])+'</b></td>'+k[3].map(function(v){return '<td>'+(v?esc(v):'<span class="wait">รอผล</span>')+'</td>'}).join("")+'</tr>'}).join("");
+
+  /* plans */
+  function planCard(p){
+    var bar=p.parts.map(function(x){return '<span class="'+x[2]+'" style="width:'+(x[1]/36*100).toFixed(1)+'%"></span>'}).join("");
+    var rows=p.parts.map(function(x){return '<tr><td><span class="sw '+x[2]+'"></span>'+esc(x[0])+'</td><td>'+x[1]+'</td></tr>'}).join("");
+    return '<div class="plan"><span class="tag">'+esc(p.sub)+'</span><h3>'+esc(p.name)+'</h3><p>'+esc(p.who)+'</p><div class="bar" aria-hidden="true">'+bar+'</div><table class="credits">'+rows+'<tr><td>รายวิชาไม่นับหน่วยกิต</td><td>(7)</td></tr><tr class="total"><td>รวม</td><td>36</td></tr></table></div>';
+  }
+  var ph=STATIC.plans.map(planCard).join(""); $("home-plans").innerHTML=ph; $("cur-plans").innerHTML=ph;
+
+  /* PLO tabs */
+  function renderPLO(plan){
+    var two=plan==="2", list=two?STATIC.plo:STATIC.plo.slice(0,6);
+    $("plo-list").innerHTML=list.map(function(r,i){
+      return '<div class="plo-row"><span class="plo-n">PLO '+(i+1)+'</span><p>'+esc(r[0].replace("{X}",two?"การค้นคว้าอิสระ":"วิทยานิพนธ์"))+'</p><span class="plo-lv">'+esc(r[1])+'<span class="lv">'+r[2]+'</span></span></div>';
+    }).join("");
+  }
+  document.querySelectorAll("[data-plo]").forEach(function(b){b.addEventListener("click",function(){
+    document.querySelectorAll("[data-plo]").forEach(function(x){x.setAttribute("aria-selected",x===b?"true":"false")}); renderPLO(b.getAttribute("data-plo"));
+  })});
+  renderPLO("1");
+
+  /* term plans */
+  var tt=$("term-tabs");
+  tt.innerHTML=["1.1","1.2","2"].map(function(k,i){return '<button class="tab" role="tab" aria-selected="'+(i===0)+'" data-term="'+k+'">แผน '+k+'</button>'}).join("");
+  function renderTerms(k){
+    $("terms").innerHTML=STATIC.terms[k].map(function(t){
+      return '<div class="term"><h4>'+esc(t[0])+'</h4><ul>'+t[1].map(function(c){return '<li><span class="c">'+c[0]+'</span><span>'+esc(c[1])+'</span><span class="cr">'+c[2]+'</span></li>'}).join("")+'<li><span></span><span>รวมหน่วยกิต</span><span class="cr">'+t[2]+'</span></li></ul></div>';
+    }).join("");
+  }
+  tt.addEventListener("click",function(e){var b=e.target.closest("[data-term]");if(!b)return;tt.querySelectorAll(".tab").forEach(function(x){x.setAttribute("aria-selected",x===b?"true":"false")});renderTerms(b.getAttribute("data-term"))});
+  renderTerms("1.1");
+
+  /* course table */
+  var fp=$("f-plan"), fq=$("f-q");
+  function renderCourses(){
+    var p=fp.value, q=fq.value.trim().toLowerCase(), out=[], g=null;
+    STATIC.courses.forEach(function(r){
+      if(r[0]==="g"){g=r[1];return}
+      if(p&&(" "+r[4]+" ").indexOf(" "+p+" ")<0)return;
+      if(q&&(r[0]+" "+r[1]+" "+r[2]).toLowerCase().indexOf(q)<0)return;
+      if(g){out.push('<tr class="grp"><td colspan="4">'+esc(g)+'</td></tr>');g=null}
+      out.push('<tr><td class="n">'+r[0]+'</td><td>'+esc(r[1])+'<small>'+esc(r[2])+'</small></td><td class="n">'+esc(r[3])+'</td><td class="n">'+r[4].split(" ").join(" · ")+'</td></tr>');
+    });
+    $("courses").innerHTML=out.length?out.join(""):'<tr><td colspan="4" class="muted">ไม่พบรายวิชาที่ตรงกับคำค้น ลองพิมพ์รหัส เช่น 20401514</td></tr>';
+  }
+  fp.addEventListener("change",renderCourses); fq.addEventListener("input",renderCourses); renderCourses();
+
+  /* copy */
+  document.querySelectorAll("[data-copy]").forEach(function(b){b.addEventListener("click",function(){
+    var t=b.getAttribute("data-copy");
+    try{navigator.clipboard.writeText(t).then(function(){b.textContent="คัดลอกแล้ว"},function(){b.textContent=t})}catch(e){b.textContent=t}
+  })});
+
+  /* menu + router */
+  var mb=$("menu-btn"), menu=$("menu");
+  mb.addEventListener("click",function(){var o=menu.classList.toggle("open");mb.setAttribute("aria-expanded",o?"true":"false")});
+  var pages=["home","about","curriculum","admission","faculty","news","documents","contact"];
+  var alias={learning:["curriculum","sec-learning"],facilities:["faculty","sec-facilities"],quality:["about","sec-quality"],faq:["admission","faq"],chooser:["home","chooser"]};
+  function route(){
+    var h=(location.hash||"#home").slice(1), target=null;
+    if(alias[h]){target=alias[h][1];h=alias[h][0]}
+    if(pages.indexOf(h)<0)h="home";
+    document.querySelectorAll(".page").forEach(function(s){s.hidden=s.getAttribute("data-page")!==h});
+    menu.querySelectorAll("a").forEach(function(a){if(a.getAttribute("href")==="#"+h)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});
+    menu.classList.remove("open"); mb.setAttribute("aria-expanded","false");
+    if(target){var el=$(target); if(el){setTimeout(function(){var y=el.getBoundingClientRect().top+window.scrollY-80;window.scrollTo(0,y)},0);return}}
+    window.scrollTo(0,0);
+  }
+  window.addEventListener("hashchange",route); route();
+})();
+
+/* =====================================================================
+   ฉบับภาษาอังกฤษ — ข้อความไทยที่ไม่มีคำแปลใน I18N_EN จะแสดงเป็นภาษาไทยตามเดิม
+   เพิ่มหรือแก้คำแปลที่ var I18N_EN ในรูปแบบ "ข้อความไทย": "English",
+   ===================================================================== */
+(function(){
+  var TH=/[฀-๿]/, LANG="th";
+  STATIC.courses.forEach(function(r){ if(r[0]!=="g" && !I18N_EN[r[1]]) I18N_EN[r[1]]=r[2]; });
+  var MON={"ม.ค.":"Jan","ก.พ.":"Feb","มี.ค.":"Mar","เม.ย.":"Apr","พ.ค.":"May","มิ.ย.":"Jun","ก.ค.":"Jul","ส.ค.":"Aug","ก.ย.":"Sep","ต.ค.":"Oct","พ.ย.":"Nov","ธ.ค.":"Dec"};
+  function auto(s){
+    var m=s.match(/^(\d{1,2}(?:[–-]\d{1,2})?) (\S+) (25\d\d)$/);
+    if(m&&MON[m[2]]) return m[1]+" "+MON[m[2]]+" "+(+m[3]-543);
+    m=s.match(/^ภาคการศึกษาที่ (\d)\/(25\d\d)$/); if(m) return "Semester "+m[1]+"/"+(+m[2]-543);
+    m=s.match(/^ปีงบประมาณ (25\d\d)$/); if(m) return "Fiscal year "+(+m[1]-543);
+    return null;
+  }
+  function tr(raw){
+    var k=raw.replace(/\s+/g," ").trim(); if(!k||!TH.test(k)) return null;
+    var v=I18N_EN[k]||auto(k); if(!v) return null;
+    return raw.match(/^\s*/)[0]+v+raw.match(/\s*$/)[0];
+  }
+  var ATTRS=["alt","placeholder","aria-label","title"];
+  function fixText(n){
+    var p=n.parentElement; if(!p||p.closest("script,style,[data-en-html],[data-en]")) return;
+    if(n.__th===undefined){ if(!TH.test(n.nodeValue)) return; n.__th=n.nodeValue; }
+    var v = LANG==="en" ? (tr(n.__th)||n.__th) : n.__th;
+    if(n.nodeValue!==v) n.nodeValue=v;
+  }
+  function fixEl(el){
+    if(el.tagName==="SCRIPT"||el.tagName==="STYLE") return;
+    if(el.hasAttribute("data-en-html")){
+      if(el.__thHTML===undefined) el.__thHTML=el.innerHTML;
+      var h = LANG==="en" ? el.getAttribute("data-en-html") : el.__thHTML;
+      if(el.innerHTML!==h) el.innerHTML=h;
+    } else if(el.hasAttribute("data-en")){
+      if(el.__thText===undefined) el.__thText=el.textContent;
+      var t = LANG==="en" ? (el.getAttribute("data-en")||el.__thText) : el.__thText;
+      if(el.textContent!==t) el.textContent=t;
+    }
+    ATTRS.forEach(function(a){
+      if(!el.hasAttribute(a)) return;
+      el.__thA=el.__thA||{};
+      if(el.__thA[a]===undefined) el.__thA[a]=el.getAttribute(a);
+      var o=el.__thA[a], v = LANG==="en" ? (tr(o)||o) : o;
+      if(el.getAttribute(a)!==v) el.setAttribute(a,v);
+    });
+  }
+  function apply(root){
+    if(root.nodeType===3){ fixText(root); return; }
+    if(root.nodeType!==1 || (root.closest && root.closest("script,style"))) return;
+    fixEl(root); root.querySelectorAll("*").forEach(fixEl);
+    var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT), n, list=[];
+    while(n=w.nextNode()) list.push(n);
+    list.forEach(fixText);
+  }
+  var TITLE_TH=document.title, desc=document.querySelector('meta[name="description"]'), DESC_TH=desc?desc.getAttribute("content"):"";
+  function setLang(l, save){
+    LANG = l==="en" ? "en" : "th";
+    document.documentElement.lang=LANG;
+    document.title = LANG==="en" ? (I18N_EN[TITLE_TH]||TITLE_TH) : TITLE_TH;
+    if(desc) desc.setAttribute("content", LANG==="en" ? "Master of Engineering Program in Modern Agricultural Engineering (revised 2026), Faculty of Engineering and Agro-Industry, Maejo University" : DESC_TH);
+    apply(document.body);
+    if(save){ try{ localStorage.setItem("lang",LANG) }catch(e){} }
+  }
+  new MutationObserver(function(ms){
+    if(LANG!=="en") return;
+    ms.forEach(function(m){ m.addedNodes.forEach(apply) });
+  }).observe(document.body,{childList:true,subtree:true});
+  document.getElementById("lang-btn").addEventListener("click",function(){ setLang(LANG==="en"?"th":"en",true) });
+  var init="th";
+  try{ var q=new URLSearchParams(location.search).get("lang"); init = (q==="en"||q==="th") ? q : (localStorage.getItem("lang")||"th"); }catch(e){}
+  setLang(init,false);
+})();
+</script>
+</body>
+</html>
